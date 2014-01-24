@@ -40,8 +40,6 @@ public class MouseLook : MonoBehaviour {
 			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
 			
 			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
-
-			Debug.Log("x y");
 		}
 		else if (axes == RotationAxes.MouseX)
 		{
@@ -53,8 +51,6 @@ public class MouseLook : MonoBehaviour {
 			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
 			
 			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
-
-			Debug.Log("y only");
 		}
 	}
 	
