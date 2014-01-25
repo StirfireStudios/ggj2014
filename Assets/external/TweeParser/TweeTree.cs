@@ -51,8 +51,8 @@ public class TweeTree : MonoBehaviour {
 			}
 
 			// search for character start and end nodes
-			if (node.isDialogStart && node.Speaker != null) {
-				_characters[node.Speaker.Name].Start = node;
+			if (node.isDialogStart && node.Speaker != null && node.Player != null) {
+				_characters[node.Speaker.Name].addStartFor(node.Player, node);
 			}
 
 			if (node.isDialogForPlayerApproach && node.Speaker != null && node.Player != null) {
