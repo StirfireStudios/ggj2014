@@ -10,8 +10,16 @@ public class Passenger : MonoBehaviour
 
 	void Awake()
 	{
-		TweeNode startNode = TweeTree.Instance.getNode("CFC1 John1-1");
-		baseMachine = new DialogueMachine(startNode);
+		tweeChar = TweeTree.Instance.getCharacter(characterName);
+		if (tweeChar == null)
+		{
+			Debug.LogWarning("Could not find character named "+characterName);
+			Destroy(this);
+		}
+		else
+		{
+			baseMachine = new DialogueMachine(tweeChar.Start);
+		}
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -23,4 +31,6 @@ public class Passenger : MonoBehaviour
 	{
 		DialogueDisplay.HideText();
 	}
+
+	private TweeCharacter tweeChar;
 }

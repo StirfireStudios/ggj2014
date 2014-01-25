@@ -9,6 +9,10 @@ public class DialogueMachine
 
 	public DialogueMachine(TweeNode startNode)
 	{
+		if (startNode == null)
+		{
+			Debug.LogWarning("Making machine from null start node");
+		}
 		currentNode = startNode;
 
 		MessagePasser.subscribe("game-tick", OnTick);
