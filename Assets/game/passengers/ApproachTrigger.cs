@@ -5,12 +5,12 @@ public class ApproachTrigger : MonoBehaviour
 {
 	public string conversationName;
 
-	void OnCollisionEnter()
+	void OnTriggerEnter()
 	{
 		MessagePasser.send("approach-start", conversationName);
 	}
 
-	void OnCollisionExit()
+	void OnTriggerExit()
 	{
 		MessagePasser.send("approach-end", conversationName);
 	}

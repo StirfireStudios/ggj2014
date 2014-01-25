@@ -66,6 +66,46 @@ ModelImporter:
     100120: SC_crate_007
     100122: SC_crate_01
     100124: //RootNode
+    100126: EC_chairLegs_009
+    100128: EC_chairLegs_01
+    100130: EC_chairLegs_010
+    100132: EC_chairLegs_011
+    100134: EC_chairLegs_012
+    100136: EC_chairLegs_013
+    100138: EC_chairLegs_014
+    100140: EC_chairLegs_015
+    100142: EC_chairLegs_016
+    100144: EC_chairLegs_017
+    100146: EC_chairLegs_018
+    100148: EC_chairLegs_019
+    100150: EC_chairLegs_02
+    100152: EC_chairLegs_020
+    100154: EC_chairLegs_021
+    100156: EC_chairLegs_03
+    100158: EC_chairLegs_04
+    100160: EC_chairLegs_05
+    100162: EC_chairLegs_06
+    100164: EC_chairLegs_07
+    100166: EC_chairLegs_08
+    100168: EC_seat
+    100170: EC_seat001
+    100172: EC_seat002
+    100174: EC_seat003
+    100176: EC_seat004
+    100178: EC_seat014
+    100180: EC_seat_005
+    100182: EC_seat_006
+    100184: EC_seat_007
+    100186: EC_seat_008
+    100188: EC_seat_009
+    100190: EC_seat_010
+    100192: EC_seat_011
+    100194: EC_seat_012
+    100196: EC_seat_013
+    100198: EC_seat_015
+    100200: Plane003 1
+    100202: SC_crate_008
+    100204: SC_crate_009
     400000: Box002
     400002: Box003
     400004: Box004
@@ -129,6 +169,46 @@ ModelImporter:
     400120: SC_crate_007
     400122: SC_crate_01
     400124: //RootNode
+    400126: EC_chairLegs_009
+    400128: EC_chairLegs_01
+    400130: EC_chairLegs_010
+    400132: EC_chairLegs_011
+    400134: EC_chairLegs_012
+    400136: EC_chairLegs_013
+    400138: EC_chairLegs_014
+    400140: EC_chairLegs_015
+    400142: EC_chairLegs_016
+    400144: EC_chairLegs_017
+    400146: EC_chairLegs_018
+    400148: EC_chairLegs_019
+    400150: EC_chairLegs_02
+    400152: EC_chairLegs_020
+    400154: EC_chairLegs_021
+    400156: EC_chairLegs_03
+    400158: EC_chairLegs_04
+    400160: EC_chairLegs_05
+    400162: EC_chairLegs_06
+    400164: EC_chairLegs_07
+    400166: EC_chairLegs_08
+    400168: EC_seat
+    400170: EC_seat001
+    400172: EC_seat002
+    400174: EC_seat003
+    400176: EC_seat004
+    400178: EC_seat014
+    400180: EC_seat_005
+    400182: EC_seat_006
+    400184: EC_seat_007
+    400186: EC_seat_008
+    400188: EC_seat_009
+    400190: EC_seat_010
+    400192: EC_seat_011
+    400194: EC_seat_012
+    400196: EC_seat_013
+    400198: EC_seat_015
+    400200: Plane003 1
+    400202: SC_crate_008
+    400204: SC_crate_009
     2300000: Box002
     2300002: Box003
     2300004: Box004
@@ -191,6 +271,46 @@ ModelImporter:
     2300118: SC_crate_006
     2300120: SC_crate_007
     2300122: SC_crate_01
+    2300124: EC_chairLegs_009
+    2300126: EC_chairLegs_01
+    2300128: EC_chairLegs_010
+    2300130: EC_chairLegs_011
+    2300132: EC_chairLegs_012
+    2300134: EC_chairLegs_013
+    2300136: EC_chairLegs_014
+    2300138: EC_chairLegs_015
+    2300140: EC_chairLegs_016
+    2300142: EC_chairLegs_017
+    2300144: EC_chairLegs_018
+    2300146: EC_chairLegs_019
+    2300148: EC_chairLegs_02
+    2300150: EC_chairLegs_020
+    2300152: EC_chairLegs_021
+    2300154: EC_chairLegs_03
+    2300156: EC_chairLegs_04
+    2300158: EC_chairLegs_05
+    2300160: EC_chairLegs_06
+    2300162: EC_chairLegs_07
+    2300164: EC_chairLegs_08
+    2300166: EC_seat
+    2300168: EC_seat001
+    2300170: EC_seat002
+    2300172: EC_seat003
+    2300174: EC_seat004
+    2300176: EC_seat014
+    2300178: EC_seat_005
+    2300180: EC_seat_006
+    2300182: EC_seat_007
+    2300184: EC_seat_008
+    2300186: EC_seat_009
+    2300188: EC_seat_010
+    2300190: EC_seat_011
+    2300192: EC_seat_012
+    2300194: EC_seat_013
+    2300196: EC_seat_015
+    2300198: Plane003 1
+    2300200: SC_crate_008
+    2300202: SC_crate_009
     3300000: Box002
     3300002: Box003
     3300004: Box004
@@ -253,6 +373,46 @@ ModelImporter:
     3300118: SC_crate_006
     3300120: SC_crate_007
     3300122: SC_crate_01
+    3300124: EC_chairLegs_009
+    3300126: EC_chairLegs_01
+    3300128: EC_chairLegs_010
+    3300130: EC_chairLegs_011
+    3300132: EC_chairLegs_012
+    3300134: EC_chairLegs_013
+    3300136: EC_chairLegs_014
+    3300138: EC_chairLegs_015
+    3300140: EC_chairLegs_016
+    3300142: EC_chairLegs_017
+    3300144: EC_chairLegs_018
+    3300146: EC_chairLegs_019
+    3300148: EC_chairLegs_02
+    3300150: EC_chairLegs_020
+    3300152: EC_chairLegs_021
+    3300154: EC_chairLegs_03
+    3300156: EC_chairLegs_04
+    3300158: EC_chairLegs_05
+    3300160: EC_chairLegs_06
+    3300162: EC_chairLegs_07
+    3300164: EC_chairLegs_08
+    3300166: EC_seat
+    3300168: EC_seat001
+    3300170: EC_seat002
+    3300172: EC_seat003
+    3300174: EC_seat004
+    3300176: EC_seat014
+    3300178: EC_seat_005
+    3300180: EC_seat_006
+    3300182: EC_seat_007
+    3300184: EC_seat_008
+    3300186: EC_seat_009
+    3300188: EC_seat_010
+    3300190: EC_seat_011
+    3300192: EC_seat_012
+    3300194: EC_seat_013
+    3300196: EC_seat_015
+    3300198: Plane003 1
+    3300200: SC_crate_008
+    3300202: SC_crate_009
     4300000: DR
     4300002: Box002
     4300004: Box003
@@ -315,6 +475,46 @@ ModelImporter:
     4300118: SC_crate_006
     4300120: SC_crate_007
     4300122: DR_windows
+    4300124: EC_seat
+    4300126: EC_chairLegs_04
+    4300128: EC_seat001
+    4300130: EC_chairLegs_05
+    4300132: EC_seat002
+    4300134: EC_chairLegs_06
+    4300136: EC_seat003
+    4300138: EC_chairLegs_07
+    4300140: EC_seat004
+    4300142: EC_chairLegs_08
+    4300144: EC_seat_005
+    4300146: EC_chairLegs_01
+    4300148: EC_seat_006
+    4300150: EC_chairLegs_03
+    4300152: EC_chairLegs_02
+    4300154: EC_seat_007
+    4300156: EC_seat_008
+    4300158: EC_chairLegs_009
+    4300160: EC_chairLegs_010
+    4300162: EC_chairLegs_011
+    4300164: EC_seat_009
+    4300166: EC_seat_010
+    4300168: EC_chairLegs_012
+    4300170: EC_chairLegs_013
+    4300172: EC_chairLegs_014
+    4300174: EC_seat_011
+    4300176: EC_seat_012
+    4300178: EC_chairLegs_015
+    4300180: EC_chairLegs_016
+    4300182: EC_chairLegs_017
+    4300184: EC_seat_013
+    4300186: EC_seat014
+    4300188: EC_chairLegs_018
+    4300190: EC_chairLegs_019
+    4300192: EC_chairLegs_020
+    4300194: EC_seat_015
+    4300196: EC_chairLegs_021
+    4300198: Plane003
+    4300200: SC_crate_008
+    4300202: SC_crate_009
     9500000: //RootNode
   materials:
     importMaterials: 1

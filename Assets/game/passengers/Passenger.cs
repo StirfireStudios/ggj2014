@@ -34,6 +34,7 @@ public class Passenger : MonoBehaviour
 	public bool sitting = false;
 	public float turn = 0;
 	public string characterName;
+	public string conversationName;
 
 	DialogueMachine baseMachine;
 	TweeCharacter tweeChar;
@@ -42,6 +43,7 @@ public class Passenger : MonoBehaviour
 	TextMesh text;
 	Animator anim;
 
+	bool inApproach = false;
 	float currentTurn;
 	float targetTurn;
 
@@ -59,18 +61,14 @@ public class Passenger : MonoBehaviour
 		text = GetComponentInChildren<TextMesh>();
 
 		MessagePasser.subscribe("game-tick", OnTick);
+		MessagePasser.subscribe("approach-start", OnApproach);
+		MessagePasser.subscribe("approach-end", OnApproach);
 
 		anim = GetComponent<Animator>();
 		anim.SetBool("sit", sitting);
 		anim.SetFloat("turning", turn);
 		currentTurn = turn;
 		targetTurn = turn;
-
-		string[] names = TweeTree.Instance.getCharacterNames();
-		foreach (string name in names)
-		{
-			//Debug.Log(name);
-		}
 		
 		tweeChar = TweeTree.Instance.getCharacter(characterName);
 		if (tweeChar == null)
@@ -111,14 +109,50 @@ public class Passenger : MonoBehaviour
 		approachMachine = new DialogueMachine(start);
 	}
 
+	public void OnApproach(string message, string arg)
+	{
+		if (arg != conversationName || approachMachine == null)
+		{
+			return;
+		}
+
+		if (message == "approach-start")
+		{
+			Debug.Log("Starting approach for "+arg);
+			inApproach = true;
+			updateText();
+		}
+		else
+		{
+			Debug.Log("Ending approach for "+arg);
+			inApproach = false;
+			approachMachine = null;
+		}
+	}
+
 	public void OnTick(string message, string arg)
 	{
-		if (baseMachine != null)
+		if (inApproach)
 		{
-			baseMachine.Advance();
+			if (approachMachine != null)
+			{
+				approachMachine.Advance();
+				if (approachMachine.Finished)
+				{
+					Debug.Log("Ending approach for "+arg);
+					inApproach = false;
+					approachMachine = null;
+				}
+			}
+		}
+		if (!inApproach)
+		{
+			if (baseMachine != null)
+			{
+				baseMachine.Advance();
+			}
 		}
 		updateText();
-		anim.SetBool("sit", sitting);
 	}
 
 	void Update()
@@ -129,12 +163,27 @@ public class Passenger : MonoBehaviour
 
 	void updateText()
 	{
-		if (baseMachine == null || baseMachine.CurrentNode == null)
+		if (inApproach)
 		{
-			targetTurn = turn;
-			return;
+			if (approachMachine == null || approachMachine.CurrentNode == null)
+			{
+				targetTurn = turn;
+				return;
+			}
+		}
+		else
+		{
+			if (baseMachine == null || baseMachine.CurrentNode == null)
+			{
+				targetTurn = turn;
+				return;
+			}
 		}
 		TweeNode node = baseMachine.CurrentNode;
+		if (inApproach)
+		{
+			node = approachMachine.CurrentNode;
+		}
 		TweeCharacter speaker = node.Speaker;
 		if (speaker != null && tweeChar.Name == speaker.Name)
 		{
