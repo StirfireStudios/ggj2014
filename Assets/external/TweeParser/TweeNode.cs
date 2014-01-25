@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using System;
 
 public class TweeNode {
+	[Flags]
+	enum NodeFlags {
+		DialogNode = 0x01, // This is a dialog node
+		StartApproach = 0x02, // This dialog starts when the player approaches
+		StartLeave = 0x04, // This dialog starts when the player leaves
+		Start = 0x08, // this is the start node for this character's conversation
+		EventNode = 0x80 // this is an event node
+	};
 
 	public string Name {
 		get {
@@ -28,11 +36,27 @@ public class TweeNode {
 		}
 	}
 
-	private string getTextInBrackets(string text) {
-		int index = text.IndexOf("[");
-		return text.Substring(index+1, text.Length - (index + 2)).Trim();
+	private bool hasFlags(NodeFlags flags) {
+		return (_flags & flags) == flags;
 	}
 
+	public bool isDialog { get { return hasFlags(NodeFlags.DialogNode); } }
+	public bool isDialogStart { get { return hasFlags(NodeFlags.Start); } }
+	public bool isForPlayerApproach { get { return hasFlags(NodeFlags.StartApproach); } }
+	public bool isForPlayerLeave { get { return hasFlags(NodeFlags.StartLeave); } }
+
+	private string getTextInBrackets(string text) {
+		return getTextInBrackets(text, false);
+	}
+
+	private string getTextInBrackets(string text, bool twobrackets) {
+		int index = text.IndexOf("[");
+		if (twobrackets)
+			return text.Substring(index+2, text.Length - (index + 3)).Trim();
+		else
+			return text.Substring(index+1, text.Length - (index + 2)).Trim();
+	}
+	
 	public TweeNode(string text) {
 		string[] lines = text.Split(new string[] {"\n"}, System.StringSplitOptions.None);
 		if (lines[0].Contains("[")) {
@@ -68,6 +92,9 @@ public class TweeNode {
 
 	private string _text;
 	private string _name;
+	private NodeFlags _flags;
 	private string[] _tags;
+	private string _speaker;
+	private string _target;
 	private TweeLink[] _links;
 }

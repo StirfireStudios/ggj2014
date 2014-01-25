@@ -24,6 +24,16 @@ namespace Twee {
 			foreach(TextAsset script in scripts) {
 				ParseAsset(script);
 			}
+
+			foreach(TweeNode node in _nodes.Values) {
+				foreach(TweeLink link in node.Links) {
+					if (_nodes.ContainsKey(link.NodeName)) {
+						link.Node = _nodes[link.NodeName];						
+					} else {
+						Debug.Log("WARNING: \""+node.Name+"\" contains a link to '" + link.NodeName + "' that couldn't be resolved");
+					}
+				}
+			}
 		}
 
 		private void ParseAsset(TextAsset script) {
@@ -40,16 +50,6 @@ namespace Twee {
 			}
 			if (nodetext.Length > 0)
 				ParseNode(nodetext.ToString());
-
-			foreach(TweeNode node in _nodes.Values) {
-				foreach(TweeLink link in node.Links) {
-					if (_nodes.ContainsKey(link.NodeName)) {
-						link.Node = _nodes[link.NodeName];						
-					} else {
-						Debug.Log("WARNING: \""+node.Name+"\" contains a link to '" + link.NodeName + "' that couldn't be resolved");
-					}
-				}
-			}
 		}
 
 		private void ParseNode(string text) {
