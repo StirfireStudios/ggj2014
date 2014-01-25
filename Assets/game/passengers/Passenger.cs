@@ -42,6 +42,9 @@ public class Passenger : MonoBehaviour
 	TextMesh text;
 	Animator anim;
 
+	float currentTurn;
+	float targetTurn;
+
 	void Awake()
 	{
 		if (lookup == null)
@@ -53,12 +56,22 @@ public class Passenger : MonoBehaviour
 	
 	void Start()
 	{
+		text = GetComponentInChildren<TextMesh>();
+
+		MessagePasser.subscribe("game-tick", OnTick);
+
+		anim = GetComponent<Animator>();
+		anim.SetBool("sit", sitting);
+		anim.SetFloat("turning", turn);
+		currentTurn = turn;
+		targetTurn = turn;
+
 		string[] names = TweeTree.Instance.getCharacterNames();
 		foreach (string name in names)
 		{
-			Debug.Log(name);
+			//Debug.Log(name);
 		}
-
+		
 		tweeChar = TweeTree.Instance.getCharacter(characterName);
 		if (tweeChar == null)
 		{
@@ -68,13 +81,13 @@ public class Passenger : MonoBehaviour
 		}
 		else
 		{
-			TweeCharacter player = TweeTree.Instance.getCharacter("Jessie");
+			TweeCharacter player = TweeTree.Instance.getCharacter(Player.Instance.charcterName);
 			if (player == null)
 			{
 				Debug.Log("Couldn't find player");
 			}
 			baseMachine = new DialogueMachine(tweeChar.getStartFor(player));
-
+			
 			TweeNode approachNode = tweeChar.getApproachFor(player);
 			if (approachNode == null)
 			{
@@ -90,14 +103,7 @@ public class Passenger : MonoBehaviour
 			}
 		}
 
-		text = GetComponentInChildren<TextMesh>();
 		updateText();
-
-		MessagePasser.subscribe("game-tick", OnTick);
-
-		anim = GetComponent<Animator>();
-		anim.SetBool("sit", sitting);
-		anim.SetFloat("turning", turn);
 	}
 
 	public void setupApproach(TweeNode start)
@@ -112,10 +118,17 @@ public class Passenger : MonoBehaviour
 		anim.SetBool(Animator.StringToHash("sit"), sitting);
 	}
 
+	void Update()
+	{
+		currentTurn = Mathf.Lerp(currentTurn, targetTurn, 0.1f);
+		anim.SetFloat("turning", currentTurn);
+	}
+
 	void updateText()
 	{
 		if (baseMachine.CurrentNode == null)
 		{
+			targetTurn = turn;
 			return;
 		}
 		TweeNode node = baseMachine.CurrentNode;
@@ -123,9 +136,36 @@ public class Passenger : MonoBehaviour
 		if (tweeChar.Name == speaker.Name)
 		{
 			text.text = wrapLine(baseMachine.Text);
+
+			if (node.Target != null)
+			{
+				Transform target = null;
+				if (node.Target.Name == "Player")
+				{
+					target = Player.Instance.transform;
+				}
+				else if (lookup.ContainsKey(node.Target.Name))
+				{
+					target = lookup[node.Target.Name].transform;
+				}
+
+				if (target != null)
+				{
+					Vector3 offset = target.position - transform.position;
+					offset = transform.InverseTransformDirection(offset);
+					Quaternion look = Quaternion.LookRotation(offset);
+					float angle = look.eulerAngles.y - 90;
+					if (angle > 180)
+					{
+						angle -= 360;
+					}
+					targetTurn = angle / 90;
+				}
+			}
 		}
 		else
 		{
+			targetTurn = turn;
 			text.text = "";
 		}
 	}
