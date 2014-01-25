@@ -113,9 +113,11 @@ public class Passenger : MonoBehaviour
 
 	public void OnTick(string message, string arg)
 	{
-		baseMachine.Advance();
+		if (baseMachine != null)
+		{
+			baseMachine.Advance();
+		}
 		updateText();
-		anim.SetBool(Animator.StringToHash("sit"), sitting);
 	}
 
 	void Update()
@@ -126,14 +128,14 @@ public class Passenger : MonoBehaviour
 
 	void updateText()
 	{
-		if (baseMachine.CurrentNode == null)
+		if (baseMachine == null || baseMachine.CurrentNode == null)
 		{
 			targetTurn = turn;
 			return;
 		}
 		TweeNode node = baseMachine.CurrentNode;
 		TweeCharacter speaker = node.Speaker;
-		if (tweeChar.Name == speaker.Name)
+		if (speaker != null && tweeChar.Name == speaker.Name)
 		{
 			text.text = wrapLine(baseMachine.Text);
 
