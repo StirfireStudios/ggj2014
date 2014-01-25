@@ -9,8 +9,8 @@ public class TweeNode {
 		StartApproach = 0x02, // This dialog starts when the player approaches
 		StartLeave = 0x04, // This dialog starts when the player leaves
 		Start = 0x08, // this is the start node for this character's conversation
-		EventNode = 0x80 // this is an event node
-		IgnoreNode = 0x8000, // this is ignorable
+		EventNode = 0x80, // this is an event node
+		IgnoreNode = 0x8000 // this is ignorable
 	};
 
 	public string Name {
