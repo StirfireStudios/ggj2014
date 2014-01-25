@@ -1,0 +1,225 @@
+﻿:: StoryTitle
+Train Story
+
+
+:: Train Timeline
+This is the overall timeline.
+[[Minute 1]]
+
+
+:: Minute 1
+Train is travelling on it's path.
+Woman is murdered.
+[[Minute 2]]
+
+
+:: Minute 2
+Train hits a bump
+[[Minute 3]]
+
+
+:: Minute 3
+Dessert is being served in dining cart.
+[[Minute 4]]
+
+
+:: Minute 4
+Gun is swapped with toy gun.
+[[Minute 5]]
+
+
+:: Minute 5
+One of the train staff finds the body.
+Train approaches the tunnel.
+[[Minute 6]]
+
+
+:: Minute 6
+Tunnel [[Gunshot]]
+
+
+:: First Convo 1 1
+A man and woman are in this compartment. The woman is looking out the window. The man is reading a paper. The headline reads "Dandelion Killer Still At Large"
+
+Man: Have you read the papers, Mavis?
+Woman: Mmm hmm
+Man: They still haven't caught that "Dandelion Killer". It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
+Woman: Mmm hmm 
+
+[[First Convo 1 2]]
+
+
+:: First Convo 1 2
+Train hits a bump.
+Man: Damn these modern railways. No structure. In my day we kept our tracks up to standard. None of this "falts in the line" business.
+Woman: I know dear.
+Man: We worked good and hard, and we were glad for the work! 
+[[First Convo 1 3]]
+
+
+:: First Convo 1 3
+[[First Convo 1 4]]
+
+
+:: First Convo 1 4
+[[First Convo 1 5]]
+
+
+:: First Convo 1 5
+As the train aproaches the tunnel:
+
+Man: Looks like it's about to get dark again. 
+
+[[Gunshot]]
+
+
+:: First 01
+This is the first class carriage. There is an unoccupied compartment at the front where you can see some luggage. The tag on the luggage reads "Smithson, Andrew". 
+You can explore some of the carriages, as doors are open. Others are closed and you cannot enter. 
+[[First Convo 1 1]]
+[[First Convo 2 1]]
+
+
+:: First Convo 2 1
+Two women are chatting about a tennis match.
+
+Woman 1: I was listening to the radio last and you won't believe! 
+
+[[First Convo 2 2]]
+
+
+:: First Convo 2 2
+Train hits a bump. Two women do not react.
+
+[[First Convo 2 3]]
+
+
+:: First Convo 2 3
+
+
+
+:: First Convo 2 4
+
+
+
+:: First Convo 2 5
+
+
+
+:: Man
+[[First 01]]
+[[Dining 01]]
+[[Economy 01]]
+
+
+:: Dining Convo 1 1
+Young couple, newlyweds, planning their honeymoon.
+
+
+:: Dining Convo 1 2
+
+
+
+:: Dining Convo 1 3
+
+
+
+:: Dining Convo 1 4
+
+
+
+:: Dining Convo 1 5
+
+
+
+:: Start
+Woman is murdered on the train! In the luggage compartment 
+
+[[Man]]
+[[Child]]
+
+
+
+:: Dining 01
+[[Dining Convo 1 1]]
+[[Dining Convo 2 1]]
+
+
+:: Dining Convo 2 1
+Two constables, discussing Dandelion Murderer in hushed tones. They have an empty booth in front and behind them.
+
+
+:: Dining Convo 2 2
+
+
+
+:: Dining Convo 2 3
+
+
+
+:: Dining Convo 2 4
+
+
+
+:: Dining Convo 2 5
+
+
+
+:: Gunshot
+
+
+
+:: Child
+[[First 01]]
+[[Dining 01]]
+[[Economy 01]]
+
+
+:: Econ Convo 1 1
+
+
+
+:: Econ Convo 1 2
+
+
+
+:: Econ Convo 1 3
+
+
+
+:: Econ Convo 1 4
+
+
+
+:: Economy 01
+[[Econ Convo 1 1]]
+[[Econ Convo 2 1]]
+
+
+
+:: Econ Convo 2 1
+
+
+
+:: Econ Convo 2 2
+
+
+
+:: Econ Convo 2 3
+
+
+
+:: Econ Convo 2 4
+
+
+
+:: Econ Convo 5
+A loud scream is heard. Everyone is silent.
+
+[[Gunshot]]
+
+
+:: StoryAuthor
+Anonymous
+
+
