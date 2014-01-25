@@ -80,7 +80,7 @@ public class Passenger : MonoBehaviour
 		}
 		else
 		{
-			TweeCharacter player = TweeTree.Instance.getCharacter(Player.Instance.charcterName);
+			TweeCharacter player = TweeTree.Instance.getCharacter(Player.Instance.characterName);
 			if (player == null)
 			{
 				Debug.Log("Couldn't find player");
@@ -139,6 +139,13 @@ public class Passenger : MonoBehaviour
 	{
 		if (currentMachine != null)
 		{
+			if (currentMachine.CurrentNode != null && currentMachine.CurrentNode.Speaker != null)
+			{
+				if (currentMachine.CurrentNode.Speaker.Name == Player.Instance.characterName)
+				{
+					DialogueDisplay.HideText();
+				}
+			}
 			currentMachine.Advance();
 			if (inApproach)
 			{
@@ -170,6 +177,11 @@ public class Passenger : MonoBehaviour
 		}
 		TweeNode node = currentMachine.CurrentNode;
 		TweeCharacter speaker = node.Speaker;
+
+		if (speaker != null && Player.Instance.characterName == speaker.Name)
+		{
+			DialogueDisplay.ShowText(currentMachine.Text);
+		}
 
 		if (speaker != null && tweeChar.Name == speaker.Name)
 		{

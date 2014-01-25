@@ -3644,7 +3644,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 20
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 100
   m_Depth: 1
@@ -6535,6 +6535,10 @@ Prefab:
       propertyPath: maximumY
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: field of view
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
   m_RootGameObject: {fileID: 1737767529}
@@ -6744,7 +6748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ae47678caed484994793c541d3f4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charcterName: Jessie
+  characterName: Jessie
 --- !u!1 &1774933293
 GameObject:
   m_ObjectHideFlags: 0
