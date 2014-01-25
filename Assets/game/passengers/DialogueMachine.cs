@@ -5,7 +5,6 @@ using Twee;
 public class DialogueMachine
 {
 	TweeNode currentNode;
-	bool paused = false;
 
 	public DialogueMachine(TweeNode startNode)
 	{
@@ -14,17 +13,10 @@ public class DialogueMachine
 			Debug.LogWarning("Making machine from null start node");
 		}
 		currentNode = startNode;
-
-		MessagePasser.subscribe("game-tick", OnTick);
 	}
 
-	public void OnTick(string message, Hashtable args)
+	public void Advance()
 	{
-		if (paused)
-		{
-			return;
-		}
-
 		if (currentNode != null && currentNode.Links.Length > 0)
 		{
 			TweeLink link = currentNode.Links[0];
@@ -34,16 +26,6 @@ public class DialogueMachine
 		{
 			currentNode = null;
 		}
-	}
-
-	public void Pause()
-	{
-		paused = true;
-	}
-
-	public void Resume()
-	{
-		paused = false;
 	}
 
 	public string Text
