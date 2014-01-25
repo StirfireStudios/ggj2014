@@ -113,7 +113,8 @@ public class TweeTree : MonoBehaviour {
 	private void ParseNode(string text, string filename) {
 		TweeNode node = new TweeNode(text, _characters);
 		if (_nodes.ContainsKey(node.Name))
-			Debug.Log("WARNING: We already have a node called \""+node.Name+"\"");
+			if (!_nodes[node.Name].isIgnored)
+				Debug.LogError("Twine Parsing: We already have a node called \""+node.Name+"\"");
 		else 
 			_nodes.Add(node.Name, node);
 

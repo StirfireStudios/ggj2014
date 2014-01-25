@@ -28,7 +28,7 @@ public class TweeCharacter {
 
 	public void addStartFor(TweeCharacter character, TweeNode node) {
 		if (_start.ContainsKey(character)) {
-			Debug.Log("Warning: multiple Starts for " + character.Name + " to " + this._name + " Previous node: " + _start[character].Name + " New Node: " + node.Name);
+			Debug.LogError("Twine Parsing: multiple Starts for " + character.Name + " to " + this._name + " Previous node: " + _start[character].Name + " New Node: " + node.Name);
 			return;
 		}
 		_start[character] = node;
@@ -37,7 +37,7 @@ public class TweeCharacter {
 
 	public void addAppoachFor(TweeCharacter character, TweeNode node) {
 		if (_approachStart.ContainsKey(character)) {
-			Debug.Log("Warning: multiple Start:Approaches for " + character.Name + " to " + this._name + " Previous node: " + _approachStart[character].Name + " New Node: " + node.Name);
+			Debug.LogError("Twine Parsing: multiple Start:Approaches for " + character.Name + " to " + this._name + " Previous node: " + _approachStart[character].Name + " New Node: " + node.Name);
 			return;
 		}
 		_approachStart[character] = node;
@@ -45,7 +45,7 @@ public class TweeCharacter {
 
 	public void addDepartFor(TweeCharacter character, TweeNode node) {
 		if (_departStart.ContainsKey(character)) {
-			Debug.Log("Warning: multiple Start:Leave for " + character.Name + " to " + this._name + " Previous node: " + _approachStart[character].Name + " New Node: " + node.Name);
+			Debug.LogError("Twine Parsing: multiple Start:Leave for " + character.Name + " to " + this._name + " Previous node: " + _approachStart[character].Name + " New Node: " + node.Name);
 			return;
 		}
 		_departStart[character] = node;
