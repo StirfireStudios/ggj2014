@@ -47,7 +47,7 @@ public class Passenger : MonoBehaviour
 		}
 		else
 		{
-			baseMachine = new DialogueMachine(tweeChar.Start);
+			baseMachine = new DialogueMachine(tweeChar.getStartFor(TweeTree.Instance.getCharacter("Jessie")));
 		}
 
 		text = GetComponentInChildren<TextMesh>();
