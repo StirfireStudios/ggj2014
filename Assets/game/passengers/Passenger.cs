@@ -36,9 +36,10 @@ public class Passenger : MonoBehaviour
 	public string characterName;
 	public string conversationName;
 
-	DialogueMachine baseMachine;
 	TweeCharacter tweeChar;
+	DialogueMachine baseMachine;
 	DialogueMachine approachMachine;
+	DialogueMachine currentMachine;
 	
 	TextMesh text;
 	Animator anim;
@@ -85,6 +86,7 @@ public class Passenger : MonoBehaviour
 				Debug.Log("Couldn't find player");
 			}
 			baseMachine = new DialogueMachine(tweeChar.getStartFor(player));
+			currentMachine = baseMachine;
 			
 			TweeNode approachNode = tweeChar.getApproachFor(player);
 			if (approachNode == null)
@@ -93,6 +95,7 @@ public class Passenger : MonoBehaviour
 			}
 			else
 			{
+				setupApproach(approachNode);
 				foreach (TweeCharacter ass in tweeChar.Associated)
 				{
 					Passenger pass = lookup[ass.Name];
@@ -120,6 +123,7 @@ public class Passenger : MonoBehaviour
 		{
 			Debug.Log("Starting approach for "+arg);
 			inApproach = true;
+			currentMachine = approachMachine;
 			updateText();
 		}
 		else
@@ -127,31 +131,27 @@ public class Passenger : MonoBehaviour
 			Debug.Log("Ending approach for "+arg);
 			inApproach = false;
 			approachMachine = null;
+			currentMachine = baseMachine;
 		}
 	}
 
 	public void OnTick(string message, string arg)
 	{
-		if (inApproach)
+		if (currentMachine != null)
 		{
-			if (approachMachine != null)
+			currentMachine.Advance();
+			if (inApproach)
 			{
-				approachMachine.Advance();
 				if (approachMachine.Finished)
 				{
 					Debug.Log("Ending approach for "+arg);
 					inApproach = false;
 					approachMachine = null;
+					currentMachine = baseMachine;
 				}
 			}
 		}
-		if (!inApproach)
-		{
-			if (baseMachine != null)
-			{
-				baseMachine.Advance();
-			}
-		}
+
 		updateText();
 	}
 
@@ -163,31 +163,17 @@ public class Passenger : MonoBehaviour
 
 	void updateText()
 	{
-		if (inApproach)
+		if (currentMachine == null || currentMachine.CurrentNode == null)
 		{
-			if (approachMachine == null || approachMachine.CurrentNode == null)
-			{
-				targetTurn = turn;
-				return;
-			}
+			targetTurn = turn;
+			return;
 		}
-		else
-		{
-			if (baseMachine == null || baseMachine.CurrentNode == null)
-			{
-				targetTurn = turn;
-				return;
-			}
-		}
-		TweeNode node = baseMachine.CurrentNode;
-		if (inApproach)
-		{
-			node = approachMachine.CurrentNode;
-		}
+		TweeNode node = currentMachine.CurrentNode;
 		TweeCharacter speaker = node.Speaker;
+
 		if (speaker != null && tweeChar.Name == speaker.Name)
 		{
-			text.text = wrapLine(baseMachine.Text);
+			text.text = wrapLine(currentMachine.Text);
 
 			if (node.Target != null)
 			{
