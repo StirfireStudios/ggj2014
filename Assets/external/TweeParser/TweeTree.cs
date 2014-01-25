@@ -77,6 +77,7 @@ public class TweeTree : MonoBehaviour {
 				addCharacterToListFromLink(node, list, visited);
 				foreach(TweeCharacter character in list.Values) {
 					character.addStartFor(node.Player, node);
+					character.addAssociated(node.Speaker);
 				}
 			}
 

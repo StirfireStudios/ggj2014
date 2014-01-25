@@ -5,6 +5,8 @@ using System;
 public class TweeCharacter {
 	public string Name { get { return _name; } }
 
+	public TweeCharacter[] Associated { get { return _associated.ToArray(); } }
+
 	public TweeNode getStartFor(TweeCharacter character) {
 		if (_start.ContainsKey(character)) {
 			return _start[character];
@@ -51,14 +53,24 @@ public class TweeCharacter {
 		_departStart[character] = node;
 	}
 
+	public void addAssociated(TweeCharacter character) {
+		if (_associated.Contains(character)) {
+			return;
+		}
+		_associated.Add(character);
+		character.addAssociated(this);
+	}
+
 	public TweeCharacter (string name) {
 		_name = name;
+		_associated = new List<TweeCharacter>();
 		_start = new Dictionary<TweeCharacter, TweeNode>();
 		_approachStart = new Dictionary<TweeCharacter, TweeNode>();
 		_departStart = new Dictionary<TweeCharacter, TweeNode>();
 	}
 
 	private string _name;
+	private List<TweeCharacter> _associated;
 	private Dictionary <TweeCharacter, TweeNode> _start;
 	private Dictionary <TweeCharacter, TweeNode> _approachStart;
 	private Dictionary <TweeCharacter, TweeNode> _departStart;
