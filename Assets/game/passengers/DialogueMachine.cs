@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogueMachine
 {
@@ -55,6 +56,14 @@ public class DialogueMachine
 		get
 		{
 			return currentNode;
+		}
+	}
+
+	public bool Finished
+	{
+		get
+		{
+			return currentNode == null;
 		}
 	}
 }
