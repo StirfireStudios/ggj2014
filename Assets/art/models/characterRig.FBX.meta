@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 13d399d40fafd4fc7b3b08308f78bdde
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: character
+    100002: //RootNode
+    100004: chest
+    100006: head
+    100008: headNub
+    100010: lowleg
+    100012: Pelvis
+    100014: upperLeg
+    400000: character
+    400002: //RootNode
+    400004: chest
+    400006: head
+    400008: headNub
+    400010: lowleg
+    400012: Pelvis
+    400014: upperLeg
+    4300000: character
+    7400000: Stand
+    7400002: Sit
+    7400004: Turn
+    9500000: //RootNode
+    13700000: character
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths:
+    - lowleg/upperLeg/Pelvis/chest/head
+    clipAnimations:
+    - serializedVersion: 16
+      name: Stand
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: .100000001
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: character
+        weight: 1
+      - path: lowleg
+        weight: 1
+      - path: lowleg/upperLeg
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head/headNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Sit
+      takeName: Take 001
+      firstFrame: 8
+      lastFrame: 8.10000038
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: character
+        weight: 1
+      - path: lowleg
+        weight: 1
+      - path: lowleg/upperLeg
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head/headNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Turn
+      takeName: Take 001
+      firstFrame: 25
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: character
+        weight: 1
+      - path: lowleg
+        weight: 1
+      - path: lowleg/upperLeg
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head/headNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0250000004
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

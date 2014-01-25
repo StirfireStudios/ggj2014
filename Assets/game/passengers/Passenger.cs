@@ -29,15 +29,23 @@ public class Passenger : MonoBehaviour
 	}
 
 	public bool sitting = false;
+	public float turn = 0;
 	public string characterName;
 	
 	DialogueMachine baseMachine;
 	TweeCharacter tweeChar;
 	
 	TextMesh text;
+	Animator anim;
 	
-	void Awake()
+	void Start()
 	{
+		string[] names = TweeTree.Instance.getCharacterNames();
+		foreach (string name in names)
+		{
+			Debug.Log(name);
+		}
+
 		tweeChar = TweeTree.Instance.getCharacter(characterName);
 		if (tweeChar == null)
 		{
@@ -47,23 +55,38 @@ public class Passenger : MonoBehaviour
 		}
 		else
 		{
-			baseMachine = new DialogueMachine(tweeChar.getStartFor(TweeTree.Instance.getCharacter("Jessie")));
+			TweeCharacter player = TweeTree.Instance.getCharacter("Jessie");
+			if (player == null)
+			{
+				Debug.Log("Couldn't find player");
+			}
+			baseMachine = new DialogueMachine(tweeChar.getStartFor(player));
 		}
 
 		text = GetComponentInChildren<TextMesh>();
 		updateText();
 
 		MessagePasser.subscribe("game-tick", OnTick);
+
+		anim = GetComponent<Animator>();
+		anim.SetBool("sit", sitting);
+		anim.SetFloat("turning", turn);
+		anim.SetLayerWeight(1, Mathf.Abs(turn));
 	}
 
 	public void OnTick(string message, Hashtable args)
 	{
 		baseMachine.Advance();
 		updateText();
+		anim.SetBool(Animator.StringToHash("sit"), sitting);
 	}
 
 	void updateText()
 	{
+		if (baseMachine.CurrentNode == null)
+		{
+			return;
+		}
 		TweeNode node = baseMachine.CurrentNode;
 		TweeCharacter speaker = node.Speaker;
 		if (tweeChar.Name == speaker.Name)
