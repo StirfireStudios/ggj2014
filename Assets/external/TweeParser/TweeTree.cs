@@ -27,6 +27,15 @@ public class TweeTree : MonoBehaviour {
 		}
 	}
 
+	private void addCharacterToListFromLink(TweeNode node, Dictionary<string, TweeCharacter> list) {
+		if (!list.ContainsKey(node.Speaker.Name)) {
+			list[node.Speaker.Name] = node.Speaker;
+		}
+		foreach(TweeLink link in node.Link) {
+			addCharacterToListFromLink(link.Node, list);
+		}
+	}
+
 	public void Awake() {
 		if (_instance != null && _instance != this)
 			Destroy(gameObject);
@@ -52,7 +61,11 @@ public class TweeTree : MonoBehaviour {
 
 			// search for character start and end nodes
 			if (node.isDialogStart && node.Speaker != null && node.Player != null) {
-				_characters[node.Speaker.Name].addStartFor(node.Player, node);
+				Dictionary <string, TweeCharacter> list = new Dictionary<string, TweeCharacter>();
+				addCharacterToListFromLink(node, list);
+				foreach(TweeCharacter character in list.Values) {
+					character.addStartFor(node.Player, node);
+				}
 			}
 
 			if (node.isDialogForPlayerApproach && node.Speaker != null && node.Player != null) {
