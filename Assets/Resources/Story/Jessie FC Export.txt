@@ -1,0 +1,239 @@
+﻿:: Train 00s
+Train is driving along track.
+
+
+:: Train 60s
+Train hits a bump.
+
+
+:: Train 120s
+Dessert is being served in dining cart.
+
+
+
+:: Train 180s
+Gun is swapped with toy gun.
+
+
+
+:: Train 240s
+One of the train staff finds the body.
+Train approaches the tunnel.
+
+
+
+:: Train 300s
+Everything goes dark. A word comes onto the screen - BANG
+
+[[Gunshot]]
+
+
+:: Start
+Your story will display this passage first. Edit it by double clicking it.
+
+
+:: CFC1
+A man and woman are in this compartment. The woman is looking out the window. The man is reading a paper. The headline reads "Dandelion Killer Still At Large"
+
+
+:: CFC1 John1-1
+10s
+Have you read the papers, Mavis?
+--
+[[CFC1 Mavis 1-1]]
+
+
+:: CFC1 John 2-1
+--60s
+Damn these modern railways. No structure. In my day we kept our tracks up to standard. None of this "falts in the line" business.
+--
+[[CFC1 Mavis 2-1]]
+
+
+:: CFC1 John 3-1
+--120s
+Useless, these men are, useless. 
+
+[[CFC1 Mavis 3-1]]
+
+
+:: CFC1 4-1
+--180s
+[[CFC1 John 5-1]]
+
+
+:: CFC1 John 5-1
+--295s
+Looks like it's about to get dark again. 
+
+[[Gunshot]]
+
+
+:: CFC1 Mavis 1-1
+--
+Mmm hmm
+--
+[[CFC1 John 1-2]]
+
+
+:: CFC1 Mavis 2-1
+I know dear.
+--
+[[CFC1 John 2-2]]
+
+
+:: CFC1 Mavis 3-1
+--
+Yes, dear.
+[[CFC1 4-1]]
+
+
+:: CFC1 John 1-2
+--
+They still haven't caught that "Dandelion Killer". It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
+--
+[[CFC1 Mavis 1-2]]
+
+
+:: CFC1 John 2-2
+We worked good and hard, and we were glad for the work! 
+
+[[CFC1 Mavis 2-2]]
+
+
+:: Gunshot
+--300s
+
+!!!!!BANG
+
+
+:: CFC1 Mavis 1-2
+--
+Mmm hmm 
+--
+[[CFC1 John 2-1]]
+
+
+:: CFC1 Mavis 2-2
+Yes, dear.
+--
+[[CFC1 John 3-1]]
+
+
+:: CFC2 Beth 1-1 [S:Beth T:Sally]
+TENNIS DIALOGUE
+[[CFC2 Sally 1-1]]
+
+
+:: CFC2 Beth 2-1 [S:Beth T:Sally]
+Tennis Dialogue
+[[CFC2 Sally 2-1]]
+
+
+:: CFC2 Beth 3-1 [S:Beth T:Sally]
+Tennis Dialogue
+
+[[CFC2 Sally 3-1]]
+
+
+:: CFC2 Beth 4-1 [S:Beth T:Sally]
+Tennis Dialogue
+
+[[CFC2 Sally 4-1]]
+
+
+:: CFC2 Beth 5-1 [S:Beth T:Sally]
+Tennis Dialogue
+
+[[CFC2 Sally 5-1]]
+
+
+:: CFC2 Child Jessie 1-1
+I'm bored! Will you play with me?
+
+[[CFC2 Child Sally 1-2]]
+
+
+:: CFC2 Child Sally 1-2
+Not right now, dear.
+
+[[Ok, bye!|CFC2 Child Jessie 3-1]]
+[[Have you seen my mummy?|CFC2 Child Jessie 2-1]]
+
+
+:: CFC2
+Two women are chatting about a tennis match.
+
+
+
+
+:: CFC2 Sally 1-1 [S:Sally T:Beth]
+TENNIS DIALOGUE
+[[CFC2 Beth 2-1]]
+
+
+:: CFC2 Sally 2-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[CFC2 Beth 3-1]]
+
+
+:: CFC2 Sally 3-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[CFC2 Beth 4-1]]
+
+
+:: CFC2 Sally 4-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[CFC2 Beth 5-1]]
+
+
+:: CFC2 Sally 5-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[Gunshot]]
+
+
+:: CFC2 Child Beth 1-1 [S:Beth T:Sally Start:Approach]
+--
+Oh, goodness, there's a child in the room!
+[[CFC2 Child Sally 1-1]]
+
+
+:: CFC2 Child Sally 1-1 [S:Sally T:Jessie]
+What are you doing here, little one?
+
+[[I'm bored.|CFC2 Child Jessie 1-1]]
+[[Have you seen my mummy?|CFC2 Child Jessie 2-1]]
+
+
+:: CFC2 Child Jessie 3-1
+Ok, bye.
+
+
+:: CFC2 Child Jessie 2-1
+Have you seen my mummy?
+
+[[CFC2 Child Beth 2-2]]
+
+
+:: CFC2 Child Beth 2-2
+When did you see your mummy last?
+
+[[We were playing Cops and Robbers.|CFC2 Child Jessie 2-3]]
+
+
+:: CFC2 Child Jessie 2-3
+We were playing Cops and Robbers. Then she fell asleep. 
+[[CFC2 Child Beth 2-1]]
+
+
+:: CFC2 Child Beth 2-1
+Mummy probably needs her sleep. Run along now!
+
+[[Ok, bye.|CFC2 Child Jessie 3-1]]
+[[I'm bored.|CFC2 Child Jessie 1-1]]
+
+
