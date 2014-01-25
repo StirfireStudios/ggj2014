@@ -51,6 +51,14 @@ public class TweeTree : MonoBehaviour {
 			_nodes.Add(node.Name, node);
 	}
 
+	public TweeNode getNode(string name) {
+		return _nodes[name];
+	}
+
+	public TweeNode nodeExists(string name) {
+		return _nodes.ContainsKey(name);
+	}
+
 	private static TweeTree _instance;
 	private Dictionary<string, TweeNode> _nodes;
 }
