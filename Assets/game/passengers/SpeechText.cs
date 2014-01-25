@@ -7,6 +7,9 @@ public class SpeechText : MonoBehaviour
 	public bool reverse;
 	public bool local;
 
+	public float volume = 4;
+	public float fadeOut = 3;
+
 	Transform trans;
 	TextMesh text;
 	
@@ -38,6 +41,8 @@ public class SpeechText : MonoBehaviour
 		}
 
 		Vector3 offset = trans.position - target.position;
-		text.color = new Color(1, 1, 1, 1 - offset.sqrMagnitude * 0.03f);
+		float mag = offset.magnitude;
+		mag = (mag - volume) / fadeOut;
+		text.color = new Color(1, 1, 1, 1 - Mathf.Clamp01(mag));
 	}
 }

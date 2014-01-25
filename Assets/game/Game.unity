@@ -121,6 +121,14 @@ Prefab:
       propertyPath: turn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: a37b8c25b59e242018372cab72333662, type: 2}
+      propertyPath: volume
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: a37b8c25b59e242018372cab72333662, type: 2}
+      propertyPath: fadeOut
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a37b8c25b59e242018372cab72333662, type: 2}
   m_RootGameObject: {fileID: 617372429}
@@ -839,6 +847,8 @@ MonoBehaviour:
   target: {fileID: 1737767530}
   reverse: 0
   local: 0
+  volume: 3
+  fadeOut: 3
 --- !u!1 &617372429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1025,8 @@ MonoBehaviour:
   target: {fileID: 0}
   reverse: 0
   local: 0
+  volume: 4
+  fadeOut: 3
 --- !u!1 &735161358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,6 +3213,10 @@ Prefab:
     - target: {fileID: 11400000, guid: a37b8c25b59e242018372cab72333662, type: 2}
       propertyPath: turn
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: a37b8c25b59e242018372cab72333662, type: 2}
+      propertyPath: fadeOut
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a37b8c25b59e242018372cab72333662, type: 2}
