@@ -28,7 +28,7 @@ public class TweeCharacter {
 
 	public void addStartFor(TweeCharacter character, TweeNode node) {
 		if (_start.ContainsKey(character)) {
-			Debug.Log("Warning: multiple Starts for " + character.Name + " to " + this._name + " Previous node: " + _approachStart[character].Name + " New Node: " + node.Name);
+			Debug.Log("Warning: multiple Starts for " + character.Name + " to " + this._name + " Previous node: " + _start[character].Name + " New Node: " + node.Name);
 			return;
 		}
 		_start[character] = node;
