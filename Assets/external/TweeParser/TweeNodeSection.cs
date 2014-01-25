@@ -22,7 +22,7 @@ public class TweeNodeSection {
 		for (int i = 1; i < lines.Length; i++) {
 			text.AppendLine(lines[i]);
 		}
-		_text = text.ToString();
+		_text = text.ToString().Trim();
 	}
 
 	private int _delay;

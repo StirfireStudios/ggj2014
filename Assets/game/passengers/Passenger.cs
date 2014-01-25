@@ -118,6 +118,7 @@ public class Passenger : MonoBehaviour
 			baseMachine.Advance();
 		}
 		updateText();
+		anim.SetBool("sit", sitting);
 	}
 
 	void Update()
