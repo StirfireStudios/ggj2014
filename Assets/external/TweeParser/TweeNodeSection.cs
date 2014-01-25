@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class TweeNodeSection {
+	public int Delay { get { return _delay; } }
+	public string Text { get { return _text; } }
 
 	public TweeNodeSection(string data) {
 		_delay = 10;

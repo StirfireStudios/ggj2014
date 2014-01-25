@@ -52,6 +52,10 @@ public class TweeNode {
 		get {
 			return _player;
 		}
+
+		set {
+			_player = value;
+		}
 	}
 
 	private bool hasFlags(NodeFlags flags) {
@@ -79,17 +83,6 @@ public class TweeNode {
 			return text.Substring(index+1, text.Length - (index + 2)).Trim();
 	}
 
-	private TweeCharacter findOrAddCharacter(string tag, Dictionary <string, TweeCharacter> characters) {
-		tag = tag.Substring(2);
-		if (characters.ContainsKey(tag)) {
-			return characters[tag];
-		} else {
-			TweeCharacter character = new TweeCharacter(tag);
-			characters[tag] = character;
-			return character;
-		}
-	}
-
 	public TweeNode(string text, Dictionary <string, TweeCharacter> characters) {
 		_flags = 0;
 		string[] lines = text.Split(new string[] {"\n"}, System.StringSplitOptions.None);
@@ -107,11 +100,11 @@ public class TweeNode {
 				} else if (String.Equals(tag, "Event", StringComparison.OrdinalIgnoreCase)) {
 					_flags |= NodeFlags.EventNode;
 				} else if (tag.StartsWith("S:") || tag.StartsWith("s:")) {
-					_speaker = findOrAddCharacter(tag, characters);
+					_speaker = TweeTree.findOrAddCharacter(tag, characters);
 				} else if (tag.StartsWith("T:") || tag.StartsWith("t:")) {
-					_target = findOrAddCharacter(tag, characters);
+					_target = TweeTree.findOrAddCharacter(tag, characters);
 				} else if (tag.StartsWith("P:") || tag.StartsWith("p:")) {
-					_player = findOrAddCharacter(tag, characters);
+					_player = TweeTree.findOrAddCharacter(tag, characters);
 				}
 			} 
 			if (!isDialog && !isEvent) {
