@@ -30,9 +30,9 @@ public class TweeNode {
 		}
 	}
 
-	public string Text {
+	public TweeNodeSection[] Sections {
 		get {
-			return _text;
+			return _sections;
 		}
 	}
 
@@ -135,19 +135,24 @@ public class TweeNode {
 
 		System.Text.StringBuilder bodytext = new System.Text.StringBuilder();
 		List<TweeLink> links = new List<TweeLink>();
+		List<TweeNodeSection> sections = new List<TweeNodeSection>();
 		for(int i = 1; i < lines.Length; i++) {
 			if (lines[i].Contains("[")) {
 				TweeLink link = new TweeLink(getTextInBrackets(lines[i], true));
 				links.Add (link);
 			} else {
-				bodytext.Append(lines[i]);
+				if (lines[i].StartsWith("--") && bodytext.Length > 0) {
+					sections.Add(new TweeNodeSection(bodytext.ToString()));
+					bodytext = new System.Text.StringBuilder();
+				}
+				bodytext.AppendLine(lines[i]);
 			}
 		}
 		if (bodytext.Length > 0) {
-			_text = bodytext.ToString();
-		} else {
-			_text = "";
+			sections.Add(new TweeNodeSection(bodytext.ToString()));
 		}
+
+		_sections = sections.ToArray();
 
 		if (links.Count > 0) {
 			_links = links.ToArray();
@@ -156,7 +161,7 @@ public class TweeNode {
 		}
 	}
 
-	private string _text;
+	private TweeNodeSection[] _sections;
 	private string _name;
 	private NodeFlags _flags;
 	private string[] _tags;
