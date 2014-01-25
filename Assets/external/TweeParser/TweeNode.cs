@@ -10,6 +10,7 @@ public class TweeNode {
 		StartLeave = 0x04, // This dialog starts when the player leaves
 		Start = 0x08, // this is the start node for this character's conversation
 		EventNode = 0x80 // this is an event node
+		IgnoreNode = 0x8000, // this is ignorable
 	};
 
 	public string Name {
@@ -66,6 +67,7 @@ public class TweeNode {
 	public bool isDialogStart { get { return hasFlags(NodeFlags.Start); } }
 	public bool isDialogForPlayerApproach { get { return hasFlags(NodeFlags.StartApproach); } }
 	public bool isDialogForPlayerDepart { get { return hasFlags(NodeFlags.StartLeave); } }
+	public bool isIgnored { get { return hasFlags(NodeFlags.IgnoreNode); } }
 
 
 	public bool isEvent { get { return hasFlags(NodeFlags.EventNode); } }
@@ -99,6 +101,8 @@ public class TweeNode {
 					_flags |= NodeFlags.Start;
 				} else if (String.Equals(tag, "Event", StringComparison.OrdinalIgnoreCase)) {
 					_flags |= NodeFlags.EventNode;
+				} else if (String.Equals(tag, "Ignore", StringComparison.OrdinalIgnoreCase)) {
+					_flags |= NodeFlags.IgnoreNode;
 				} else if (tag.StartsWith("S:") || tag.StartsWith("s:")) {
 					_speaker = TweeTree.findOrAddCharacter(tag, characters);
 				} else if (tag.StartsWith("T:") || tag.StartsWith("t:")) {
