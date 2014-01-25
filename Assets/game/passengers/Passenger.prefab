@@ -58,6 +58,7 @@ GameObject:
   - 4: {fileID: 400006}
   - 23: {fileID: 2300000}
   - 102: {fileID: 10200000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Text Display
   m_TagString: Untagged
@@ -180,7 +181,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sitting: 1
+  turn: -1
   characterName: John
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b50bdb0d144b46dbb23be28e094be2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  reverse: 0
+  local: 0
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

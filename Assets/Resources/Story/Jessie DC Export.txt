@@ -1,36 +1,36 @@
-﻿:: Start
+﻿:: Start [Ignore]
 Your story will display this passage first. Edit it by double clicking it.
 
 
-:: Train 00s
+:: Train 00s [Ignore]
 Train is driving along track.
 [[Train 60s]]
 
 
-:: Train 60s
+:: Train 60s [Ignore]
 Train hits a bump.
 [[Train 120s]]
 
 
-:: Train 120s
+:: Train 120s [Ignore]
 Gun is swapped with toy gun.
 
 Train passes village.
 [[Train 180s]]
 
 
-:: Train 180s
+:: Train 180s [Ignore]
 Dessert is being served in dining cart.
 [[Train 240s]]
 
 
-:: Train 240s
+:: Train 240s [Ignore]
 One of the train staff finds the body.
 Train approaches the tunnel.
 [[Train 300s]]
 
 
-:: Train 300s
+:: Train 300s [Ignore]
 Everything goes dark. A word comes onto the screen - BANG
 
 [[Gunshot]]
@@ -107,7 +107,7 @@ Now, do you need something? Or are you gonna leave us to eat our lunch?
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
 
 
-:: CDC1
+:: CDC1 [Ignore]
 Two police officers are sitting at a table. Their hats are on the table. They are discussing the Dandelion Killer. 
 
 [[CDC1 Bill 1-1]]
@@ -136,7 +136,7 @@ No, nothing.
 [[CDC1 Bill 5-2]]
 
 
-:: CDC1 Child Ben 1-1 [S:Ben T:Jessie StartNode Start:Approach]
+:: CDC1 Child Ben 1-1 [S:Ben T:Jessie Start:Approach]
 What's all this, then? Who might you be?
 
 [[CDC1 Child Jessie 1-1]]
@@ -178,6 +178,10 @@ Ok, bye.
 
 :: CDC1 Child Bill 5-1 [S:Bill T:Ben Start:Leave]
 Cute kid.
+
+What were we talking about? 
+
+[[CDC1 Bill 1-1]]
 
 
 :: CDC1 Bill 1-2 [S:Bill T:Ben]
@@ -233,6 +237,20 @@ That's ok. You just wait outside the dark room. I'll find your mother and take h
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
 
 
+:: CDCE1 [Ignore]
+Noone is sitting at this table. On top of the table is a bouquet of dandelions in a vase. 
+Under the table is a pistol with //Jessie// written on it. 
+[[CDCE1 Jessie]]
+
+
+:: CDCE1 Jessie [Start:Approach StartNode S:Jessie]
+This looks just like my gun! I left it in the back with Mummy. 
+
+--
+
+Wait, this //is// my gun. So which gun is with Mummy?
+
+
 :: CDC1 Bill 3-2 [S:Bill T:Ben]
 By gosh you did! Sarge of Scottland Yard.
 [[CDC1 Ben 3-3]]
@@ -244,7 +262,7 @@ Nah, you're imagining things. It's just the "Dandelion Killer" gettin' you on ed
 [[CDC1 Bill 5-3]]
 
 
-:: Gunshot
+:: Gunshot [Ignore]
 !!!!!BANG
 
 
@@ -272,6 +290,16 @@ Right at the back, near the dark room.
 [[CDC1 Child Ben 4-5]] 
 
 
+:: CDCE2 [Ignore]
+The table is unoccupied. There are the remnants of food on the table. Under the table is a single dandelion and a photo of the woman. The photo is ripped so you can't see the head. 
+
+[[CDCE2 Jessie]]
+
+
+:: CDCE2 Jessie [S:Jessie]
+It's mummy! I wonder where she went. 
+
+
 :: CDC1 Ben 3-3 [S:Ben T:Bill]
 With my best mate by me side.
 
@@ -283,25 +311,7 @@ Yeah, s'pose you're right.
 [[Gunshot]]
 
 
-:: CDCE1
-Noone is sitting at this table. On top of the table is a bouquet of dandelions in a vase. 
-Under the table is a pistol with //Jessie// written on it. 
-[[CDCE1 Jessie]]
-
-
-:: CDCE1 Jessie [Start:Approach StartNode S:Jessie]
-This looks just like my gun! I left it in the back with Mummy. 
-
---
-
-Wait, this //is// my gun. So which gun is with Mummy?
-
-
-:: CDCE2
-
-
-
-:: CDC2
+:: CDC2 [Ignore]
 Joy and Grace, high class women, at a table. They are gossiping and talking about something. 
 
 

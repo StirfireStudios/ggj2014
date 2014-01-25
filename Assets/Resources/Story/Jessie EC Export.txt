@@ -1,0 +1,42 @@
+﻿:: Start
+Your story will display this passage first. Edit it by double clicking it.
+
+
+:: Train 00s
+Train is driving along track.
+[[Train 60s]]
+
+
+:: Train 60s
+Train hits a bump.
+[[Train 120s]]
+
+
+:: Train 120s
+Gun is swapped with toy gun.
+
+Train passes village.
+[[Train 180s]]
+
+
+:: Train 180s
+Dessert is being served in dining cart.
+[[Train 240s]]
+
+
+:: Train 240s
+One of the train staff finds the body.
+Train approaches the tunnel.
+[[Train 300s]]
+
+
+:: Train 300s
+Everything goes dark. A word comes onto the screen - BANG
+
+[[Gunshot]]
+
+
+:: Gunshot
+!!!!!BANG
+
+

@@ -71,7 +71,6 @@ public class Passenger : MonoBehaviour
 		anim = GetComponent<Animator>();
 		anim.SetBool("sit", sitting);
 		anim.SetFloat("turning", turn);
-		anim.SetLayerWeight(1, Mathf.Abs(turn));
 	}
 
 	public void OnTick(string message, Hashtable args)

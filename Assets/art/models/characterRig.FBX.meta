@@ -22,7 +22,8 @@ ModelImporter:
     4300000: character
     7400000: Stand
     7400002: Sit
-    7400004: Turn
+    7400004: Turn-Stand
+    7400006: Turn-Sit
     9500000: //RootNode
     13700000: character
   materials:
@@ -86,8 +87,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Sit
       takeName: Take 001
-      firstFrame: 8
-      lastFrame: 8.10000038
+      firstFrame: 5
+      lastFrame: 5.0999999
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -126,10 +127,52 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Turn
+      name: Turn-Stand
       takeName: Take 001
-      firstFrame: 25
-      lastFrame: 25
+      firstFrame: 20
+      lastFrame: 20.1000004
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: character
+        weight: 1
+      - path: lowleg
+        weight: 1
+      - path: lowleg/upperLeg
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head
+        weight: 1
+      - path: lowleg/upperLeg/Pelvis/chest/head/headNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Turn-Sit
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 10.1000004
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
