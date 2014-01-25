@@ -79,17 +79,6 @@ public class TweeNode {
 			return text.Substring(index+1, text.Length - (index + 2)).Trim();
 	}
 
-	private TweeCharacter findOrAddCharacter(string tag, Dictionary <string, TweeCharacter> characters) {
-		tag = tag.Substring(2);
-		if (characters.ContainsKey(tag)) {
-			return characters[tag];
-		} else {
-			TweeCharacter character = new TweeCharacter(tag);
-			characters[tag] = character;
-			return character;
-		}
-	}
-
 	public TweeNode(string text, Dictionary <string, TweeCharacter> characters) {
 		_flags = 0;
 		string[] lines = text.Split(new string[] {"\n"}, System.StringSplitOptions.None);

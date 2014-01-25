@@ -12,6 +12,21 @@ using System;
 			}
 		}
 
+	static public TweeCharacter findOrAddCharacter(string tag, Dictionary <string, TweeCharacter> characters) {
+		string[] sections = tag.Split(new string[] {":"}, System.StringSplitOptions.None);
+		if (sections.Length > 1) 
+			tag = sections[1];
+		else
+			tag = sections[0];
+		if (characters.ContainsKey(tag)) {
+			return characters[tag];
+		} else {
+			TweeCharacter character = new TweeCharacter(tag);
+			characters[tag] = character;
+			return character;
+		}
+	}
+
 		public void Awake() {
 			if (_instance != null && _instance != this)
 				Destroy(gameObject);
