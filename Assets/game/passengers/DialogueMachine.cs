@@ -10,17 +10,26 @@ public class DialogueMachine
 	public DialogueMachine(TweeNode startNode)
 	{
 		currentNode = startNode;
+
+		MessagePasser.subscribe("game-tick", OnTick);
 	}
 
-	public void OnTick()
+	public void OnTick(string message, Hashtable args)
 	{
 		if (paused)
 		{
 			return;
 		}
 
-		TweeLink link = currentNode.Links[1];
-		currentNode = link.Node;
+		if (currentNode != null && currentNode.Links.Length > 0)
+		{
+			TweeLink link = currentNode.Links[0];
+			currentNode = link.Node;
+		}
+		else
+		{
+			currentNode = null;
+		}
 	}
 
 	public void Pause()
@@ -37,6 +46,10 @@ public class DialogueMachine
 	{
 		get
 		{
+			if (currentNode == null)
+			{
+				return null;
+			}
 			return currentNode.Text;
 		}
 	}
