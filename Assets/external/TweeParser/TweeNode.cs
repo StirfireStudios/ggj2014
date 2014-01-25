@@ -100,11 +100,11 @@ public class TweeNode {
 				} else if (String.Equals(tag, "Event", StringComparison.OrdinalIgnoreCase)) {
 					_flags |= NodeFlags.EventNode;
 				} else if (tag.StartsWith("S:") || tag.StartsWith("s:")) {
-					_speaker = findOrAddCharacter(tag, characters);
+					_speaker = TweeTree.findOrAddCharacter(tag, characters);
 				} else if (tag.StartsWith("T:") || tag.StartsWith("t:")) {
-					_target = findOrAddCharacter(tag, characters);
+					_target = TweeTree.findOrAddCharacter(tag, characters);
 				} else if (tag.StartsWith("P:") || tag.StartsWith("p:")) {
-					_player = findOrAddCharacter(tag, characters);
+					_player = TweeTree.findOrAddCharacter(tag, characters);
 				}
 			} 
 			if (!isDialog && !isEvent) {
