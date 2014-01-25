@@ -59,7 +59,7 @@ Hey, look, Bill! It's the village where I grew up!
 
 :: CDC1 Ben 4-1 [S:Bill T:Ben]
 --180s
-Ah, here we go. Something sweet. That'll take your mind off the "Dandelion Killer". 
+Looks like dessert is here. Something sweet, that'll take your mind off "The Dandelion Killer". 
 
 [[CDC1 Bill 4-1]]
 
@@ -78,7 +78,32 @@ Can I wear your hat? I want to be a police man!
 :: CDC1 Child Ben 2-1 [S:Ben T:Jessie]
 'Fraid not, son. We're doing important police work. 
 
-[[You're eating lunch.|CDC1 Child Jessie 2-2]]
+[[You're eating supper.|CDC1 Child Jessie 2-2]]
+[[Ok, bye.|CDC1 Child Jessie 4-5]]
+
+
+:: CDC1 Child Jessie 2-2 [S:Jessie T:Ben]
+You're eating supper. 
+
+[[CDC1 Child Bill 2-2]]
+
+
+:: CDC1 Child Bill 2-2 [S:Bill T:Ben]
+Hahaha, he's got you there, sarge. 
+
+[[CDC1 Child Ben 2-2]]
+
+
+:: CDC1 Child Ben 2-2 [S:Ben T:Bill]
+Yeah, he does. 
+[[CDC1 Child Ben 2-3]]
+
+
+:: CDC1 Child Ben 2-3 [S:Ben T:Jessie]
+Now, do you need something? Or are you gonna leave us to eat our lunch?
+
+[[I'm bored.|CDC1 Child Jessie 3-1]]
+[[I can't find my mummy.|CDC1 Child Jessie 4-1]]
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
 
 
@@ -137,8 +162,22 @@ I'm bored. Can I play with you?
 [[CDC1 Child Ben 3-1]]
 
 
-:: Untitled Passage 1
+:: CDC1 Child Ben 3-1 [S:Ben T:Jessie]
+Not right now.
 
+[[Can I wear your hat?|CDC1 Child Jessie 2-1]]
+[[Where's my mummy?|CDC1 Child Jessie 4-1]]
+[[Ok, bye.|CDC1 Child Jessie 4-5]]
+
+
+
+:: CDC1 Child Jessie 4-5 [S:Jessie T:Ben]
+Ok, bye. 
+
+
+
+:: CDC1 Child Bill 5-1 [S:Bill T:Ben Start:Leave]
+Cute kid.
 
 
 :: CDC1 Bill 1-2 [S:Bill T:Ben]
@@ -165,6 +204,35 @@ I don't know where my mummy went. Can you find her?
 [[CDC1 Child Ben 4-1]]
 
 
+:: CDC1 Child Ben 4-1 [S:Ben T:Jessie]
+Oh dear, that is a problem. 
+
+[[CDC1 Child Jessie 4-2]]
+
+
+:: CDC1 Child Bill 4-2 [S:Bill T:Ben]
+Little kid, all alone. Ma nowhere 'round. We should help, Sarge.
+
+[[CDC1 Child Ben 4-2]]
+
+
+:: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
+Where are you staying, Jessie?
+
+[[CDC1 Child Jessie 4-3]]
+
+
+:: CDC1 Child Ben 4-4 [S:Ben T:Jessie]
+You go back there, Jessie. I'll talk to the driver, and come get you when we find her.
+[[CDC1 Child Jessie 4-4]]
+
+
+:: CDC1 Child Ben 4-5 [S:Ben T:Jessie]
+That's ok. You just wait outside the dark room. I'll find your mother and take her to you. 
+
+[[Ok, bye.|CDC1 Child Jessie 4-5]]
+
+
 :: CDC1 Bill 3-2 [S:Bill T:Ben]
 By gosh you did! Sarge of Scottland Yard.
 [[CDC1 Ben 3-3]]
@@ -178,6 +246,30 @@ Nah, you're imagining things. It's just the "Dandelion Killer" gettin' you on ed
 
 :: Gunshot
 !!!!!BANG
+
+
+:: CDC1 Child Jessie 4-2 [S:Jessie T:Ben]
+Can you help me?
+
+[[CDC1 Child Bill 4-2]]
+
+
+:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
+Too right, Bill, too right.
+
+[[CDC1 Child Ben 4-3]]
+
+
+:: CDC1 Child Jessie 4-3 [S:Jessie T:Ben]
+Right at the back, near the dark room.
+
+[[CDC1 Child Ben 4-4]]
+
+
+:: CDC1 Child Jessie 4-4 [S:Jessie T:Ben]
+//NO!// I don't want to go to the dark room!
+
+[[CDC1 Child Ben 4-5]] 
 
 
 :: CDC1 Ben 3-3 [S:Ben T:Bill]

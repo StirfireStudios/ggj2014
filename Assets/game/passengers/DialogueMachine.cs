@@ -4,26 +4,37 @@ using System.Collections;
 public class DialogueMachine
 {
 	TweeNode currentNode;
+	int currentSection = 0;
 
 	public DialogueMachine(TweeNode startNode)
 	{
 		if (startNode == null)
 		{
 			Debug.LogWarning("Making machine from null start node");
+			return;
 		}
 		currentNode = startNode;
 	}
 
 	public void Advance()
 	{
-		if (currentNode != null && currentNode.Links.Length > 0)
+		if (currentNode == null)
 		{
-			TweeLink link = currentNode.Links[0];
-			currentNode = link.Node;
+			return;
 		}
-		else
+		currentSection++;
+		if (currentSection >= currentNode.Sections.Length)
 		{
-			currentNode = null;
+			currentSection = 0;
+			if (currentNode.Links.Length > 0)
+			{
+				TweeLink link = currentNode.Links[0];
+				currentNode = link.Node;
+			}
+			else
+			{
+				currentNode = null;
+			}
 		}
 	}
 
@@ -35,7 +46,7 @@ public class DialogueMachine
 			{
 				return null;
 			}
-			return currentNode.Text;
+			return currentNode.Sections[currentSection].Text;
 		}
 	}
 
