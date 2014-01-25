@@ -38,13 +38,19 @@ public class TweeNode {
 
 	public TweeCharacter Speaker {
 		get {
-			return null;
+			return _speaker;
 		}
 	}
 
 	public TweeCharacter Target {
 		get {
-			return null;
+			return _target;
+		}
+	}
+
+	public TweeCharacter Player {
+		get {
+			return _player;
 		}
 	}
 
@@ -55,7 +61,7 @@ public class TweeNode {
 	public bool isDialog { get { return hasFlags(NodeFlags.DialogNode); } }
 	public bool isDialogStart { get { return hasFlags(NodeFlags.Start); } }
 	public bool isDialogForPlayerApproach { get { return hasFlags(NodeFlags.StartApproach); } }
-	public bool isDialogForPlayerLeave { get { return hasFlags(NodeFlags.StartLeave); } }
+	public bool isDialogForPlayerDepart { get { return hasFlags(NodeFlags.StartLeave); } }
 
 
 	public bool isEvent { get { return hasFlags(NodeFlags.EventNode); } }
@@ -72,8 +78,19 @@ public class TweeNode {
 		else
 			return text.Substring(index+1, text.Length - (index + 2)).Trim();
 	}
-	
-	public TweeNode(string text) {
+
+	private TweeCharacter findOrAddCharacter(string tag, Dictionary <string, TweeCharacter> characters) {
+		tag = tag.Substring(2);
+		if (characters.ContainsKey(tag)) {
+			return characters[tag];
+		} else {
+			TweeCharacter character = new TweeCharacter(tag);
+			characters[tag] = character;
+			return character;
+		}
+	}
+
+	public TweeNode(string text, Dictionary <string, TweeCharacter> characters) {
 		_flags = 0;
 		string[] lines = text.Split(new string[] {"\n"}, System.StringSplitOptions.None);
 		if (lines[0].Contains("[")) {
@@ -89,6 +106,12 @@ public class TweeNode {
 					_flags |= NodeFlags.Start;
 				} else if (String.Equals(tag, "Event", StringComparison.OrdinalIgnoreCase)) {
 					_flags |= NodeFlags.EventNode;
+				} else if (tag.StartsWith("S:") || tag.StartsWith("s:")) {
+					_speaker = findOrAddCharacter(tag, characters);
+				} else if (tag.StartsWith("T:") || tag.StartsWith("t:")) {
+					_target = findOrAddCharacter(tag, characters);
+				} else if (tag.StartsWith("P:") || tag.StartsWith("p:")) {
+					_player = findOrAddCharacter(tag, characters);
 				}
 			} 
 			if (!isDialog && !isEvent) {
@@ -106,7 +129,6 @@ public class TweeNode {
 				output += "for the player leaving, ";
 
 			Debug.Log(output.Substring(0, output.Length - 2));*/
-
 		} else {
 			_name = lines[0].Substring(2).Trim();
 		}
@@ -138,7 +160,8 @@ public class TweeNode {
 	private string _name;
 	private NodeFlags _flags;
 	private string[] _tags;
-	private string _speaker;
-	private string _target;
+	private TweeCharacter _speaker;
+	private TweeCharacter _target;
+	private TweeCharacter _player;
 	private TweeLink[] _links;
 }

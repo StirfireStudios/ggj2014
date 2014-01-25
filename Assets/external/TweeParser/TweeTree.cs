@@ -19,6 +19,7 @@ namespace Twee {
 			_instance = this;
 			DontDestroyOnLoad(gameObject);
 			_nodes = new Dictionary<string, TweeNode>();
+			_characters = new Dictionary<string, TweeCharacter>();
 
 			TextAsset[] scripts = Resources.LoadAll<TextAsset>("Story");
 			foreach(TextAsset script in scripts) {
@@ -26,6 +27,7 @@ namespace Twee {
 			}
 
 			foreach(TweeNode node in _nodes.Values) {
+				// Link all the nodes
 				foreach(TweeLink link in node.Links) {
 					if (_nodes.ContainsKey(link.NodeName)) {
 						link.Node = _nodes[link.NodeName];						
@@ -33,6 +35,23 @@ namespace Twee {
 						Debug.Log("WARNING: \""+node.Name+"\" contains a link to '" + link.NodeName + "' that couldn't be resolved");
 					}
 				}
+
+				// search for character start and end nodes
+				if (node.isDialogStart && node.Speaker != null) {
+					_characters[node.Speaker.Name].Start = node;
+				}
+
+				if (node.isDialogForPlayerApproach && node.Speaker != null && node.Player != null) {
+					_characters[node.Speaker.Name].addAppoachFor(node.Player, node);
+				}
+
+				if (node.isDialogForPlayerDepart && node.Speaker != null && node.Player != null) {
+					_characters[node.Speaker.Name].addDepartFor(node.Player, node);
+				}
+			}
+
+			foreach(TweeCharacter character in _characters.Values) {
+				Debug.Log("Character: " + character.Name);
 			}
 		}
 
@@ -53,7 +72,7 @@ namespace Twee {
 		}
 
 		private void ParseNode(string text) {
-			TweeNode node = new TweeNode(text);
+			TweeNode node = new TweeNode(text, _characters);
 			if (_nodes.ContainsKey(node.Name))
 				Debug.Log("WARNING: We already have a node called \""+node.Name+"\"");
 			else 
@@ -66,6 +85,23 @@ namespace Twee {
 
 		public bool nodeExists(string name) {
 			return _nodes.ContainsKey(name);
+		}
+
+		public TweeCharacter getCharacter(string name) {
+			if (_characters.ContainsKey(name)) {
+				return _characters[name];
+			} else {
+				return null;
+			}
+		}
+
+		public string[] getCharacterNames() {
+			string[] names = new string[_characters.Count];
+			int index = 0;
+			foreach(string key in _characters.Keys) {
+				names[index] = key;
+			}
+			return names;
 		}
 
 		private static TweeTree _instance;
