@@ -132,7 +132,7 @@ public class TweeNode {
 		for(int i = 1; i < lines.Length; i++) {
 			if (lines[i].Contains("[")) {
 				TweeLink link = new TweeLink(getTextInBrackets(lines[i], true));
-				links.Add (link);
+				links.Add(link);
 			} else {
 				if (lines[i].StartsWith("--") && bodytext.Length > 0) {
 					sections.Add(new TweeNodeSection(bodytext.ToString()));

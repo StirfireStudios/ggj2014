@@ -27,12 +27,21 @@ public class TweeTree : MonoBehaviour {
 		}
 	}
 
-	private void addCharacterToListFromLink(TweeNode node, Dictionary<string, TweeCharacter> list) {
-		if (!list.ContainsKey(node.Speaker.Name)) {
-			list[node.Speaker.Name] = node.Speaker;
-		}
-		foreach(TweeLink link in node.Link) {
-			addCharacterToListFromLink(link.Node, list);
+	private void addCharacterToListFromLink(TweeNode node, Dictionary<string, TweeCharacter> list, Dictionary<string, TweeNode> visited) {
+		if (node.Speaker != null) {
+			if (!list.ContainsKey(node.Speaker.Name)) {
+				list[node.Speaker.Name] = node.Speaker;
+			}
+		} 
+		foreach(TweeLink link in node.Links) {
+			if (link.Node != null) {
+				if (!visited.ContainsKey(link.Node.Name)) {
+					visited[link.Node.Name] = link.Node;
+					addCharacterToListFromLink(link.Node, list, visited);
+				}
+			} else {
+				Debug.Log("Whoa! Node: " + node.Name + " links to a nonexistant node called: '" + link.NodeName + "'");
+			}
 		}
 	}
 
@@ -49,20 +58,23 @@ public class TweeTree : MonoBehaviour {
 			ParseAsset(script);
 		}
 
+		// Link all the nodes
 		foreach(TweeNode node in _nodes.Values) {
-			// Link all the nodes
 			foreach(TweeLink link in node.Links) {
 				if (_nodes.ContainsKey(link.NodeName)) {
-					link.Node = _nodes[link.NodeName];						
+					link.Node = _nodes[link.NodeName];
 				} else {
 					Debug.Log("WARNING: \""+node.Name+"\" contains a link to '" + link.NodeName + "' that couldn't be resolved");
 				}
 			}
+		}
 
-			// search for character start and end nodes
+		// search for character start nodes
+		foreach(TweeNode node in _nodes.Values) {
 			if (node.isDialogStart && node.Speaker != null && node.Player != null) {
 				Dictionary <string, TweeCharacter> list = new Dictionary<string, TweeCharacter>();
-				addCharacterToListFromLink(node, list);
+				Dictionary <string, TweeNode> visited = new Dictionary<string, TweeNode>();
+				addCharacterToListFromLink(node, list, visited);
 				foreach(TweeCharacter character in list.Values) {
 					character.addStartFor(node.Player, node);
 				}
@@ -71,7 +83,7 @@ public class TweeTree : MonoBehaviour {
 			if (node.isDialogForPlayerApproach && node.Speaker != null && node.Player != null) {
 				_characters[node.Speaker.Name].addAppoachFor(node.Player, node);
 			}
-
+			
 			if (node.isDialogForPlayerDepart && node.Speaker != null && node.Player != null) {
 				_characters[node.Speaker.Name].addDepartFor(node.Player, node);
 			}

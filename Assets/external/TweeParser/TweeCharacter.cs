@@ -53,6 +53,7 @@ public class TweeCharacter {
 
 	public TweeCharacter (string name) {
 		_name = name;
+		_start = new Dictionary<TweeCharacter, TweeNode>();
 		_approachStart = new Dictionary<TweeCharacter, TweeNode>();
 		_departStart = new Dictionary<TweeCharacter, TweeNode>();
 	}
