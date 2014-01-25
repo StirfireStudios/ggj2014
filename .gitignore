@@ -1,8 +1,11 @@
 .DS_Store
 Library
-Temp
+Library/*
 *.csproj
-*.pidb
-*.unityproj
 *.sln
 *.userprefs
+Temp
+*.pidb
+Build
+Synced Assets
+targets
