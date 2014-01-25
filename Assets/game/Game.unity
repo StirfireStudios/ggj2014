@@ -117,6 +117,10 @@ Prefab:
       propertyPath: m_Name
       value: Mavis
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a37b8c25b59e242018372cab72333662, type: 2}
+      propertyPath: turn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a37b8c25b59e242018372cab72333662, type: 2}
   m_RootGameObject: {fileID: 617372429}
@@ -690,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sitting: 1
-  turn: -1
+  turn: 0
   characterName: John
 --- !u!95 &531659370
 Animator:
@@ -865,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sitting: 1
-  turn: 1
+  turn: 0
   characterName: Mavis
 --- !u!95 &617372431
 Animator:
@@ -3196,7 +3200,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: a37b8c25b59e242018372cab72333662, type: 2}
       propertyPath: turn
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a37b8c25b59e242018372cab72333662, type: 2}
