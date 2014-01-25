@@ -52,6 +52,10 @@ public class TweeNode {
 		get {
 			return _player;
 		}
+
+		set {
+			_player = value;
+		}
 	}
 
 	private bool hasFlags(NodeFlags flags) {
