@@ -36,33 +36,77 @@ public class TweeNode {
 		}
 	}
 
+	public TweeCharacter Speaker {
+		get {
+			return null;
+		}
+	}
+
+	public TweeCharacter Target {
+		get {
+			return null;
+		}
+	}
+
 	private bool hasFlags(NodeFlags flags) {
 		return (_flags & flags) == flags;
 	}
 
 	public bool isDialog { get { return hasFlags(NodeFlags.DialogNode); } }
 	public bool isDialogStart { get { return hasFlags(NodeFlags.Start); } }
-	public bool isForPlayerApproach { get { return hasFlags(NodeFlags.StartApproach); } }
-	public bool isForPlayerLeave { get { return hasFlags(NodeFlags.StartLeave); } }
+	public bool isDialogForPlayerApproach { get { return hasFlags(NodeFlags.StartApproach); } }
+	public bool isDialogForPlayerLeave { get { return hasFlags(NodeFlags.StartLeave); } }
+
+
+	public bool isEvent { get { return hasFlags(NodeFlags.EventNode); } }
 
 	private string getTextInBrackets(string text) {
 		return getTextInBrackets(text, false);
 	}
 
 	private string getTextInBrackets(string text, bool twobrackets) {
+		text = text.Trim ();
 		int index = text.IndexOf("[");
 		if (twobrackets)
-			return text.Substring(index+2, text.Length - (index + 3)).Trim();
+			return text.Substring(index+2, text.Length - (index + 4)).Trim();
 		else
 			return text.Substring(index+1, text.Length - (index + 2)).Trim();
 	}
 	
 	public TweeNode(string text) {
+		_flags = 0;
 		string[] lines = text.Split(new string[] {"\n"}, System.StringSplitOptions.None);
 		if (lines[0].Contains("[")) {
 			int index = lines[0].IndexOf("[");
 			_name = lines[0].Substring(2, index - 2).Trim();
 			_tags = getTextInBrackets(lines[0]).Split(new string[] {" "}, System.StringSplitOptions.RemoveEmptyEntries);
+			foreach(string tag in _tags) {
+				if (String.Equals(tag, "Start:Approach", StringComparison.OrdinalIgnoreCase)) {
+					_flags |= NodeFlags.StartApproach;
+				} else if (String.Equals(tag, "Start:Leave", StringComparison.OrdinalIgnoreCase)) {
+					_flags |= NodeFlags.StartLeave;
+				} else if (String.Equals(tag, "StartNode", StringComparison.OrdinalIgnoreCase)) {
+					_flags |= NodeFlags.Start;
+				} else if (String.Equals(tag, "Event", StringComparison.OrdinalIgnoreCase)) {
+					_flags |= NodeFlags.EventNode;
+				}
+			} 
+			if (!isDialog && !isEvent) {
+				_flags |= NodeFlags.DialogNode;
+			}
+
+/*			string output = "Node is: ";
+			if (isDialog)
+				output += "dialog, ";
+			if (isDialogStart)
+				output += "start of conversation, ";
+			if (isDialogForPlayerApproach)
+				output += "for the player approaching, ";
+			if (isDialogForPlayerLeave)
+				output += "for the player leaving, ";
+
+			Debug.Log(output.Substring(0, output.Length - 2));*/
+
 		} else {
 			_name = lines[0].Substring(2).Trim();
 		}
@@ -71,7 +115,7 @@ public class TweeNode {
 		List<TweeLink> links = new List<TweeLink>();
 		for(int i = 1; i < lines.Length; i++) {
 			if (lines[i].Contains("[")) {
-				TweeLink link = new TweeLink(getTextInBrackets(lines[i]));
+				TweeLink link = new TweeLink(getTextInBrackets(lines[i], true));
 				links.Add (link);
 			} else {
 				bodytext.Append(lines[i]);

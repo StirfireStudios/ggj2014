@@ -70,5 +70,6 @@ namespace Twee {
 
 		private static TweeTree _instance;
 		private Dictionary<string, TweeNode> _nodes;
+		private Dictionary<string, TweeCharacter> _characters;
 	}
 }
