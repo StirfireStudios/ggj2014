@@ -14,6 +14,13 @@ public class TweeCharacter {
 		return null;
 	}
 
+	public TweeNode getDepartFor(TweeCharacter character) {
+		if (_departStart.ContainsKey(character)) {
+			return _departStart[character];
+		}
+		return null;
+	}
+
 	public void addAppoachFor(TweeCharacter character, TweeNode node) {
 		if (_approachStart.ContainsKey(character)) {
 			Debug.Log("Warning: multiple Start:Approaches for " + character.Name + " to " + this._name + " Previous node: " + _approachStart[character].Name + " New Node: " + node.Name);
