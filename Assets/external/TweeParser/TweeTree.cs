@@ -100,6 +100,7 @@ namespace Twee {
 			int index = 0;
 			foreach(string key in _characters.Keys) {
 				names[index] = key;
+				index++;
 			}
 			return names;
 		}
