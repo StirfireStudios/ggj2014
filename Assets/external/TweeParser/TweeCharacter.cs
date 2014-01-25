@@ -5,7 +5,12 @@ using System;
 public class TweeCharacter {
 	public string Name { get { return _name; } }
 
-	public TweeNode Start { get { return _start; } set { _start = value; } }
+	public TweeNode getStartFor(TweeCharacter character) {
+		if (_start.ContainsKey(character)) {
+			return _start[character];
+		}
+		return null;
+	}
 
 	public TweeNode getApproachFor(TweeCharacter character) {
 		if (_approachStart.ContainsKey(character)) {
@@ -20,6 +25,15 @@ public class TweeCharacter {
 		}
 		return null;
 	}
+
+	public void addStartFor(TweeCharacter character, TweeNode node) {
+		if (_start.ContainsKey(character)) {
+			Debug.Log("Warning: multiple Starts for " + character.Name + " to " + this._name + " Previous node: " + _approachStart[character].Name + " New Node: " + node.Name);
+			return;
+		}
+		_start[character] = node;
+	}
+
 
 	public void addAppoachFor(TweeCharacter character, TweeNode node) {
 		if (_approachStart.ContainsKey(character)) {
@@ -44,7 +58,7 @@ public class TweeCharacter {
 	}
 
 	private string _name;
-	private TweeNode _start;
+	private Dictionary <TweeCharacter, TweeNode> _start;
 	private Dictionary <TweeCharacter, TweeNode> _approachStart;
 	private Dictionary <TweeCharacter, TweeNode> _departStart;
 }
