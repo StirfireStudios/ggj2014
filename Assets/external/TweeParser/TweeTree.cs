@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-namespace Twee {
 	public class TweeTree : MonoBehaviour {
 
 		static public TweeTree Instance {
@@ -109,4 +108,3 @@ namespace Twee {
 		private Dictionary<string, TweeNode> _nodes;
 		private Dictionary<string, TweeCharacter> _characters;
 	}
-}

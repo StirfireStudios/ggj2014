@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Twee;
 
 public class Passenger : MonoBehaviour
 {
