@@ -162,6 +162,7 @@ public class Passenger : MonoBehaviour
 			{
 				if (approachMachine.Finished)
 				{
+					MessagePasser.send("approach-end", conversationName);
 					inApproach = false;
 					approachMachine = null;
 					currentMachine = baseMachine;

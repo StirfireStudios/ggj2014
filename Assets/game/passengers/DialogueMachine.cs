@@ -62,14 +62,13 @@ public class DialogueMachine
 			return;
 		}
 		TweeNodeSection section = currentNode.Sections[currentSection];
-		if (currentDelay > section.Delay)
+		Debug.Log("Delay: "+section.Delay+" "+section.Text);
+		currentDelay++;
+		Debug.Log("Current delay: "+currentDelay);
+		if (currentDelay >= section.Delay)
 		{
-			currentSection++;
 			currentDelay = 0;
-		}
-		else
-		{
-			currentDelay++;
+			currentSection++;
 		}
 		if (currentSection >= currentNode.Sections.Length)
 		{
@@ -110,7 +109,8 @@ public class DialogueMachine
 			}
 			if (currentNode.Speaker != null && currentNode.Speaker.Name != Player.Instance.characterName)
 			{
-			    if (currentDelay < currentNode.Sections[currentSection].Delay)
+				int delay = currentNode.Sections[currentSection].Delay;
+			    if (delay > 0 && currentDelay < delay - 1)
 				{
 					return "";
 				}
