@@ -35,7 +35,7 @@ Did you hear something?
 [[MDC1 Ben 5-1]]
 
 
-:: MDC1 Man Ben 1-1 [S:Ben T:Don StartApproach]
+:: MDC1 Man Ben 1-1 [S:Ben T:Don Start:Approach]
 Can I help you there, mate?
 [[MDC1 Man Don 1-1]]
 
@@ -304,7 +304,7 @@ Calm down, father. He has been keeping me company. Waiting on you is such a bore
 
 
 :: MDC2 Dirk 1-4 [S:Dirk T:Grace]
-It is a criminal act on his part to leave you unattended. Why, here you are convorting with a stranger when you are to be married. Hardly seemly of you.
+It is a criminal act on his part to leave you unattended. Why, here you are consorting with a stranger when you are to be married. Hardly seemly of you.
 
 [[MDC2 Grace 1-4]]
 
@@ -337,7 +337,7 @@ And where is this father of yours? You assure me he accompanies you, and yet I'v
 Watch your tongue, sir. My father is dealing with a personal matter. I am sure he will be along presently.
 
 
-:: MDC2 Man Dirk 1-1 [S:Dirk T:Don]
+:: MDC2 Man Dirk 1-1 [S:Dirk T:Don Start:Approach]
 Ah, if it isn't the devil himself. Hello, good sir. Grace was just regailing me of your virtues. 
 
 [[Who are you?|MDC2 Man Don 2-1]]
