@@ -3,13 +3,21 @@ using System.Collections;
 
 public class BackgroundTrees : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public Transform player;
+
+	Transform trans;
+
+	void Start()
+	{
+		trans = transform;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void Update()
+	{
+		trans.rotation = player.rotation;
+		Vector3 newPos = player.position;
+		newPos.x = 0;
+		newPos.z = 0;
+		trans.position = newPos;
 	}
 }
