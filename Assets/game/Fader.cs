@@ -48,7 +48,7 @@ public class Fader : MonoBehaviour {
 			}
 			else
 			{
-				mat.color = new Color(1, 1, 1, 1 - alpha);
+				mat.color = new Color(1, 1, 1, alpha);
 				if (timer >= 5)
 				{
 					fadingOut = true;
