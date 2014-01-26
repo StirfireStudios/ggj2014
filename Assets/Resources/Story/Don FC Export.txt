@@ -1,0 +1,297 @@
+﻿:: Start [Ignore]
+Your story will display this passage first. Edit it by double clicking it.
+
+
+:: Train 00s [Ignore]
+Train is driving along track.
+
+
+:: Train 60s [Ignore]
+Train hits a bump.
+
+
+:: Train 120s [Ignore]
+Gun is swapped with toy gun.
+
+
+
+:: Train 180s [Ignore]
+Dessert is being served in dining cart.
+
+
+
+:: Train 240s [Ignore]
+One of the train staff finds the body.
+Train approaches the tunnel.
+
+
+
+:: Train 300s [Ignore]
+Everything goes dark. A word comes onto the screen - BANG
+
+[[Gunshot]]
+
+
+:: MFC1 Man Don 4-1 [S:Don T:John]
+I'll leave you to your paper.
+
+[[MFC1 Man John 4-1]]
+
+
+:: MFC1 Man John 4-1 [S:John T:Mavis Start:Leave]
+Good riddance to bad rubbish, that's what I say.
+
+
+:: MFC1 [Ignore]
+A man and woman are in this compartment. The woman is looking out the window. The man is reading a paper. The headline reads "Dandelion Killer Still At Large"
+
+
+:: MFC1 John1-1 [S:John T:Mavis StartNode]
+10s
+Have you read the papers, Mavis?
+--
+[[MFC1 Mavis 1-1]]
+
+
+:: MFC1 John 2-1 [S:John T:Mavis]
+--60s
+Damn these modern railways. No structure. In my day we kept our tracks up to standard. None of this "falts in the line" business.
+--
+[[MFC1 Mavis 2-1]]
+
+
+:: MFC1 John 3-1 [S:John T:Mavis]
+--120s
+Useless, these men are, useless. 
+
+[[MFC1 Mavis 3-1]]
+
+
+:: MFC1 4-1 [S:John T:Mavis]
+--180s
+[[MFC1 John 5-1]]
+
+
+:: MFC1 John 5-1 [S:John T:Mavis]
+--295s
+Looks like it's about to get dark again. 
+
+[[Gunshot]]
+
+
+:: MFC1 Man Mavis 2-1 [S:Mavis T:Don]
+MMM HMM!!
+
+[[MFC1 Man Don 2-2]]
+
+
+:: MFC1 Man Mavis 2-2 [S:Mavis T:Don]
+That's right.
+
+[[MFC1 Man John 2-3]]
+
+
+:: MFC1 Man John 2-3 [S:John T:Don]
+Now why don't you run along, before I come to my senses and give you the whipping you deserve.
+
+[[I'm outa here.|MFC1 Man Don 4-1]]
+
+
+:: MFC1 Mavis 1-1 [S:Mavis T:John]
+--
+Mmm hmm
+--
+[[MFC1 John 1-2]]
+
+
+:: MFC1 Mavis 2-1 [S:Mavis T:John]
+I know dear.
+--
+[[MFC1 John 2-2]]
+
+
+:: MFC1 Mavis 3-1 [S:Mavis T:John]
+--
+Yes, dear.
+[[MFC1 4-1]]
+
+
+:: MFC1 Man John 1-1 [Start: Approach S:John T:Don]
+Who are you? What are you doing here. 
+
+[[So about that Dandelion Killer...|MFC1 Man Don 2-1]]
+[[Watch your tone!|MFC1 Man Don 3-1]] 
+[[Just passing through.|MFC1 Man Don 4-1]]
+
+
+:: MFC1 Man Don 2-1
+I'm here on an official investigation. I'll have you know I'm tracking a very dangerous man. 
+
+[[MFC1 Man John 2-1]]
+
+
+:: MFC1 Man John 2-1 [S:John T:Don]
+Oh ho ho, I'll bet you are. After <b>The Dandelion Killer</b>, then?
+
+[[MFC1 Man Mavis 2-1]]
+
+
+:: MFC1 Man Don 2-2 [S:Don]
+Yes, well...
+
+[[MFC1 Man John 2-2]]
+
+
+:: MFC1 Man John 2-2 [S:John T:Don]
+I, for one, don't believe you for a second. And neither does my wife. 
+
+[[MFC1 Man Mavis 2-2]]
+
+
+:: MFC1 John 1-2 [S:John T:Mavis]
+--
+They still haven't caught that "Dandelion Killer". It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
+--
+[[MFC1 Mavis 1-2]]
+
+
+:: MFC1 John 2-2 [S:John T:Mavis]
+We worked good and hard, and we were glad for the work! 
+
+[[MFC1 Mavis 2-2]]
+
+
+:: Gunshot [Ignore]
+--300s
+
+!!!!!BANG
+
+
+:: MFC1 Man Don 3-1 [S:Don T:John]
+Don't get smart with me. I'll have you know I'm a detective!
+
+[[MFC1 Man John 3-1]]
+
+
+:: MFC1 Man John 3-1 [S:Don T:Mavis]
+A detective, he says! Y'hear that, Mavis? Want's us to believe he's a detective. And wearing a suit that's older than I am, that is a right laugh.
+
+[[MFC1 Man Mavis 3-1]]
+
+
+:: MFC1 Man Don 3-2 [S:Don T:John]
+Do not cross me, or I'll have you taken in. I'm sure the constables in Dining would be happy to assist me.
+
+[[MFC1 Man John 3-2]]
+
+
+:: MFC1 Man John 3-2 [S:John T:Mavis]
+Have us taken in? Listen to him, Mavis. This young upstart has the gall to suggest... I'll not be slave to this harassment. 
+
+[[MFC1 Man Mavis 3-2]]
+
+
+:: MFC1 Man Don 3-3 [S:Don T:John]
+Well... You see...
+
+--
+
+I'll forgive you, but only this once.
+[[MFC1 Man John 3-3]]
+
+
+:: MFC1 Man John 3-3 [S:John T:Don]
+You still haven't answered me, boy. What are you doing here?
+
+[[About that Dandelion Killer...|MFC1 Man Don 2-1]]
+[[Maybe I should go.|MFC1 Man Don 4-1]]
+
+
+:: MFC1 Mavis 1-2 [S:Mavis T:John]
+--
+Mmm hmm 
+--
+[[MFC1 John 2-1]]
+
+
+:: MFC1 Mavis 2-2 [S:Mavis T:John]
+Yes, dear.
+--
+[[MFC1 John 3-1]]
+
+
+:: MFC1 Man Mavis 3-1 [S:Mavis]
+Mmm hmm
+
+[[MFC1 Man Don 3-2]]
+
+
+:: MFC1 Man Mavis 3-2 [S:Mavis]
+Mmm hmm...
+
+[[MFC1 Man Don 3-3]]
+
+
+:: MFC2 Beth 1-1 [S:Beth T:Sally StartNode]
+TENNIS DIALOGUE
+[[MFC2 Sally 1-1]]
+
+
+:: MFC2 Beth 2-1 [S:Beth T:Sally]
+Tennis Dialogue
+[[MFC2 Sally 2-1]]
+
+
+:: MFC2 Beth 3-1 [S:Beth T:Sally]
+Tennis Dialogue
+
+[[MFC2 Sally 3-1]]
+
+
+:: MFC2 Beth 4-1 [S:Beth T:Sally]
+Tennis Dialogue
+
+[[MFC2 Sally 4-1]]
+
+
+:: MFC2 Beth 5-1 [S:Beth T:Sally]
+Tennis Dialogue
+
+[[MFC2 Sally 5-1]]
+
+
+:: MFC2 [Ignore]
+Two women are chatting about a tennis match.
+
+
+
+
+:: MFC2 Sally 1-1 [S:Sally T:Beth]
+TENNIS DIALOGUE
+[[MFC2 Beth 2-1]]
+
+
+:: MFC2 Sally 2-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[MFC2 Beth 3-1]]
+
+
+:: MFC2 Sally 3-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[MFC2 Beth 4-1]]
+
+
+:: MFC2 Sally 4-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[MFC2 Beth 5-1]]
+
+
+:: MFC2 Sally 5-1 [S:Sally T:Beth]
+Tennis Dialogue
+
+[[Gunshot]]
+
+

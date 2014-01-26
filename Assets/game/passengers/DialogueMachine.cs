@@ -18,6 +18,7 @@ public class DialogueMachine
 		currentNode = startNode;
 
 		MessagePasser.subscribe("player-choice", OnPlayerChoice);
+		MessagePasser.subscribe("approach-end", OnApproachEnd);
 	}
 
 	public void OnPlayerChoice(string message, string arg)
@@ -38,6 +39,11 @@ public class DialogueMachine
 				DialogueDisplay.ShowText(link.Text);
 			}
 		}
+	}
+
+	public void OnApproachEnd(string message, string arg)
+	{
+		awaitingPlayer = false;
 	}
 
 	public void Advance()

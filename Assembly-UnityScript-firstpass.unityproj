@@ -51,11 +51,14 @@
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" />
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" />
+     <None Include="Assets\Resources\Story\Don DC Export.txt" />
      <None Include="Assets\external\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Resources\Story\Jessie EC Export.txt" />
      <None Include="Assets\Resources\Story\Jessie FC Export.txt" />
+     <None Include="Assets\Resources\Story\Don EC Export.txt" />
      <None Include="Assets\Resources\Story\Jessie DC Export.txt" />
+     <None Include="Assets\Resources\Story\Don FC Export.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
