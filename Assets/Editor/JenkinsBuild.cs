@@ -46,7 +46,11 @@ class JenkinsBuild {
 		string[] args = System.Environment.GetCommandLineArgs();
 		APP_NAME = args[args.Length - 1];
 	}
-	
+
+	private static void BuildLightmaps() {
+		Lightmapping.Bake();
+	}
+
 	static void BuildTarget(BuildType target) {
 		string[] scenes = FindEnabledEditorScenes();
 		ParseCommandLine();

@@ -12,6 +12,7 @@ public class ApproachTrigger : MonoBehaviour
 
 	void OnTriggerExit()
 	{
+		Debug.Log("Player left "+conversationName);
 		MessagePasser.send("approach-end", conversationName);
 	}
 }

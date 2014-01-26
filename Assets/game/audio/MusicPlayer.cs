@@ -40,7 +40,7 @@ public class MusicPlayer : MonoBehaviour {
 	}
 
 	private string getFilename(string arg){
-		return arg + _characterName;
+		return arg + Player.Instance.characterName;
 	}
 
 	public void OnStart(string message, string arg) {
@@ -70,8 +70,7 @@ public class MusicPlayer : MonoBehaviour {
 	void Update () {
 
 	}
-
-	private string _characterName = "Don";
+	
 	private Dictionary<string, AudioSource> _clips;
 	private AudioSource _current;
 }

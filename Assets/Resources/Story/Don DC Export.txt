@@ -166,8 +166,6 @@ Excuse me?
 :: MDC1 Man Don 5-3 [S:Don T:Ben]
 <size=35>Yeah, I'll do that.</size>
 
-[[MDC1 Man Bill 5-1]]
-
 
 :: MDC1 Ben 2-1 [S:Ben T:Bill]
 Sure. I guess. He ain't no Ripper. He'll slip up. 
@@ -210,6 +208,10 @@ Quiet, Bill, let the man speak.
 [[MDC1 Man Don 5-1]]
 
 
+:: MDC1 Man Bill 5-1 [S:Bill T:Ben Start:Leave]
+<size=30>It's him, I know it is.</size>
+
+
 :: MDC1 Ben 3-3 [S:Ben T:Bill]
 With my best mate by me side.
 
@@ -230,10 +232,6 @@ So what's troubling you?
 <size=35>Tell us about it.</size>
 
 [[MDC1 Man Don 3-1]]
-
-
-:: MDC1 Man Bill 5-1 [S:Bill T:Ben Start:Leave]
-<size=30>It's him, I know it is.</size>
 
 
 :: MDC2 [Ignore]
@@ -413,7 +411,6 @@ Begging your pardon, sir. I'm just having a bit of fun.
 :: MDC2 Man Don 2-5 [S:Don T:Grace]
 Well, then you can have that "bit of fun" without me. Good day!
 
-[[MDC2 Man Dirk 2-6]]
 
 
 :: MDC2 Man Dirk 2-6 [Start:Leave S:Dirk T:Grace]
