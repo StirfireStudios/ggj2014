@@ -59,7 +59,7 @@ Hey, look, Bill! It's the village where I grew up!
 
 :: CDC1 Ben 4-1 [S:Bill T:Ben]
 --180s
-Looks like dessert is here. Something sweet, that'll take your mind off <b>The Dandelion Killer</b>. 
+Looks like dessert is here. Something sweet, that'll take your mind off <color=#ffa500ff>The Dandelion Killer</color>. 
 
 [[CDC1 Bill 4-1]]
 
@@ -70,13 +70,15 @@ Did you hear something?
 [[CDC1 Ben 5-1]]
 
 
-:: CDC1 Child Jessie 2-1 [S:Jessie T:Ben]
-Can I wear your hat? I want to be a police man!
-[[CDC1 Child Ben 2-1]]
+:: CDC1 Child Jessie 3-1 [S:Jessie T:Ben]
+I'm bored. Can I play with you?
+
+[[CDC1 Child Ben 3-1]]
 
 
-:: CDC1 Child Ben 2-1 [S:Ben T:Jessie]
+:: CDC1 Child Ben 3-1 [S:Ben T:Jessie]
 'Fraid not, son. We're doing important police work. 
+
 
 [[You're eating supper.|CDC1 Child Jessie 2-2]]
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
@@ -100,9 +102,8 @@ Yeah, he does.
 
 
 :: CDC1 Child Ben 2-3 [S:Ben T:Jessie]
-Now, do you need something? Or are you gonna leave us to eat our lunch?
+Now, do you need something? Or are you gonna leave us to eat our supper?
 
-[[I'm bored.|CDC1 Child Jessie 3-1]]
 [[I can't find my mummy.|CDC1 Child Jessie 4-1]]
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
 
@@ -156,24 +157,22 @@ That's right, son. What are you doing all on your own?
 [[I can't find my mummy.|CDC1 Child Jessie 4-1]]
 
 
-:: CDC1 Child Jessie 3-1 [S:Jessie T:Ben]
-I'm bored. Can I play with you?
+:: CDC1 Child Jessie 2-1 [S:Jessie T:Ben]
+Can I wear your hat? I want to be a police man!
+[[CDC1 Child Ben 2-1]]
 
-[[CDC1 Child Ben 3-1]]
 
-
-:: CDC1 Child Ben 3-1 [S:Ben T:Jessie]
+:: CDC1 Child Ben 2-1 [S:Ben T:Jessie]
 Not right now.
 
-[[Can I wear your hat?|CDC1 Child Jessie 2-1]]
 [[Where's my mummy?|CDC1 Child Jessie 4-1]]
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
-
 
 
 :: CDC1 Child Jessie 4-5 [S:Jessie T:Ben]
 Ok, bye. 
 
+[[CDC1 Child Bill 5-1]]
 
 
 :: CDC1 Child Bill 5-1 [S:Bill T:Ben Start:Leave]
@@ -213,27 +212,22 @@ Oh dear, that is a problem.
 [[CDC1 Child Jessie 4-2]]
 
 
+:: CDC1 Child Jessie 4-2 [S:Jessie T:Ben]
+Can you help me?
+
+[[CDC1 Child Bill 4-2]]
+
+
 :: CDC1 Child Bill 4-2 [S:Bill T:Ben]
 Little kid, all alone. Ma nowhere 'round. We should help, Sarge.
 
 [[CDC1 Child Ben 4-2]]
 
 
-:: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
-Where are you staying, Jessie?
+:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
+Too right, Bill, too right.
 
-[[CDC1 Child Jessie 4-3]]
-
-
-:: CDC1 Child Ben 4-4 [S:Ben T:Jessie]
-You go back there, Jessie. I'll talk to the driver, and come get you when we find her.
-[[CDC1 Child Jessie 4-4]]
-
-
-:: CDC1 Child Ben 4-5 [S:Ben T:Jessie]
-That's ok. You just wait outside the dark room. I'll find your mother and take her to you. 
-
-[[Ok, bye.|CDC1 Child Jessie 4-5]]
+[[CDC1 Child Ben 4-3]]
 
 
 :: CDCE1 [Ignore]
@@ -256,7 +250,7 @@ By gosh you did! Sarge of Scottland Yard.
 
 
 :: CDC1 Ben 5-2 [S:Ben T:Bill]
-Nah, you're imagining things. It's just <b>The Dandelion Killer</b> gettin' you on edge. 
+Nah, you're imagining things. It's just <color=#ffa500ff>The Dandelion Killer</color> gettin' you on edge. 
 
 [[CDC1 Bill 5-3]]
 
@@ -265,16 +259,10 @@ Nah, you're imagining things. It's just <b>The Dandelion Killer</b> gettin' you 
 !!!!!BANG
 
 
-:: CDC1 Child Jessie 4-2 [S:Jessie T:Ben]
-Can you help me?
+:: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
+Where are you staying, Jessie?
 
-[[CDC1 Child Bill 4-2]]
-
-
-:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
-Too right, Bill, too right.
-
-[[CDC1 Child Ben 4-3]]
+[[CDC1 Child Jessie 4-3]]
 
 
 :: CDC1 Child Jessie 4-3 [S:Jessie T:Ben]
@@ -283,10 +271,21 @@ Right at the back, near the dark room.
 [[CDC1 Child Ben 4-4]]
 
 
+:: CDC1 Child Ben 4-4 [S:Ben T:Jessie]
+You go back there, Jessie. I'll talk to the driver, and come get you when we find her.
+[[CDC1 Child Jessie 4-4]]
+
+
 :: CDC1 Child Jessie 4-4 [S:Jessie T:Ben]
 <i>NO!</i> I don't want to go to the dark room!
 
 [[CDC1 Child Ben 4-5]] 
+
+
+:: CDC1 Child Ben 4-5 [S:Ben T:Jessie]
+That's ok. You just wait outside the dark room. I'll find your mother and take her to you. 
+
+[[Ok, bye.|CDC1 Child Jessie 4-5]]
 
 
 :: CDCE2 [Ignore]
