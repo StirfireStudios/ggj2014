@@ -1,4 +1,8 @@
-﻿:: Train 00s [Ignore]
+﻿:: Start [Ignore]
+
+
+
+:: Train 00s [Ignore]
 Train is driving along track.
 [[Train 60s]]
 
@@ -33,7 +37,7 @@ Everything goes dark. A word comes onto the screen - BANG
 
 
 :: CEC1 [Ignore]
-Chris and Moira sit in this seat. They are talking about <b>The Dandelion Killer</b>.
+Chris and Moira sit in this seat. They are talking about <color=#ffa500ff>The Dandelion Killer</color>.
 
 [[CEC1 Moira 1-1]]
 
@@ -72,6 +76,16 @@ They aren't very nice to me. They used to be friends with me, but then they got 
 
 :: Gunshot [Ignore]
 !!!!!BANG
+
+
+:: CEC2 Don 1-1 [S:Don Start:Approach]
+Damn shame, it is. A damn shame. 
+
+[[CEC2 Don 1-2]]
+
+
+:: CEC2 Don 1-2 [S:Don]
+Poor kid. Wouldn't wish it on anyone. 
 
 
 :: CEC1 Moira 1-2 [S:Moira T:Chris]

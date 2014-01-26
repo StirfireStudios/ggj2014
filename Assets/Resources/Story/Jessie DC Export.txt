@@ -224,24 +224,18 @@ Little kid, all alone. Ma nowhere 'round. We should help, Sarge.
 [[CDC1 Child Ben 4-2]]
 
 
-:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
-Too right, Bill, too right.
-
-[[CDC1 Child Ben 4-3]]
-
-
 :: CDCE1 [Ignore]
 Noone is sitting at this table. On top of the table is a bouquet of dandelions in a vase. 
 Under the table is a pistol with <i>Jessie</i> written on it. 
 [[CDCE1 Jessie]]
 
 
-:: CDCE1 Jessie [Start:Approach StartNode S:Jessie]
+:: CDCE1 Jessie [Prop:Gun S:Jessie]
 This looks just like my gun! I left it in the back with Mummy. 
 
 --
 
-Wait, this //is// my gun. So which gun is with Mummy?
+Wait, this <i>is</i> my gun. So which gun is with Mummy?
 
 
 :: CDC1 Bill 3-2 [S:Bill T:Ben]
@@ -259,8 +253,14 @@ Nah, you're imagining things. It's just <color=#ffa500ff>The Dandelion Killer</c
 !!!!!BANG
 
 
+:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
+Too right, Bill, too right.
+
+[[CDC1 Child Ben 4-3]]
+
+
 :: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
-Where are you staying, Jessie?
+Where was your mummy last, Jessie?
 
 [[CDC1 Child Jessie 4-3]]
 
@@ -294,7 +294,7 @@ The table is unoccupied. There are the remnants of food on the table. Under the 
 [[CDCE2 Jessie]]
 
 
-:: CDCE2 Jessie [S:Jessie]
+:: CDCE2 Jessie [Prop:DonPhoto S:Jessie]
 It's that mean man. He was yelling at Mummy. 
 
 
@@ -344,40 +344,40 @@ Yes, Grace; is he pretty like me?
 Grace and Dirk (DK). They are sitting and having a pleasent conversation about lovely things. 
 
 
-:: MDC2 Dirk 1-1 [StartNode S:Dirk T:Grace]
+:: CDC2 Dirk 1-1 [StartNode S:Dirk T:Grace]
 --120s
 
 Well, now, aren't you just the prettiest thing!
 
-[[MDC2 Grace 1-1]]
+[[CDC2 Grace 1-1]]
 
 
-:: MDC2 Grace 1-1 [S:Grace T:Dirk]
+:: CDC2 Grace 1-1 [S:Grace T:Dirk]
 You're very nice, but I already have a boyfriend.
-[[MDC2 Dirk 1-2]]
+[[CDC2 Dirk 1-2]]
 
 
-:: MDC2 Dirk 1-2 [S:Dirk T:Grace]
+:: CDC2 Dirk 1-2 [S:Dirk T:Grace]
 A lady as lovely as yourself? I've no doubt. 
 
-[[MDC2 Grace 1-2]]
+[[CDC2 Grace 1-2]]
 
 
-:: MDC2 Grace 1-2 [S:Grace T:Dirk]
+:: CDC2 Grace 1-2 [S:Grace T:Dirk]
 Hahaha, you should count yourself lucky that my fiance isn't riding with me.
-[[MDC2 Dirk 1-3]]
+[[CDC2 Dirk 1-3]]
 
 
-:: MDC2 Dirk 1-3 [S:Dirk T:Grace]
+:: CDC2 Dirk 1-3 [S:Dirk T:Grace]
 Travelling alone? A dangerous habit for someone of your class.
 
-[[MDC2 Grace 1-3]]
+[[CDC2 Grace 1-3]]
 
 
-:: MDC2 Grace 1-3 [S:Grace T:Dirk]
+:: CDC2 Grace 1-3 [S:Grace T:Dirk]
 I'm not wealthy, sir. At least not yet. And I am hardly alone. My father rides this very train with me.
 
-[[MDC2 Dirk 1-4]]
+[[CDC2 Dirk 1-4]]
 
 
 :: CDC2 Child Grace 1-1 [S:Grace T:Jessie Start:Approach]
@@ -410,37 +410,37 @@ So, soon-to-be-wedded Grace, tell me more about your big man in the big city...
 
 
 
-:: MDC2 Dirk 1-4 [S:Dirk T:Grace]
+:: CDC2 Dirk 1-4 [S:Dirk T:Grace]
 It is a criminal act on his part to leave you unattended. Why, here you are convorting with a stranger when you are to be married. Hardly seemly of you.
 
-[[MDC2 Grace 1-4]]
+[[CDC2 Grace 1-4]]
 
 
-:: MDC2 Grace 1-4 [S:Grace T:Dirk]
+:: CDC2 Grace 1-4 [S:Grace T:Dirk]
 And will you protect me, good sir? Will you vouch for my honour?
 
-[[MDC2 Dirk 1-5]]
+[[CDC2 Dirk 1-5]]
 
 
-:: MDC2 Dirk 1-5 [S:Dirk T:Grace]
+:: CDC2 Dirk 1-5 [S:Dirk T:Grace]
 I'll hear of nothing less! 
 
-[[MDC2 Grace 1-5]]
+[[CDC2 Grace 1-5]]
 
 
-:: MDC2 Grace 1-5 [S:Grace T:Dirk]
+:: CDC2 Grace 1-5 [S:Grace T:Dirk]
 There, you see? I am well cared for. My father will be glad that you and I crossed paths.
 
-[[MDC2 Dirk 1-6]]
+[[CDC2 Dirk 1-6]]
 
 
-:: MDC2 Dirk 1-6 [S:Dirk T:Grace]
+:: CDC2 Dirk 1-6 [S:Dirk T:Grace]
 And where is this father of yours? You assure me he accompanies you, and yet I've seen neither hide nor hair of him since we began this torrid affair.
 
-[[MDC2 Grace 1-6]]
+[[CDC2 Grace 1-6]]
 
 
-:: MDC2 Grace 1-6 [S:Grace T:Dirk]
+:: CDC2 Grace 1-6 [S:Grace T:Dirk]
 Watch your tongue, sir. My father is dealing with a personal matter. I am sure he will be along presently.
 
 
