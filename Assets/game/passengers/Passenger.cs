@@ -6,7 +6,7 @@ using System.Text;
 public class Passenger : MonoBehaviour
 {
 
-	const int speechWidth = 25;
+	const int speechWidth = 35;
 
 	private string wrapLine(string s)
 	{

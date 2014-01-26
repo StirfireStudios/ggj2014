@@ -95,8 +95,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 1.23113382, y: 0, z: 1.515679}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: .731276453, y: 0, z: 16.2751102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -158,7 +158,7 @@ TextMesh:
   m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: .0299999993
-  m_LineSpacing: 1
+  m_LineSpacing: .75
   m_Anchor: 7
   m_Alignment: 1
   m_TabSize: 4
@@ -182,7 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sitting: 1
   turn: 0
-  characterName: Ben
+  characterName: Mavis
+  conversationName: John&Mavis
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,7 +212,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 3ae843ca7aa534761bd81a916b006d5d, type: 2}
+  - {fileID: 2100000, guid: 2861ef5e88e5841d598d854e6bc09767, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
