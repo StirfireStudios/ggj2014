@@ -18,6 +18,7 @@ public class DialogueDisplay : MonoBehaviour
 
 	Rect displayRect;
 	string currentText;
+	TweeLink[] currentLinks;
 
 	void Awake()
 	{
@@ -42,6 +43,22 @@ public class DialogueDisplay : MonoBehaviour
 			GUI.skin.box.fontSize = 32;
 			GUI.Box(displayRect, currentText);
 		}
+		if (currentLinks != null)
+		{
+			string choiceMade = null;
+			for (int i = 0; i < currentLinks.Length; i++)
+			{
+				Rect button = new Rect(10, Screen.height - 74 * (i+1), Screen.width - 20, 64);
+				if (GUI.Button(button, currentLinks[i].Text))
+				{
+					choiceMade = currentLinks[i].NodeName;
+				}
+			}
+			if (choiceMade != null)
+			{
+				MessagePasser.send("player-choice", choiceMade);
+			}
+		}
 	}
 
 	public static void ShowText(string text)
@@ -52,5 +69,16 @@ public class DialogueDisplay : MonoBehaviour
 	public static void HideText()
 	{
 		Instance.currentText = null;
+	}
+
+	public static void ShowOptions(TweeLink[] links)
+	{
+		Instance.currentLinks = links;
+		HideText();
+	}
+
+	public static void HideOptions()
+	{
+		Instance.currentLinks = null;
 	}
 }

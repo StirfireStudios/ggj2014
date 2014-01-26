@@ -190,7 +190,7 @@ public class Passenger : MonoBehaviour
 			if (node.Target != null)
 			{
 				Transform target = null;
-				if (node.Target.Name == "Player")
+				if (node.Target.Name == Player.Instance.characterName)
 				{
 					target = Player.Instance.transform;
 				}
