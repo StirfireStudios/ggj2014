@@ -37,7 +37,7 @@ Everything goes dark. A word comes onto the screen - BANG
 
 
 :: CDC1 Bill 1-1 [StartNode S:Bill T:Ben]
---
+--75s
 Four women he's killed, now. And we're plumb useless to stop him.
 
 [[CDC1 Ben 1-1]]
@@ -45,7 +45,6 @@ Four women he's killed, now. And we're plumb useless to stop him.
 
 
 :: CDC1 Ben 2-1 [S:Ben T:Bill]
---60s
 Sure. I guess. He ain't no Jack. He'll slip up. 
 
 [[CDC1 Ben 3-1]]

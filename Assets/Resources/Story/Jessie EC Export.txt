@@ -43,14 +43,13 @@ Chris and Moira sit in this seat. They are talking about <color=#ffa500ff>The Da
 
 
 :: CEC1 Moira 1-1 [S:Moira T:Chris StartNode]
---120s
+--150s
 I heard he slits pokes them with a stick! Pokes them in the neck.
 
 [[CEC1 Chris 1-1]]
 
 
 :: CEC1 Chris 2-1 [S:Chris T:Moira]
---180s
 Why don't you like them? The women he makes sleep, I mean.
 
 [[CEC1 Moira 2-1]]
@@ -89,8 +88,8 @@ Poor kid. Wouldn't wish it on anyone.
 
 
 :: CEC1 Moira 1-2 [S:Moira T:Chris]
---
-It was a kstick, I know it! My mummy's friend Linda told my mummy and she told me it was a stick.
+
+It was a stick, I know it! My mummy's friend Linda told my mummy and she told me it was a stick.
 
 [[CEC1 Chris 1-2]]
 
