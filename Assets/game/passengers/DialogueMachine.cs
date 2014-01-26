@@ -7,9 +7,13 @@ public class DialogueMachine
 	TweeNode currentNode;
 	int currentSection = 0;
 	bool awaitingPlayer = false;
+	string typeName;
+	string charName;
 
-	public DialogueMachine(TweeNode startNode)
+	public DialogueMachine(TweeNode startNode, string typeName, string charName)
 	{
+		this.typeName = typeName;
+		this.charName = charName;
 		if (startNode == null)
 		{
 			Debug.LogWarning("Making machine from null start node");
@@ -23,7 +27,7 @@ public class DialogueMachine
 
 	public void OnPlayerChoice(string message, string arg)
 	{
-		if (currentNode == null)
+		if (currentNode == null || !awaitingPlayer)
 		{
 			return;
 		}
@@ -66,7 +70,6 @@ public class DialogueMachine
 				}
 				else
 				{
-					Debug.Log("Starting player choice. Base text: "+link.Text);
 					//player links
 					DialogueDisplay.ShowOptions(currentNode.Links);
 					awaitingPlayer = true;
@@ -85,7 +88,7 @@ public class DialogueMachine
 		{
 			if (currentNode == null)
 			{
-				return null;
+				return "";
 			}
 			return currentNode.Sections[currentSection].Text;
 		}
