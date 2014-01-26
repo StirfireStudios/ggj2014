@@ -85,7 +85,7 @@ public class Passenger : MonoBehaviour
 			{
 				Debug.Log("Couldn't find player");
 			}
-			baseMachine = new DialogueMachine(tweeChar.getStartFor(player));
+			baseMachine = new DialogueMachine(tweeChar.getStartFor(player), "base", characterName);
 			currentMachine = baseMachine;
 			
 			TweeNode approachNode = tweeChar.getApproachFor(player);
@@ -109,7 +109,7 @@ public class Passenger : MonoBehaviour
 
 	public void setupApproach(TweeNode start)
 	{
-		approachMachine = new DialogueMachine(start);
+		approachMachine = new DialogueMachine(start, "approach", characterName);
 	}
 
 	public void OnApproach(string message, string arg)
@@ -128,10 +128,11 @@ public class Passenger : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("Ending approach for "+arg);
+			Debug.Log("Ending approach for "+characterName);
 			inApproach = false;
 			approachMachine = null;
 			currentMachine = baseMachine;
+			DialogueDisplay.HideText();
 			DialogueDisplay.HideOptions();
 		}
 	}
@@ -152,7 +153,6 @@ public class Passenger : MonoBehaviour
 			{
 				if (approachMachine.Finished)
 				{
-					Debug.Log("Ending approach for "+arg);
 					inApproach = false;
 					approachMachine = null;
 					currentMachine = baseMachine;
