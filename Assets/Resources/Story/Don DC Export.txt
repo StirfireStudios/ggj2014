@@ -1,0 +1,466 @@
+﻿:: Start [Ignore]
+
+
+
+:: Train 00s [Ignore]
+Train is driving along track.
+[[Train 60s]]
+
+
+:: Train 60s [Ignore]
+Train hits a bump.
+[[Train 120s]]
+
+
+:: Train 120s [Ignore]
+Gun is swapped with toy gun.
+
+Train passes village.
+[[Train 180s]]
+
+
+:: Train 180s [Ignore]
+Dessert is being served in dining cart.
+[[Train 240s]]
+
+
+:: Train 240s [Ignore]
+One of the train staff finds the body.
+Train approaches the tunnel.
+[[Train 300s]]
+
+
+:: Train 300s [Ignore]
+Everything goes dark. A word comes onto the screen - BANG
+
+[[Gunshot]]
+
+
+:: MDC1 Man Ben 1-1 [S:Ben T:Don StartApproach]
+Can I help you there, mate?
+[[MDC1 Man Don 1-1]]
+
+
+:: MDC1 Man Don 2-1 [S:Don T:Ben]
+<size=35>I don't want to cause a panic, but there's a dead body on this train.</size>
+[[MDC1 Man Bill 2-1]]
+
+
+:: MDC1 Man Don 3-1 [S:Don T:Ben]
+<size=35>She's in the back. Stab wound. We gotta keep it on the down low.</size>
+[[MDC1 Man Ben 3-1]]
+
+
+:: MDC1 Man Don 4-1 [S:Don T:Bill]
+<size=35>Look, you guys don't have to worry about it. Just keep it on the hush hush. Make sure no one goes into that back cart.</size>
+
+[[MDC1 Man Ben 4-1]]
+
+
+:: MDC1 Man Don 5-1 [S:Don T:Ben]
+<size=35>Something like that.</size>
+
+[[MDC1 Man Ben 5-2]]
+
+
+:: MDCE1 [Ignore]
+Noone is sitting at this table. On top of the table is a bouquet of dandelions in a vase. 
+Under the table is a pistol with <i>Jessie</i> written on it. 
+
+
+:: MDC1 [Ignore]
+Two police officers are sitting at a table. Their hats are on the table. They are discussing the Dandelion Killer. 
+
+[[MDC1 Bill 1-1]]
+
+
+:: MDC1 Bill 1-1 [StartNode S:Bill T:Ben]
+--60s
+Four women he's killed, now. And we're plumb useless to stop him. I never trained to deal with serials. 
+
+[[MDC1 Ben 1-1]]
+
+
+
+:: MDC1 Ben 3-1 [S:Ben T:Bill]
+--120s
+Hey, look, Bill! It's the village where I grew up!
+[[MDC1 Bill 3-1]]
+
+
+:: MDC1 Ben 4-1 [S:Bill T:Ben]
+--180s
+Looks like dessert is here. Something sweet, that'll take your mind off <b>The Dandelion Killer</b>. 
+
+[[MDC1 Bill 4-1]]
+
+
+:: MDC1 Bill 5-1 [S:Bill T:Ben]
+--240s
+Did you hear something?
+[[MDC1 Ben 5-1]]
+
+
+:: MDC1 Man Don 1-1 [S:Don T:Ben]
+Officers, I need you to keep quiet about this. It's important.
+
+[[MDC1 Man Bill 1-1]]
+
+
+:: MDC1 Man Bill 2-1 [S:Bill T:Don]
+<size=55> WHAT?</size>
+[[MDC1 Man Don 2-2]]
+
+
+:: MDC1 Man Ben 3-1 [S:Ben T:Don]
+<size=35>How long has she been there?</size>
+[[MDC1 Man Don 3-2]]
+
+
+:: MDC1 Man Ben 4-1 [S:Ben T:Don]
+<size=35>So you're some kinda Dick then?</size>
+
+[[MDC1 Man Don 4-2]]
+
+
+:: MDC1 Man Ben 5-2 [S;Ben T:Don]
+<size=35>Well, it’s good to have you on board, sir. Don’t mind saying we’re a pinch out of our depth here. You keep doing what you're doing. Let us know if you find something more.</size>
+[[MDC1 Man Don 5-3]]
+
+
+:: MDCE2 [Ignore]
+The table is unoccupied. There are the remnants of food on the table. Under the table is a single dandelion and a photo of the woman. The photo is ripped so you can't see the head. 
+
+
+
+:: MDC1 Ben 1-1 [S:Ben T:Bill]
+We'll get him, Bill. He can't hide forever.
+
+[[MDC1 Bill 1-2]]
+
+
+:: MDC1 Bill 3-1 [S:Bill T:Ben]
+You don't say! Fancy that for a laugh.
+[[MDC1 Ben 3-2]]
+
+
+:: MDC1 Bill 4-1 [S:Bill T:Ben]
+Haha, you know me too well. 
+
+[[Gunshot]]
+
+
+:: MDC1 Ben 5-1 [S:Ben T:Bill]
+--
+No, nothing.
+[[MDC1 Bill 5-2]]
+
+
+:: MDC1 Man Bill 1-1 [S:Bill T:Don]
+Important enough to keep us from our supper?
+
+[[MDC1 Man Ben 1-2]]
+
+
+:: MDC1 Man Don 2-2 [S:Don T:Bill]
+<size=35>Sshh! Do you want to cause a panic!</size>
+
+[[MDC1 Man Bill 2-2]]
+
+
+:: MDC1 Man Don 3-2 [S:Don T:Ben]
+<size=35>Not long. Her body's still warm.</size>
+[[MDC1 Man Bill 3-1]]
+
+
+:: MDC1 Man Don 4-2 [S:Don T:Ben]
+Excuse me?
+
+[[MDC1 Man Ben 4-2]]
+
+
+:: MDC1 Man Don 5-3 [S:Don T:Ben]
+<size=35>Yeah, I'll do that.</size>
+
+[[MDC1 Man Bill 5-1]]
+
+
+:: MDC1 Bill 1-2 [S:Bill T:Ben]
+You reckon? I ain't sure. We're stretched thin, here.
+
+[[MDC1 Ben 2-1]]
+
+
+:: MDC1 Ben 3-2 [S:Ben T:Bill]
+Yeah, me pa used to tell me I'd never get out of that place. I sure showed her!
+[[MDC1 Bill 3-2]]
+
+
+:: MDC1 Bill 5-2 [S:Bill T:Ben]
+--
+I could'a swear'd I heard a scream.
+
+[[MDC1 Ben 5-2]]
+
+
+:: MDC1 Man Ben 1-2 [S:Ben T:Bill]
+Quiet, Bill, let the man speak.
+
+[[MDC1 Man Ben 1-3]]
+
+
+:: MDC1 Man Bill 2-2 [S:Bill T:Don]
+<size=35>Sorry.</size>
+
+[[MDC1 Man Ben 2-2]]
+
+
+:: MDC1 Man Bill 3-1 [S:Bill T:Ben]
+<size=30>I don't like this, sarge. I didn't train for this.</size>
+
+[[MDC1 Man Don 4-1]]
+
+
+:: MDC1 Man Ben 4-2 [S:Ben T:Don]
+<size=35>A detective, sir. A detective.</size>
+
+[[MDC1 Man Don 5-1]]
+
+
+:: MDC1 Ben 2-1 [S:Ben T:Bill]
+Sure. I guess. He ain't no Ripper. He'll slip up. 
+
+[[MDC1 Ben 3-1]]
+
+
+:: MDC1 Bill 3-2 [S:Bill T:Ben]
+By gosh you did! Sarge of Scottland Yard.
+[[MDC1 Ben 3-3]]
+
+
+:: MDC1 Ben 5-2 [S:Ben T:Bill]
+Nah, you're imagining things. It's just <b>The Dandelion Killer</b> gettin' you on edge. 
+
+[[MDC1 Bill 5-3]]
+
+
+:: Gunshot [Ignore]
+!!!!!BANG
+
+
+:: MDC1 Man Ben 1-3 [S:Ben T:Don]
+So what's troubling you?
+[[MDC1 Man Don 2-1]]
+
+
+:: MDC1 Man Ben 2-2 [S:Ben T:Don]
+<size=35>Tell us about it.</size>
+
+[[MDC1 Man Don 3-1]]
+
+
+:: MDC1 Man Bill 5-1 [S:Bill T:Ben Start:Leave]
+<size=30>It's him, I know it is.</size>
+
+
+:: MDC1 Ben 3-3 [S:Ben T:Bill]
+With my best mate by me side.
+
+[[MDC1 Ben 4-1]]
+
+
+:: MDC1 Bill 5-3 [S:Bill T:Ben]
+Yeah, s'pose you're right. 
+[[Gunshot]]
+
+
+:: MDC2 [Ignore]
+Grace and Dirk sit at 
+
+
+:: MDC2 Dirk 1-1 [StartNode S:Dirk T:Grace]
+--120s
+
+Well, now, aren't you just the prettiest thing!
+
+[[MDC2 Grace 1-1]]
+
+
+:: MDC2 Grace 1-1 [S:Grace T:Dirk]
+Sir, you flatter me. Do you forget that I'm to be married?
+[[MDC2 Dirk 1-2]]
+
+
+:: MDC2 Dirk 1-2 [S:Dirk T:Grace]
+A lady as lovely as yourself? I've no doubt. 
+
+[[MDC2 Grace 1-2]]
+
+
+:: MDC2 Grace 1-2 [S:Grace T:Dirk]
+Hahaha, you should count yourself lucky that my fiance isn't riding with me.
+[[MDC2 Dirk 1-3]]
+
+
+:: MDC2 Dirk 1-3 [S:Dirk T:Grace]
+Travelling alone? A dangerous habit for someone of your class.
+
+[[MDC2 Grace 1-3]]
+
+
+:: MDC2 Grace 1-3 [S:Grace T:Dirk]
+I'm not wealthy, sir. At least not yet. And I am hardly alone. My father rides this very train with me.
+
+[[MDC2 Dirk 1-4]]
+
+
+:: MDC2 Man Don 3-1 [S:Don T:Grace]
+And what, pray tell, are these virtues of which you speak?
+
+[[MDC2 Man Dirk 3-1]]
+
+
+:: MDC2 Man Dirk 3-1 [S:Dirk T:Don]
+Is not fathering a beautiful creature such as this virtue enough?
+
+[[MDC2 Man Don 3-2]]
+
+
+:: MDC2 Man Don 3-2 [S:Don T:Dirk]
+Hold your tongue, lest I hold it for you. 
+
+[[MDC2 Man Dirk 3-2]]
+
+
+:: MDC2 Man Dirk 3-2 [S:Dirk T:Don]
+Begging your pardon, my good man. I meant no offense.
+[[MDC2 Man Grace 3-2]]
+
+
+:: MDC2 Man Grace 3-2 [S:Grace T:Dirk]
+Calm down, father. He has been keeping me company. Waiting on you is such a bore. 
+
+[[MDC2 Man Don 2-1]]
+
+
+:: MDC2 Dirk 1-4 [S:Dirk T:Grace]
+It is a criminal act on his part to leave you unattended. Why, here you are convorting with a stranger when you are to be married. Hardly seemly of you.
+
+[[MDC2 Grace 1-4]]
+
+
+:: MDC2 Grace 1-4 [S:Grace T:Dirk]
+And will you protect me, good sir? Will you vouch for my honour?
+
+[[MDC2 Dirk 1-5]]
+
+
+:: MDC2 Dirk 1-5 [S:Dirk T:Grace]
+I'll hear of nothing less! 
+
+[[MDC2 Grace 1-5]]
+
+
+:: MDC2 Grace 1-5 [S:Grace T:Dirk]
+There, you see? I am well cared for. My father will be glad that you and I crossed paths.
+
+[[MDC2 Dirk 1-6]]
+
+
+:: MDC2 Dirk 1-6 [S:Dirk T:Grace]
+And where is this father of yours? You assure me he accompanies you, and yet I've seen neither hide nor hair of him since we began this torrid affair.
+
+[[MDC2 Grace 1-6]]
+
+
+:: MDC2 Grace 1-6 [S:Grace T:Dirk]
+Watch your tongue, sir. My father is dealing with a personal matter. I am sure he will be along presently.
+
+
+:: MDC2 Man Dirk 1-1 [S:Dirk T:Don]
+Ah, if it isn't the devil himself. Hello, good sir. Grace was just regailing me of your virtues. 
+
+[[Who are you?|MDC2 Man Don 2-1]]
+[[What virtues?|MDC2 Man Don 3-1]]
+
+
+
+:: MDC2 Man Don 2-1 [S:Don T:Dirk]
+Who are you, sir, and what business do you have with my daughter?
+
+[[MDC2 Man Dirk 2-1]]
+
+
+:: MDC2 Man Dirk 2-1 [S:Dirk T:Don]
+My name is Dirk, and it's a pleasure to make your acquaintance. As for your daughter, I'm afraid I have no business of which to speak. My life would surely be improved if I had.
+
+[[MDC2 Man Don 2-2]]
+
+
+:: MDC2 Man Don 2-2 [S:Don T:Dirk]
+Watch your tone, sir. My daughter is to be married. I'll not have her good name bismirched by consorting with the likes of you.
+
+[[MDC2 Man Dirk 2-2]]
+
+
+:: MDC2 Man Dirk 2-2 [S:Dirk T:Don]
+You wound me! Why, I would never think to besmirch Grace's honour. Besides, she has already turned me down. 
+
+[[MDC2 Man Don 2-3]]
+
+
+:: MDC2 Man Don 2-3 [S:Don T:Dirk]
+Why I oughta-
+[[MDC2 Man Grace 2-3]]
+
+
+:: MDC2 Man Grace 2-3 [S:Grace T:Don]
+Hush, father. He was only teasing. He is fully aware of my engagement. Aren't you, Dirk?
+
+[[MDC2 Man Dirk 2-3]]
+
+
+:: MDC2 Man Dirk 2-3 [S:Dirk T:Grace]
+Far too aware, and that's God's Truth. I only hope that this man can keep you in the manner to which you obviously deserve.
+
+[[MDC2 Man Grace 2-4]]
+
+
+:: MDC2 Man Grace 2-4 [S:Grace T:Dirk]
+You can be assured of it.
+[[MDC2 Man Dirk 2-4]]
+
+
+:: MDC2 Man Dirk 2-4 [S:Dirk T:Don]
+Then perhaps your fiance will finally be able to buy your father that new suit he so clearly needs.
+[[MDC2 Man Don 2-4]]
+
+
+:: MDC2 Man Don 2-4 [S:Don T:Grace]
+You insufferable fool. I will not tolerate these insults.
+
+[[MDC2 Man Dirk 2-5]]
+
+
+:: MDC2 Man Dirk 2-5 [S:Dirk T:Don]
+Begging your pardon, sir. I'm just having a bit of fun. 
+
+[[MDC2 Man Don 2-5]]
+
+
+:: MDC2 Man Don 2-5 [S:Don T:Grace]
+Well, then you can have that "bit of fun" without me. Good day!
+
+[[MDC2 Man Dirk 2-6]]
+
+
+:: MDC2 Man Dirk 2-6 [Start:Leave S:Dirk T:Grace]
+What a cumudgeonly fellow your father is.
+
+[[MDC2 Man Grace 2-6]]
+
+
+:: MDC2 Man Grace 2-6 [S:Grace T:Don]
+Oh, stop.
+
+

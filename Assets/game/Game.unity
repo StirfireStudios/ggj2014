@@ -5398,7 +5398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701358688e3b04a9baa149a919c2378f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 845711705}
 --- !u!114 &823851460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5410,6 +5409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14004a693ae7f4d51967841e46e8d642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 845711705}
 --- !u!1 &845711704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5437,7 +5437,7 @@ Transform:
   m_PrefabInternal: {fileID: 1716369938}
   m_GameObject: {fileID: 845711704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.20000005, z: 0}
+  m_LocalPosition: {x: 0, y: .449999988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1737767530}
@@ -9943,7 +9943,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.20000005
+      value: .449999988
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: maximumY

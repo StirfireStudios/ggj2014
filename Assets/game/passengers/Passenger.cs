@@ -132,6 +132,7 @@ public class Passenger : MonoBehaviour
 			inApproach = false;
 			approachMachine = null;
 			currentMachine = baseMachine;
+			DialogueDisplay.HideOptions();
 		}
 	}
 
@@ -155,6 +156,8 @@ public class Passenger : MonoBehaviour
 					inApproach = false;
 					approachMachine = null;
 					currentMachine = baseMachine;
+					DialogueDisplay.HideText();
+					DialogueDisplay.HideOptions();
 				}
 			}
 		}
