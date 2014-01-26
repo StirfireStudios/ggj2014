@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 		MessagePasser.subscribe("time-end", OnTimeEnd);
 		MessagePasser.subscribe("player-stop", OnApproach);
 		MessagePasser.subscribe("approach-end", OnApproach);
+		MessagePasser.subscribe("penultimate-tick", OnPenultimate);
 	}
 
 	void Start()
@@ -51,6 +52,11 @@ public class Player : MonoBehaviour
 			steering.enabled = true;
 			targetTrans = null;
 		}
+	}
+
+	void OnPenultimate(string message, string arg)
+	{
+		characterName = names[1];
 	}
 
 	void OnTimeEnd(string message, string arg)

@@ -46,6 +46,10 @@ public class GameTimer : MonoBehaviour
 		MessagePasser.send("game-tick", null);
 		timer = 0;
 		tickCount++;
+		if (tickCount == ticksToEndGame - 1)
+		{
+			MessagePasser.send("penultimate-tick", null);
+		}
 		if (tickCount >= ticksToEndGame)
 		{
 			Debug.Log("Time end");
