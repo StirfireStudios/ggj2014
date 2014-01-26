@@ -6,6 +6,7 @@ public class DialogueMachine
 {
 	TweeNode currentNode;
 	int currentSection = 0;
+	bool awaitingPlayer = false;
 
 	public DialogueMachine(TweeNode startNode)
 	{
@@ -15,11 +16,33 @@ public class DialogueMachine
 			return;
 		}
 		currentNode = startNode;
+
+		MessagePasser.subscribe("player-choice", OnPlayerChoice);
+	}
+
+	public void OnPlayerChoice(string message, string arg)
+	{
+		if (currentNode == null)
+		{
+			return;
+		}
+		foreach (TweeLink link in currentNode.Links)
+		{
+			if (link.NodeName == arg)
+			{
+				Debug.Log("Player chose "+link.Text);
+				awaitingPlayer = false;
+				currentSection = 0;
+				currentNode = link.Node;
+				DialogueDisplay.HideOptions();
+				DialogueDisplay.ShowText(link.Text);
+			}
+		}
 	}
 
 	public void Advance()
 	{
-		if (currentNode == null)
+		if (currentNode == null || awaitingPlayer)
 		{
 			return;
 		}
@@ -30,7 +53,18 @@ public class DialogueMachine
 			if (currentNode.Links.Length > 0)
 			{
 				TweeLink link = currentNode.Links[0];
-				currentNode = link.Node;
+				if (link.Text == null || link.Text == "")
+				{
+					//default link
+					currentNode = link.Node;
+				}
+				else
+				{
+					Debug.Log("Starting player choice. Base text: "+link.Text);
+					//player links
+					DialogueDisplay.ShowOptions(currentNode.Links);
+					awaitingPlayer = true;
+				}
 			}
 			else
 			{
