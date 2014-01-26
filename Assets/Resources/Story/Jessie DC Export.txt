@@ -292,7 +292,7 @@ Is he pretty, like your friend?
 [[CDC2 Child Dirk 1-2]]
 
 
-:: CDC2 Child Dirk 1-2 [T:Dirk S:Grace]
+:: CDC2 Child Dirk 1-2 [S:Dirk T:Grace]
 Yes, Grace; is he pretty like me?
 
 [[CDC2 Child Grace 1-4]]
