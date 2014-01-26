@@ -87,7 +87,7 @@ That ain't true, and you knows it!
 
 
 :: MEC1 Moira 5-1 [S:Moira T:Chris]
---295s
+--59
 Shit! What's all that screaming about?
 [[Gunshot]]
 
