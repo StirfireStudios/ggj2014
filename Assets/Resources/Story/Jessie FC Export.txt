@@ -37,9 +37,8 @@ A man and woman are in this compartment. The woman is looking out the window. Th
 
 
 :: CFC1 John1-1 [S:John T:Mavis StartNode]
-10s
 Have you read the papers, Mavis?
---
+
 [[CFC1 Mavis 1-1]]
 
 
@@ -51,15 +50,10 @@ Damn these modern railways. No structure. In my day we kept our tracks up to sta
 
 
 :: CFC1 John 3-1 [S:John T:Mavis]
---120s
+
 Useless, these men are, useless. 
 
 [[CFC1 Mavis 3-1]]
-
-
-:: CFC1 4-1 [S:John T:Mavis]
---180s
-[[CFC1 John 5-1]]
 
 
 :: CFC1 John 5-1 [S:John T:Mavis]
@@ -70,9 +64,7 @@ Looks like it's about to get dark again.
 
 
 :: CFC1 Mavis 1-1 [S:Mavis T:John]
---
 Mmm hmm
---
 [[CFC1 John 1-2]]
 
 
@@ -83,15 +75,14 @@ I know dear.
 
 
 :: CFC1 Mavis 3-1 [S:Mavis T:John]
---
+
 Yes, dear.
-[[CFC1 4-1]]
+[[CFC1 John 5-1]]
 
 
 :: CFC1 John 1-2 [S:John T:Mavis]
---
-They still haven't caught that "Dandelion Killer". It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
---
+They still haven't caught <color#ffa500ff>=The Dandelion Killer</color>. It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
+
 [[CFC1 Mavis 1-2]]
 
 
@@ -108,9 +99,8 @@ We worked good and hard, and we were glad for the work!
 
 
 :: CFC1 Mavis 1-2 [S:Mavis T:John]
---
 Mmm hmm 
---
+
 [[CFC1 John 2-1]]
 
 
@@ -197,7 +187,6 @@ Tennis Dialogue
 
 
 :: CFC2 Child Beth 1-1 [S:Beth T:Sally Start:Approach]
---
 Oh, goodness, there's a child in the room!
 [[CFC2 Child Sally 1-1]]
 
@@ -234,6 +223,6 @@ We were playing Cops and Robbers. Then she fell asleep.
 Mummy probably needs her sleep. Run along now!
 
 [[Ok, bye.|CFC2 Child Jessie 3-1]]
-[[I'm bored.|CFC2 Child Jessie 1-1]]
+
 
 
