@@ -87,7 +87,7 @@ We worked good and hard, and we were glad for the work!
 [[MFC1 Mavis 2-2]]
 
 
-:: MFC1 Man John 1-1 [Start: Approach S:John T:Don]
+:: MFC1 Man John 1-1 [Start:Approach S:John T:Don]
 Who are you? What are you doing here. 
 
 [[So about that Dandelion Killer...|MFC1 Man Don 2-1]]
