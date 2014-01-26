@@ -133,6 +133,7 @@ public class Passenger : MonoBehaviour
 			inApproach = true;
 			currentMachine = approachMachine;
 			updateText();
+			MessagePasser.send("player-stop", null);
 		}
 		else
 		{
@@ -192,11 +193,20 @@ public class Passenger : MonoBehaviour
 		if (speaker != null && Player.Instance.characterName == speaker.Name)
 		{
 			DialogueDisplay.ShowText(currentMachine.Text);
+			if (node.Target != null)
+			{
+				Player.PointAt(lookup[node.Target.Name].transform);
+			}
 		}
 
 		if (speaker != null && tweeChar.Name == speaker.Name)
 		{
 			text.text = wrapLine(currentMachine.Text);
+
+			if (inApproach)
+			{
+				Player.PointAt(transform);
+			}
 
 			if (node.Target != null)
 			{
@@ -234,5 +244,10 @@ public class Passenger : MonoBehaviour
 	void OnTimeEnd(string message, string arg)
 	{
 		Reset();
+	}
+
+	public static Transform getPasenger(string name)
+	{
+		return lookup[name].transform;
 	}
 }

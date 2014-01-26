@@ -24,30 +24,33 @@ public class GameTimer : MonoBehaviour
 		timer = timer + Time.deltaTime;
 		if (timer >= tickLength)
 		{
-			MessagePasser.send("game-tick", null);
-			timer = timer - tickLength;
-			tickCount++;
-			if (tickCount >= ticksToEndGame)
-			{
-				MessagePasser.send("time-end", null);
-				tickCount = 0;
-			}
+			Tick();
 		}
-	}
 
-	void OnGUI()
-	{
-		if (GUI.Button(advanceRect, ">") || Input.GetKeyDown(KeyCode.Period))
+		if (Input.GetKeyDown(KeyCode.Period))
 		{
 			if (!alreadyAdvanced)
 			{
-				MessagePasser.send("game-tick", null);
+				Tick();
 			}
 			alreadyAdvanced = true;
 		}
 		else
 		{
 			alreadyAdvanced = false;
+		}
+	}
+
+	void Tick()
+	{
+		MessagePasser.send("game-tick", null);
+		timer = 0;
+		tickCount++;
+		if (tickCount >= ticksToEndGame)
+		{
+			Debug.Log("Time end");
+			MessagePasser.send("time-end", null);
+			tickCount = 0;
 		}
 	}
 }

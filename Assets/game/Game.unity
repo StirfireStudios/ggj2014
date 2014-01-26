@@ -6638,6 +6638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickLength: 5
+  ticksToEndGame: 60
 --- !u!4 &767585602
 Transform:
   m_ObjectHideFlags: 0
@@ -6987,7 +6988,7 @@ Transform:
   m_PrefabInternal: {fileID: 1716369938}
   m_GameObject: {fileID: 845711704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .449999988, z: 0}
+  m_LocalPosition: {x: 0, y: 1.14999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1737767530}
@@ -9399,6 +9400,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1456267163}
   m_GameObject: {fileID: 1210777965}
   m_Mesh: {fileID: 4300336, guid: 8513395760e5e4f9db2eb1ded27f8806, type: 3}
+--- !u!1 &1214921556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1214921558}
+  - 114: {fileID: 1214921557}
+  m_Layer: 0
+  m_Name: JessieSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214921557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214921556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf41ca2942db945b388b93f0a1aad436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Jessie
+--- !u!4 &1214921558
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214921556}
+  m_LocalRotation: {x: 0, y: -.705622554, z: -8.41167562e-08, w: .708587885}
+  m_LocalPosition: {x: .763326466, y: .5, z: 19.6178055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1231116780
 GameObject:
   m_ObjectHideFlags: 0
@@ -16184,7 +16224,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .53944993
+      value: -.0953691006
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.y
@@ -16192,7 +16232,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 28.562727
+      value: -18.1599827
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -16228,7 +16268,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .449999988
+      value: 1.14999998
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: maximumY
@@ -16247,6 +16287,45 @@ Prefab:
   m_RootGameObject: {fileID: 1737767529}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1720679021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1720679023}
+  - 114: {fileID: 1720679022}
+  m_Layer: 0
+  m_Name: DonSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1720679022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720679021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf41ca2942db945b388b93f0a1aad436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Don
+--- !u!4 &1720679023
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720679021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.626646101, y: .5, z: -18.4327278}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1724904961
 GameObject:
   m_ObjectHideFlags: 0
@@ -16506,7 +16585,7 @@ Transform:
   m_PrefabInternal: {fileID: 1716369938}
   m_GameObject: {fileID: 1737767529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .53944993, y: .5, z: 28.562727}
+  m_LocalPosition: {x: -.0953691006, y: .5, z: -18.1599827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1869897037}
@@ -16625,7 +16704,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ae47678caed484994793c541d3f4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Jessie
+  cameraTrans: {fileID: 845711705}
+  movement: {fileID: 1737767532}
+  steering: {fileID: 1737767533}
+  names:
+  - Don
+  - Jessie
+  characterName: Don
 --- !u!1 &1743806207
 GameObject:
   m_ObjectHideFlags: 0
