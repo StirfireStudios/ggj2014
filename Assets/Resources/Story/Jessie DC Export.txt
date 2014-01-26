@@ -136,12 +136,10 @@ Not right now.
 :: CDC1 Child Jessie 4-5 [S:Jessie T:Ben]
 Ok, bye. 
 
-[[CDC1 Child Bill 5-1]]
 
 
 :: CDC1 Child Bill 5-1 [S:Bill T:Ben Start:Leave]
 Cute kid.
-
 What were we talking about? 
 
 
@@ -294,7 +292,7 @@ Is he pretty, like your friend?
 [[CDC2 Child Dirk 1-2]]
 
 
-:: CDC2 Child Dirk 1-2 [T:Dirk S:Grace]
+:: CDC2 Child Dirk 1-2 [S:Dirk T:Grace]
 Yes, Grace; is he pretty like me?
 
 [[CDC2 Child Grace 1-4]]
@@ -306,7 +304,6 @@ Grace and Dirk (DK). They are sitting and having a pleasent conversation about l
 
 :: CDC2 Dirk 1-1 [StartNode S:Dirk T:Grace]
 --24
-
 Well, now, aren't you just the prettiest thing!
 
 [[CDC2 Grace 1-1]]
@@ -361,8 +358,6 @@ Not my husband yet, little one. We're to be married soon, though; real soon, if 
 
 :: CDC2 Child Jessie 1-7 [S:Jessie T:Grace]
 Ew, adults are gross. I'm leaving.
-
-[[CDC2 Child Dirk 1-3]]
 
 
 :: CDC2 Child Dirk 1-3 [S:Dirk T:Grace Start:Leave]
