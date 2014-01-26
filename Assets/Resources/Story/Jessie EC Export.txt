@@ -1,61 +1,18 @@
-﻿:: Train 00s [Ignore]
-Train is driving along track.
-[[Train 60s]]
+﻿:: Start [Ignore]
 
-
-:: Train 60s [Ignore]
-Train hits a bump.
-[[Train 120s]]
-
-
-:: Train 120s [Ignore]
-Gun is swapped with toy gun.
-
-Train passes village.
-[[Train 180s]]
-
-
-:: Train 180s [Ignore]
-Dessert is being served in dining cart.
-[[Train 240s]]
-
-
-:: Train 240s [Ignore]
-One of the train staff finds the body.
-Train approaches the tunnel.
-[[Train 300s]]
-
-
-:: Train 300s [Ignore]
-Everything goes dark. A word comes onto the screen - BANG
-
-[[Gunshot]]
 
 
 :: CEC1 [Ignore]
-Chris and Moira sit in this seat. They are talking about <b>The Dandelion Killer</b>.
+Chris and Moira sit in this seat. They are talking about <color=#ffa500ff>The Dandelion Killer</color>.
 
 [[CEC1 Moira 1-1]]
 
 
 :: CEC1 Moira 1-1 [S:Moira T:Chris StartNode]
---120s
+--30
 I heard he slits pokes them with a stick! Pokes them in the neck.
 
 [[CEC1 Chris 1-1]]
-
-
-:: CEC1 Chris 2-1 [S:Chris T:Moira]
---180s
-Why don't you like them? The women he makes sleep, I mean.
-
-[[CEC1 Moira 2-1]]
-
-
-:: CEC1 Moira 5-1 [S:Moira T:Chris]
---295s
-Goodness! That was loud!
-[[Gunshot]]
 
 
 :: CEC1 Chris 1-1 [S:Chris T:Moira]
@@ -64,60 +21,44 @@ Don't be silly. He points at them and says 'BANG!". They never even saw it comin
 [[CEC1 Moira 1-2]]
 
 
-:: CEC1 Moira 2-1 [S:Moira T:Chris]
-They aren't very nice to me. They used to be friends with me, but then they got new toys and they won't play with me anymore.
+:: CEC1 Moira 1-2 [S:Moira T:Chris]
+It was a stick, I know it! My mummy's friend Linda told my mummy and she told me it was a stick.
 
-[[CEC1 Chris 2-2]]
+[[CEC1 Chris 1-2]]
+
+
+:: CEC1 Chris 1-2 [S:Chris T:Moira]
+It doesn't matter. They're still sleeping.
+
+[[CEC1 Moira 1-3]]
+
+
+:: CEC1 Moira 1-3 [S:Moira T:Chris]
+They weren't very nice. I don't like them.
+
+[[CEC1 Chris 1-3]]
+
+
+:: CEC1 Chris 1-3 [S:Chris T:Moira]
+I don't like you sometimes. You're lazy.
+
+[[CEC1 Moira 1-4]]
+
+
+:: CEC1 Moira 1-4 [S:Moira T:Chris]
+That's not a very nice thing to say!
+
+[[CEC1 Chris 2-1]]
 
 
 :: Gunshot [Ignore]
 !!!!!BANG
 
 
-:: CEC1 Moira 1-2 [S:Moira T:Chris]
---
-It was a kstick, I know it! My mummy's friend Linda told my mummy and she told me it was a stick.
-
-[[CEC1 Chris 1-2]]
-
-
-:: CEC1 Chris 2-2 [S:Chris T:Moira]
-You're just jealous because your cousin got a new toy and you didn't. 
-
-[[CEC1 Moira 2-2]]
-
-
-:: CEC1 Chris 1-2 [S:Chris T:Moira]
---
-It doesn't matter. They're still sleeping.
-
-[[CEC1 Moira 1-3]]
-
-
-:: CEC1 Moira 2-2 [S:Moira T:Chris]
-Nu-uh!
-
-[[CEC1 Chris 2-3]]
-
-
-:: CEC1 Moira 1-3 [S:Moira T:Chris]
---
-They weren't very nice. I don't like them.
-
-[[CEC1 Chris 1-3]]
-
-
-:: CEC1 Chris 2-3 [S:Chris T:Moira]
-Don't be mad! I love you!
-
-[[CEC1 Moira 2-3]]
-
-
-:: CEC1 Chris 1-3 [S:Chris T:Moira]
---
-I don't like you sometimes. You are lazy.
-
-[[CEC1 Moira 1-4]]
+:: CEC1 Moira 5-1 [S:Moira T:Chris]
+--59
+Goodness! That was loud!
+[[Gunshot]]
 
 
 :: CEC1 Moira 2-3 [S:Moira T:Chris]
@@ -126,9 +67,43 @@ Aww, you're so sweet.
 [[CEC1 Moira 5-1]]
 
 
-:: CEC1 Moira 1-4 [S:Moira T:Chris]
-That's not a very nice thing to say!
+:: CEC1 Chris 2-3 [S:Chris T:Moira]
+Don't be mad! I love you!
 
-[[CEC1 Chris 2-1]]
+[[CEC1 Moira 2-3]]
+
+
+:: CEC1 Moira 2-2 [S:Moira T:Chris]
+Nu-uh!
+
+[[CEC1 Chris 2-3]]
+
+
+:: CEC1 Chris 2-2 [S:Chris T:Moira]
+You're just jealous because your cousin got a new toy and you didn't. 
+
+[[CEC1 Moira 2-2]]
+
+
+:: CEC1 Moira 2-1 [S:Moira T:Chris]
+They aren't very nice to me. They used to be friends with me, but then they got new toys and they won't play with me anymore.
+
+[[CEC1 Chris 2-2]]
+
+
+:: CEC1 Chris 2-1 [S:Chris T:Moira]
+Why don't you like them? The women he makes sleep, I mean.
+
+[[CEC1 Moira 2-1]]
+
+
+:: CEC2 Don 1-2 [S:Don]
+Poor kid. Wouldn't wish it on anyone.
+
+
+:: CEC2 Don 1-1 [S:Don Start:Approach]
+Damn shame, it is. A damn shame. 
+
+[[CEC2 Don 1-2]]
 
 

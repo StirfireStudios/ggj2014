@@ -1,0 +1,19 @@
+﻿:: Start [Ignore]
+Your story will display this passage first. Edit it by double clicking it.
+
+
+:: MLC Don 1-1 [S:Don Prop:Annabelle]
+Damn.
+[[MLC Don 1-2]]
+
+
+:: MLC Don 1-2 [S:Don]
+What a way to go.
+
+[[MLC Don 1-3]]
+
+
+:: MLC Don 1-3 [S:Don]
+Sorry. I can't fix this. 
+
+
