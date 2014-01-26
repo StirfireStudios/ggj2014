@@ -6,6 +6,7 @@ public class DialogueMachine
 {
 	TweeNode currentNode;
 	int currentSection = 0;
+	int currentDelay = 0;
 	bool awaitingPlayer = false;
 	string typeName;
 	string charName;
@@ -40,7 +41,11 @@ public class DialogueMachine
 				currentSection = 0;
 				currentNode = link.Node;
 				DialogueDisplay.HideOptions();
-				DialogueDisplay.ShowText(link.Text);
+				DialogueDisplay.ShowText(currentNode.Sections[0].Text);
+				if (currentNode.Target != null)
+				{
+					Player.PointAt(Passenger.getPasenger(currentNode.Target.Name));
+				}
 			}
 		}
 	}
@@ -56,7 +61,15 @@ public class DialogueMachine
 		{
 			return;
 		}
-		currentSection++;
+		TweeNodeSection section = currentNode.Sections[currentSection];
+		Debug.Log("Delay: "+section.Delay+" "+section.Text);
+		currentDelay++;
+		Debug.Log("Current delay: "+currentDelay);
+		if (currentDelay >= section.Delay)
+		{
+			currentDelay = 0;
+			currentSection++;
+		}
 		if (currentSection >= currentNode.Sections.Length)
 		{
 			currentSection = 0;
@@ -72,6 +85,10 @@ public class DialogueMachine
 				{
 					//player links
 					DialogueDisplay.ShowOptions(currentNode.Links);
+					if (currentNode.Target != null)
+					{
+						Player.PointAt(Passenger.getPasenger(currentNode.Speaker.Name));
+					}
 					awaitingPlayer = true;
 				}
 			}
@@ -89,6 +106,14 @@ public class DialogueMachine
 			if (currentNode == null)
 			{
 				return "";
+			}
+			if (currentNode.Speaker != null && currentNode.Speaker.Name != Player.Instance.characterName)
+			{
+				int delay = currentNode.Sections[currentSection].Delay;
+			    if (delay > 0 && currentDelay < delay - 1)
+				{
+					return "";
+				}
 			}
 			return currentNode.Sections[currentSection].Text;
 		}

@@ -86,7 +86,7 @@ Mummy probably needs her sleep. Run along now!
 
 
 :: CFC1 John 1-2 [S:John T:Mavis]
-They still haven't caught <color#ffa500ff>=The Dandelion Killer</color>. It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
+They still haven't caught <color=#ffa500ff>The Dandelion Killer</color>. It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
 
 [[CFC1 Mavis 1-2]]
 
