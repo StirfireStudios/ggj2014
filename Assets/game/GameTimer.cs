@@ -11,6 +11,7 @@ public class GameTimer : MonoBehaviour
 
 	float timer = 0;
 	int tickCount = 0;
+	bool doneEnd = false;
 
 	void Awake()
 	{
@@ -55,6 +56,14 @@ public class GameTimer : MonoBehaviour
 			Debug.Log("Time end");
 			MessagePasser.send("time-end", null);
 			tickCount = 0;
+			if (doneEnd)
+			{
+				Application.LoadLevel("credits");
+			}
+			else
+			{
+				doneEnd = true;
+			}
 		}
 	}
 }

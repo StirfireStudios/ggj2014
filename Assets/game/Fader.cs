@@ -49,8 +49,11 @@ public class Fader : MonoBehaviour {
 			else
 			{
 				mat.color = new Color(1, 1, 1, 1 - alpha);
-				fadingOut = true;
-				timer = 0;
+				if (timer >= 5)
+				{
+					fadingOut = true;
+					timer = 0;
+				}
 			}
 		}
 	}
