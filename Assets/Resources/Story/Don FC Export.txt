@@ -29,8 +29,6 @@ Looks like it's about to get dark again.
 :: MFC1 Man Don 4-1 [S:Don T:John]
 I'll leave you to your paper.
 
-[[MFC1 Man John 4-1]]
-
 
 :: MFC1 Man John 4-1 [S:John T:Mavis Start:Leave]
 Good riddance to bad rubbish, that's what I say.
@@ -314,7 +312,6 @@ Where's my mummy?
 :: MFC3 Don 1-1 [S:Don]
 Sorry, kid, I can't help you.
 
-[[MFC3 Jessie 1-2]]
 
 
 :: MFC3 Jessie 1-2 [Star:Leave S:Jessie]
@@ -370,7 +367,6 @@ No business, none at all. I should probably leave you two in peace.
 :: MFC2 Man Don 4-1 [S:Don T:Sally]
 I have to go.
 
-[[MFC2 Man Sally 4-1]]
 
 
 :: MFC2 Man Beth 2-1 [S:Beth T:Don]
@@ -395,14 +391,13 @@ Yes, yes, perfectly safe. I've seen nothing down this end of the train. Just doi
 
 :: MFC2 Man Sally 4-1 [S:Sally T:Beth Start:Leave]
 What a peculiar fellow.
-
 [[MFC2 Man Beth 4-1]]
 
 
 :: MFC2 Man Don 1-8 [S:Don T:Sally]
 Good, good. I'd best be on my way then.
 
-[[MFC2 Man Sally 4-1]]
+
 
 
 :: MFC2 Man Sally 1-7 [S:Sally T:Don]

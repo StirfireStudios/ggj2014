@@ -97,13 +97,12 @@ Why don't you like them? The women he makes sleep, I mean.
 [[CEC1 Moira 2-1]]
 
 
-:: CEC2 Don 1-2 [S:Don]
-Poor kid. Wouldn't wish it on anyone.
-
-
 :: CEC2 Don 1-1 [S:Don Start:Approach]
 Damn shame, it is. A damn shame. 
 
-[[CEC2 Don 1-2]]
+
+
+:: CEC2 Don 1-2 [S:Don Start:Leave]
+Poor kid. Wouldn't wish it on anyone.
 
 
