@@ -6,9 +6,11 @@ public class TweeNodeSection {
 	public string Text { get { return _text; } }
 
 	public TweeNodeSection(string data) {
+		int startLine = 0;
 		_delay = 10;
 		string[] lines = data.Split(new string[] {"\n"}, System.StringSplitOptions.None);
-		if (lines[0].Length > 2) {
+		if ((lines[0].Length > 1) && lines[0].StartsWith("--")) {
+			startLine = 1;
 			System.Text.RegularExpressions.MatchCollection matches = System.Text.RegularExpressions.Regex.Matches(lines[0].Substring(2), @"[\d]+");
 			if (matches.Count > 0) {
 				string temp = "";
@@ -19,7 +21,7 @@ public class TweeNodeSection {
 			}
 		}
 		System.Text.StringBuilder text = new System.Text.StringBuilder();
-		for (int i = 1; i < lines.Length; i++) {
+		for (int i = startLine; i < lines.Length; i++) {
 			text.AppendLine(lines[i]);
 		}
 		_text = text.ToString().Trim();

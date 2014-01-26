@@ -1,5 +1,5 @@
 ﻿:: Start [Ignore]
-Your story will display this passage first. Edit it by double clicking it.
+
 
 
 :: Train 00s [Ignore]
@@ -59,7 +59,7 @@ Hey, look, Bill! It's the village where I grew up!
 
 :: CDC1 Ben 4-1 [S:Bill T:Ben]
 --180s
-Looks like dessert is here. Something sweet, that'll take your mind off "The Dandelion Killer". 
+Looks like dessert is here. Something sweet, that'll take your mind off <color=#ffa500ff>The Dandelion Killer</color>. 
 
 [[CDC1 Bill 4-1]]
 
@@ -70,13 +70,15 @@ Did you hear something?
 [[CDC1 Ben 5-1]]
 
 
-:: CDC1 Child Jessie 2-1 [S:Jessie T:Ben]
-Can I wear your hat? I want to be a police man!
-[[CDC1 Child Ben 2-1]]
+:: CDC1 Child Jessie 3-1 [S:Jessie T:Ben]
+I'm bored. Can I play with you?
+
+[[CDC1 Child Ben 3-1]]
 
 
-:: CDC1 Child Ben 2-1 [S:Ben T:Jessie]
+:: CDC1 Child Ben 3-1 [S:Ben T:Jessie]
 'Fraid not, son. We're doing important police work. 
+
 
 [[You're eating supper.|CDC1 Child Jessie 2-2]]
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
@@ -100,9 +102,8 @@ Yeah, he does.
 
 
 :: CDC1 Child Ben 2-3 [S:Ben T:Jessie]
-Now, do you need something? Or are you gonna leave us to eat our lunch?
+Now, do you need something? Or are you gonna leave us to eat our supper?
 
-[[I'm bored.|CDC1 Child Jessie 3-1]]
 [[I can't find my mummy.|CDC1 Child Jessie 4-1]]
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
 
@@ -156,24 +157,22 @@ That's right, son. What are you doing all on your own?
 [[I can't find my mummy.|CDC1 Child Jessie 4-1]]
 
 
-:: CDC1 Child Jessie 3-1 [S:Jessie T:Ben]
-I'm bored. Can I play with you?
+:: CDC1 Child Jessie 2-1 [S:Jessie T:Ben]
+Can I wear your hat? I want to be a police man!
+[[CDC1 Child Ben 2-1]]
 
-[[CDC1 Child Ben 3-1]]
 
-
-:: CDC1 Child Ben 3-1 [S:Ben T:Jessie]
+:: CDC1 Child Ben 2-1 [S:Ben T:Jessie]
 Not right now.
 
-[[Can I wear your hat?|CDC1 Child Jessie 2-1]]
 [[Where's my mummy?|CDC1 Child Jessie 4-1]]
 [[Ok, bye.|CDC1 Child Jessie 4-5]]
-
 
 
 :: CDC1 Child Jessie 4-5 [S:Jessie T:Ben]
 Ok, bye. 
 
+[[CDC1 Child Bill 5-1]]
 
 
 :: CDC1 Child Bill 5-1 [S:Bill T:Ben Start:Leave]
@@ -181,7 +180,6 @@ Cute kid.
 
 What were we talking about? 
 
-[[CDC1 Bill 1-1]]
 
 
 :: CDC1 Bill 1-2 [S:Bill T:Ben]
@@ -214,32 +212,27 @@ Oh dear, that is a problem.
 [[CDC1 Child Jessie 4-2]]
 
 
+:: CDC1 Child Jessie 4-2 [S:Jessie T:Ben]
+Can you help me?
+
+[[CDC1 Child Bill 4-2]]
+
+
 :: CDC1 Child Bill 4-2 [S:Bill T:Ben]
 Little kid, all alone. Ma nowhere 'round. We should help, Sarge.
 
 [[CDC1 Child Ben 4-2]]
 
 
-:: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
-Where are you staying, Jessie?
+:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
+Too right, Bill, too right.
 
-[[CDC1 Child Jessie 4-3]]
-
-
-:: CDC1 Child Ben 4-4 [S:Ben T:Jessie]
-You go back there, Jessie. I'll talk to the driver, and come get you when we find her.
-[[CDC1 Child Jessie 4-4]]
-
-
-:: CDC1 Child Ben 4-5 [S:Ben T:Jessie]
-That's ok. You just wait outside the dark room. I'll find your mother and take her to you. 
-
-[[Ok, bye.|CDC1 Child Jessie 4-5]]
+[[CDC1 Child Ben 4-3]]
 
 
 :: CDCE1 [Ignore]
 Noone is sitting at this table. On top of the table is a bouquet of dandelions in a vase. 
-Under the table is a pistol with //Jessie// written on it. 
+Under the table is a pistol with <i>Jessie</i> written on it. 
 [[CDCE1 Jessie]]
 
 
@@ -257,7 +250,7 @@ By gosh you did! Sarge of Scottland Yard.
 
 
 :: CDC1 Ben 5-2 [S:Ben T:Bill]
-Nah, you're imagining things. It's just the "Dandelion Killer" gettin' you on edge. 
+Nah, you're imagining things. It's just <color=#ffa500ff>The Dandelion Killer</color> gettin' you on edge. 
 
 [[CDC1 Bill 5-3]]
 
@@ -266,16 +259,10 @@ Nah, you're imagining things. It's just the "Dandelion Killer" gettin' you on ed
 !!!!!BANG
 
 
-:: CDC1 Child Jessie 4-2 [S:Jessie T:Ben]
-Can you help me?
+:: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
+Where are you staying, Jessie?
 
-[[CDC1 Child Bill 4-2]]
-
-
-:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
-Too right, Bill, too right.
-
-[[CDC1 Child Ben 4-3]]
+[[CDC1 Child Jessie 4-3]]
 
 
 :: CDC1 Child Jessie 4-3 [S:Jessie T:Ben]
@@ -284,20 +271,31 @@ Right at the back, near the dark room.
 [[CDC1 Child Ben 4-4]]
 
 
+:: CDC1 Child Ben 4-4 [S:Ben T:Jessie]
+You go back there, Jessie. I'll talk to the driver, and come get you when we find her.
+[[CDC1 Child Jessie 4-4]]
+
+
 :: CDC1 Child Jessie 4-4 [S:Jessie T:Ben]
-//NO!// I don't want to go to the dark room!
+<i>NO!</i> I don't want to go to the dark room!
 
 [[CDC1 Child Ben 4-5]] 
 
 
+:: CDC1 Child Ben 4-5 [S:Ben T:Jessie]
+That's ok. You just wait outside the dark room. I'll find your mother and take her to you. 
+
+[[Ok, bye.|CDC1 Child Jessie 4-5]]
+
+
 :: CDCE2 [Ignore]
-The table is unoccupied. There are the remnants of food on the table. Under the table is a single dandelion and a photo of the woman. The photo is ripped so you can't see the head. 
+The table is unoccupied. There are the remnants of food on the table. Under the table is a single dandelion and a photo of Don.
 
 [[CDCE2 Jessie]]
 
 
 :: CDCE2 Jessie [S:Jessie]
-It's mummy! I wonder where she went. 
+It's that mean man. He was yelling at Mummy. 
 
 
 :: CDC1 Ben 3-3 [S:Ben T:Bill]
@@ -311,7 +309,170 @@ Yeah, s'pose you're right.
 [[Gunshot]]
 
 
+:: CDC2 Child Jessie 1-2 [S:Jessie T:Grace]
+Is that your boyfriend? He's pretty.
+
+[[CDC2 Child Dirk 1-1]]
+
+
+:: CDC2 Child Dirk 1-1 [S:Dirk T:Grace]
+Kid's got good taste. Maybe you've got similar sensibilities, Grace?
+
+[[CDC2 Child Grace 1-3]]
+
+
+:: CDC2 Child Grace 1-3 [S:Grace T:Dirk]
+Oh Dirk, you're a real card. You know I'm engaged to a wonderful man in London.
+
+[[Is he pretty?|CDC2 Child Jessie 1-5]]
+[[So your husband's rich, then?|CDC2 Child Jessie 1-6]]
+
+
+:: CDC2 Child Jessie 1-5 [S:Jessie T:Grace]
+Is he pretty, like your friend?
+
+[[CDC2 Child Dirk 1-2]]
+
+
+:: CDC2 Child Dirk 1-2 [T:Dirk S:Grace]
+Yes, Grace; is he pretty like me?
+
+[[CDC2 Child Grace 1-4]]
+
+
 :: CDC2 [Ignore]
-Joy and Grace, high class women, at a table. They are gossiping and talking about something. 
+Grace and Dirk (DK). They are sitting and having a pleasent conversation about lovely things. 
+
+
+:: MDC2 Dirk 1-1 [StartNode S:Dirk T:Grace]
+--120s
+
+Well, now, aren't you just the prettiest thing!
+
+[[MDC2 Grace 1-1]]
+
+
+:: MDC2 Grace 1-1 [S:Grace T:Dirk]
+You're very nice, but I already have a boyfriend.
+[[MDC2 Dirk 1-2]]
+
+
+:: MDC2 Dirk 1-2 [S:Dirk T:Grace]
+A lady as lovely as yourself? I've no doubt. 
+
+[[MDC2 Grace 1-2]]
+
+
+:: MDC2 Grace 1-2 [S:Grace T:Dirk]
+Hahaha, you should count yourself lucky that my fiance isn't riding with me.
+[[MDC2 Dirk 1-3]]
+
+
+:: MDC2 Dirk 1-3 [S:Dirk T:Grace]
+Travelling alone? A dangerous habit for someone of your class.
+
+[[MDC2 Grace 1-3]]
+
+
+:: MDC2 Grace 1-3 [S:Grace T:Dirk]
+I'm not wealthy, sir. At least not yet. And I am hardly alone. My father rides this very train with me.
+
+[[MDC2 Dirk 1-4]]
+
+
+:: CDC2 Child Grace 1-1 [S:Grace T:Jessie Start:Approach]
+Hey there, little one. Where's your mummy?
+
+[[I don't know. Have you seen her?|CDC2 Child Jessie 1-1]]
+[[Is that your boyfriend?|CDC2 Child Jessie 1-2]]
+
+
+:: CDC2 Child Jessie 1-6 [S:Jessie T:Grace]
+So your husband has lots of money?
+
+[[CDC2 Child Grace 1-5]]
+
+
+:: CDC2 Child Grace 1-5 [S:Grace T:Jessie]
+Not my husband yet, little one. We're to be married soon, though; real soon, if my father has his say.
+
+[[CDC2 Child Jessie 1-7]]
+
+
+:: CDC2 Child Jessie 1-7 [S:Jessie T:Grace]
+Ew, adults are gross. I'm leaving.
+
+[[CDC2 Child Dirk 1-3]]
+
+
+:: CDC2 Child Dirk 1-3 [S:Dirk T:Grace Start:Leave]
+So, soon-to-be-wedded Grace, tell me more about your big man in the big city...
+
+
+
+:: MDC2 Dirk 1-4 [S:Dirk T:Grace]
+It is a criminal act on his part to leave you unattended. Why, here you are convorting with a stranger when you are to be married. Hardly seemly of you.
+
+[[MDC2 Grace 1-4]]
+
+
+:: MDC2 Grace 1-4 [S:Grace T:Dirk]
+And will you protect me, good sir? Will you vouch for my honour?
+
+[[MDC2 Dirk 1-5]]
+
+
+:: MDC2 Dirk 1-5 [S:Dirk T:Grace]
+I'll hear of nothing less! 
+
+[[MDC2 Grace 1-5]]
+
+
+:: MDC2 Grace 1-5 [S:Grace T:Dirk]
+There, you see? I am well cared for. My father will be glad that you and I crossed paths.
+
+[[MDC2 Dirk 1-6]]
+
+
+:: MDC2 Dirk 1-6 [S:Dirk T:Grace]
+And where is this father of yours? You assure me he accompanies you, and yet I've seen neither hide nor hair of him since we began this torrid affair.
+
+[[MDC2 Grace 1-6]]
+
+
+:: MDC2 Grace 1-6 [S:Grace T:Dirk]
+Watch your tongue, sir. My father is dealing with a personal matter. I am sure he will be along presently.
+
+
+:: CDC2 Child Jessie 1-1 [S:Jessie T:Grace]
+I don't know. Have you seen her?
+
+[[CDC2 Child Grace 1-2]]
+
+
+:: CDC2 Child Grace 1-2 [S:Grace T:Jessie]
+I haven't, sweety. What about your daddy?
+
+[[CDC2 Child Jessie 1-4]]
+
+
+:: CDC2 Child Jessie 1-4 [S:Jessie T:Grace]
+He's not here. We're going to visit him in the big city in his big house.
+
+[[CDC2 Child Grace 1-6]]
+
+
+:: CDC2 Child Grace 1-6 [S:Grace T:Jessie]
+What a coincidence; I'm going to visit my fiancé in his big house in the city as well.
+
+[[Is he pretty, like your friend?|CDC2 Child Jessie 1-5]]
+[[So your husband's rich, then?|CDC2 Child Jessie 1-6]]
+
+
+:: CDC2 Child Grace 1-4 [S:Grace T:Dirk]
+Oh, you're a right rascal, you are! You know looks aren't everything in a man of standing...
+
+[[So your husband's rich, then?|CDC2 Child Jessie 1-6]]
+[[Ew, adults are gross.|CDC2 Child Jessie 1-7]]
 
 

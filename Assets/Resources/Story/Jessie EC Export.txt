@@ -33,7 +33,7 @@ Everything goes dark. A word comes onto the screen - BANG
 
 
 :: CEC1 [Ignore]
-Chris and Moira sit in this seat. They are talking about The Dandelion Killer. 
+Chris and Moira sit in this seat. They are talking about <b>The Dandelion Killer</b>.
 
 [[CEC1 Moira 1-1]]
 

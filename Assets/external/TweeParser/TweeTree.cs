@@ -52,6 +52,7 @@ public class TweeTree : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 		_nodes = new Dictionary<string, TweeNode>();
 		_characters = new Dictionary<string, TweeCharacter>();
+		_props = new Dictionary<string, TweeCharacter>();
 
 		TextAsset[] scripts = Resources.LoadAll<TextAsset>("Story");
 		foreach(TextAsset script in scripts) {
@@ -112,7 +113,7 @@ public class TweeTree : MonoBehaviour {
 	}
 
 	private void ParseNode(string text, string filename) {
-		TweeNode node = new TweeNode(text, _characters);
+		TweeNode node = new TweeNode(text, _characters, _props);
 		if (_nodes.ContainsKey(node.Name)) {
 			if (!_nodes[node.Name].isIgnored) {
 				Debug.LogError("Twine Parsing: We already have a node called \""+node.Name+"\"");
@@ -155,7 +156,26 @@ public class TweeTree : MonoBehaviour {
 		return names;
 	}
 
+	public TweeCharacter getProp(string name) {
+		if (_props.ContainsKey(name)) {
+			return _props[name];
+		} else {
+			return null;
+		}
+	}
+	
+	public string[] getPropNames() {
+		string[] names = new string[_characters.Count];
+		int index = 0;
+		foreach(string key in _props.Keys) {
+			names[index] = key;
+			index++;
+		}
+		return names;
+	}
+
 	private static TweeTree _instance;
 	private Dictionary<string, TweeNode> _nodes;
 	private Dictionary<string, TweeCharacter> _characters;
+	private Dictionary<string, TweeCharacter> _props;
 }

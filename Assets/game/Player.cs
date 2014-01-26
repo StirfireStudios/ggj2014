@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
 	public static Player Instance;
 
-	public string charcterName;
+	public string characterName;
 
 	void Awake()
 	{
