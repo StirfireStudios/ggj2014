@@ -12,11 +12,11 @@ public class MusicPlayer : MonoBehaviour {
 			clip.volume = clip.volume - fadeamount;
 			yield return new WaitForSeconds(fadedelay);
 		}
-		clip.Stop();
-		clip.volume = 1.0f;
+		clip.Pause();
 	}
 
 	IEnumerator fadein(AudioSource clip) {
+		_current = clip;
 		clip.volume = 0;
 		clip.Play();
 		while (clip.volume < 1.0f) {
