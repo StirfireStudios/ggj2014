@@ -85,7 +85,7 @@ public class TweeNode {
 			return text.Substring(index+1, text.Length - (index + 2)).Trim();
 	}
 
-	public TweeNode(string text, Dictionary <string, TweeCharacter> characters) {
+	public TweeNode(string text, Dictionary <string, TweeCharacter> characters, Dictionary <string, TweeCharacter> props) {
 		_flags = 0;
 		string[] lines = text.Split(new string[] {"\n"}, System.StringSplitOptions.None);
 		if (lines[0].Contains("[")) {
@@ -109,6 +109,9 @@ public class TweeNode {
 					_target = TweeTree.findOrAddCharacter(tag, characters);
 				} else if (tag.StartsWith("P:") || tag.StartsWith("p:")) {
 					_player = TweeTree.findOrAddCharacter(tag, characters);
+				} else if (String.Equals(tag.Substring(0, 5), "prop:", StringComparison.OrdinalIgnoreCase)) {
+					_prop = TweeTree.findOrAddCharacter(tag, props);
+					Debug.Log("Add Prop! " + _prop.Name);
 				}
 			} 
 			if (!isDialog && !isEvent) {
@@ -165,5 +168,6 @@ public class TweeNode {
 	private TweeCharacter _speaker;
 	private TweeCharacter _target;
 	private TweeCharacter _player;
+	private TweeCharacter _prop;
 	private TweeLink[] _links;
 }
