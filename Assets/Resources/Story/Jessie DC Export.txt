@@ -2,42 +2,8 @@
 
 
 
-:: Train 00s [Ignore]
-Train is driving along track.
-[[Train 60s]]
-
-
-:: Train 60s [Ignore]
-Train hits a bump.
-[[Train 120s]]
-
-
-:: Train 120s [Ignore]
-Gun is swapped with toy gun.
-
-Train passes village.
-[[Train 180s]]
-
-
-:: Train 180s [Ignore]
-Dessert is being served in dining cart.
-[[Train 240s]]
-
-
-:: Train 240s [Ignore]
-One of the train staff finds the body.
-Train approaches the tunnel.
-[[Train 300s]]
-
-
-:: Train 300s [Ignore]
-Everything goes dark. A word comes onto the screen - BANG
-
-[[Gunshot]]
-
-
 :: CDC1 Bill 1-1 [StartNode S:Bill T:Ben]
---75s
+--15
 Four women he's killed, now. And we're plumb useless to stop him.
 
 [[CDC1 Ben 1-1]]
@@ -51,20 +17,19 @@ Sure. I guess. He ain't no Jack. He'll slip up.
 
 
 :: CDC1 Ben 3-1 [S:Ben T:Bill]
---120s
 Hey, look, Bill! It's the village where I grew up!
 [[CDC1 Bill 3-1]]
 
 
 :: CDC1 Ben 4-1 [S:Bill T:Ben]
---180s
+--36
 Looks like dessert is here. Something sweet, that'll take your mind off <color=#ffa500ff>The Dandelion Killer</color>. 
 
 [[CDC1 Bill 4-1]]
 
 
 :: CDC1 Bill 5-1 [S:Bill T:Ben]
---240s
+--48
 Did you hear something?
 [[CDC1 Ben 5-1]]
 
@@ -223,6 +188,41 @@ Little kid, all alone. Ma nowhere 'round. We should help, Sarge.
 [[CDC1 Child Ben 4-2]]
 
 
+:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
+Too right, Bill, too right.
+
+[[CDC1 Child Ben 4-3]]
+
+
+:: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
+Where did you see your mummy last, Jessie?
+
+[[CDC1 Child Jessie 4-3]]
+
+
+:: CDC1 Child Jessie 4-3 [S:Jessie T:Ben]
+Right at the back, near the dark room.
+
+[[CDC1 Child Ben 4-4]]
+
+
+:: CDC1 Child Ben 4-4 [S:Ben T:Jessie]
+You go back there. I'll talk to the driver, and come get you when we find her.
+[[CDC1 Child Jessie 4-4]]
+
+
+:: CDC1 Child Jessie 4-4 [S:Jessie T:Ben]
+<i>NO!</i> I don't want to go to the dark room!
+
+[[CDC1 Child Ben 4-5]] 
+
+
+:: CDC1 Child Ben 4-5 [S:Ben T:Jessie]
+That's ok. You just wait outside the dark room. I'll find your mother and take her to you. 
+
+[[Ok, bye.|CDC1 Child Jessie 4-5]]
+
+
 :: CDCE1 [Ignore]
 Noone is sitting at this table. On top of the table is a bouquet of dandelions in a vase. 
 Under the table is a pistol with <i>Jessie</i> written on it. 
@@ -248,52 +248,13 @@ Nah, you're imagining things. It's just <color=#ffa500ff>The Dandelion Killer</c
 [[CDC1 Bill 5-3]]
 
 
-:: Gunshot [Ignore]
-!!!!!BANG
-
-
-:: CDC1 Child Ben 4-2 [S:Ben T:Bill]
-Too right, Bill, too right.
-
-[[CDC1 Child Ben 4-3]]
-
-
-:: CDC1 Child Ben 4-3 [S:Ben T:Jessie]
-Where was your mummy last, Jessie?
-
-[[CDC1 Child Jessie 4-3]]
-
-
-:: CDC1 Child Jessie 4-3 [S:Jessie T:Ben]
-Right at the back, near the dark room.
-
-[[CDC1 Child Ben 4-4]]
-
-
-:: CDC1 Child Ben 4-4 [S:Ben T:Jessie]
-You go back there, Jessie. I'll talk to the driver, and come get you when we find her.
-[[CDC1 Child Jessie 4-4]]
-
-
-:: CDC1 Child Jessie 4-4 [S:Jessie T:Ben]
-<i>NO!</i> I don't want to go to the dark room!
-
-[[CDC1 Child Ben 4-5]] 
-
-
-:: CDC1 Child Ben 4-5 [S:Ben T:Jessie]
-That's ok. You just wait outside the dark room. I'll find your mother and take her to you. 
-
-[[Ok, bye.|CDC1 Child Jessie 4-5]]
-
-
 :: CDCE2 [Ignore]
 The table is unoccupied. There are the remnants of food on the table. Under the table is a single dandelion and a photo of Don.
 
 [[CDCE2 Jessie]]
 
 
-:: CDCE2 Jessie [Prop:DonPhoto S:Jessie]
+:: CDCE2 Jessie [S:Jessie Prop:Photo]
 It's that mean man. He was yelling at Mummy. 
 
 
@@ -305,7 +266,7 @@ With my best mate by me side.
 
 :: CDC1 Bill 5-3 [S:Bill T:Ben]
 Yeah, s'pose you're right. 
-[[Gunshot]]
+
 
 
 :: CDC2 Child Jessie 1-2 [S:Jessie T:Grace]
@@ -344,7 +305,7 @@ Grace and Dirk (DK). They are sitting and having a pleasent conversation about l
 
 
 :: CDC2 Dirk 1-1 [StartNode S:Dirk T:Grace]
---120s
+--24
 
 Well, now, aren't you just the prettiest thing!
 

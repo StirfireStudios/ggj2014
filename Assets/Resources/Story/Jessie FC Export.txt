@@ -1,38 +1,4 @@
-﻿:: Train 00s [Ignore]
-Train is driving along track.
-
-
-:: Train 60s [Ignore]
-Train hits a bump.
-
-
-:: Train 120s [Ignore]
-Gun is swapped with toy gun.
-
-
-
-:: Train 180s [Ignore]
-Dessert is being served in dining cart.
-
-
-
-:: Train 240s [Ignore]
-One of the train staff finds the body.
-Train approaches the tunnel.
-
-
-
-:: Train 300s [Ignore]
-Everything goes dark. A word comes onto the screen - BANG
-
-[[Gunshot]]
-
-
-:: Start [Ignore]
-Your story will display this passage first. Edit it by double clicking it.
-
-
-:: CFC1 [Ignore]
+﻿:: CFC1 [Ignore]
 A man and woman are in this compartment. The woman is looking out the window. The man is reading a paper. The headline reads "Dandelion Killer Still At Large"
 
 
@@ -43,7 +9,7 @@ Have you read the papers, Mavis?
 
 
 :: CFC1 John 2-1 [S:John T:Mavis]
---60s
+--12
 Damn these modern railways. No structure. In my day we kept our tracks up to standard. None of this "falts in the line" business.
 --
 [[CFC1 Mavis 2-1]]
@@ -56,11 +22,25 @@ Useless, these men are, useless.
 [[CFC1 Mavis 3-1]]
 
 
-:: CFC1 John 5-1 [S:John T:Mavis]
---295s
-Looks like it's about to get dark again. 
+:: CFC2 Child Jessie 1-1 [S:Jessie T:Sally]
+I'm bored! Will you play with me?
 
-[[Gunshot]]
+[[CFC2 Child Sally 1-2]]
+
+
+:: CFC2 Child Sally 1-2 [S:Sally T:Jessie]
+Not right now, dear.
+
+[[Ok, bye!|CFC2 Child Jessie 3-1]]
+[[Have you seen my mummy?|CFC2 Child Jessie 2-1]]
+
+
+:: CFC2 Child Jessie 3-1 [S:Jessie T:Beth]
+Ok, bye.
+
+
+:: Start [Ignore]
+Your story will display this passage first. Edit it by double clicking it.
 
 
 :: CFC1 Mavis 1-1 [S:Mavis T:John]
@@ -80,6 +60,31 @@ Yes, dear.
 [[CFC1 John 5-1]]
 
 
+:: CFC1 John 5-1 [S:John T:Mavis]
+--59
+Looks like it's about to get dark again. 
+
+
+
+:: CFC2 Child Beth 1-1 [S:Beth T:Sally Start:Approach]
+Oh, goodness, there's a child in the room!
+[[CFC2 Child Sally 1-1]]
+
+
+:: CFC2 Child Sally 1-1 [S:Sally T:Jessie]
+What are you doing here, little one?
+
+[[I'm bored.|CFC2 Child Jessie 1-1]]
+[[Have you seen my mummy?|CFC2 Child Jessie 2-1]]
+
+
+:: CFC2 Child Beth 2-1 [S:Beth T:Jessie]
+Mummy probably needs her sleep. Run along now!
+
+[[Ok, bye.|CFC2 Child Jessie 3-1]]
+
+
+
 :: CFC1 John 1-2 [S:John T:Mavis]
 They still haven't caught <color#ffa500ff>=The Dandelion Killer</color>. It's getting to be your aren't safe in you're own home. Isn't it, Mavis?
 
@@ -92,10 +97,21 @@ We worked good and hard, and we were glad for the work!
 [[CFC1 Mavis 2-2]]
 
 
-:: Gunshot [Ignore]
---300s
+:: CFC2 Child Jessie 2-1 [S:Jessie T:Beth]
+Have you seen my mummy?
 
-!!!!!BANG
+[[CFC2 Child Beth 2-2]]
+
+
+:: CFC2 Child Beth 2-2 [S:Beth T:Jessie]
+When did you see your mummy last?
+
+[[We were playing Cops and Robbers.|CFC2 Child Jessie 2-3]]
+
+
+:: CFC2 Child Jessie 2-3 [S:Jessie T:Beth]
+We were playing Cops and Robbers. Then she fell asleep. 
+[[CFC2 Child Beth 2-1]]
 
 
 :: CFC1 Mavis 1-2 [S:Mavis T:John]
@@ -127,7 +143,7 @@ Tennis Dialogue
 
 
 :: CFC2 Beth 4-1 [S:Beth T:Sally]
-Tennis Dialogue
+LEEEEROOOOOOY JENKINS!!!!!!!!!!
 
 [[CFC2 Sally 4-1]]
 
@@ -136,19 +152,6 @@ Tennis Dialogue
 Tennis Dialogue
 
 [[CFC2 Sally 5-1]]
-
-
-:: CFC2 Child Jessie 1-1 [S:Jessie T:Sally]
-I'm bored! Will you play with me?
-
-[[CFC2 Child Sally 1-2]]
-
-
-:: CFC2 Child Sally 1-2 [S:Sally T:Jessie]
-Not right now, dear.
-
-[[Ok, bye!|CFC2 Child Jessie 3-1]]
-[[Have you seen my mummy?|CFC2 Child Jessie 2-1]]
 
 
 :: CFC2 [Ignore]
@@ -182,47 +185,5 @@ Tennis Dialogue
 
 :: CFC2 Sally 5-1 [S:Sally T:Beth]
 Tennis Dialogue
-
-[[Gunshot]]
-
-
-:: CFC2 Child Beth 1-1 [S:Beth T:Sally Start:Approach]
-Oh, goodness, there's a child in the room!
-[[CFC2 Child Sally 1-1]]
-
-
-:: CFC2 Child Sally 1-1 [S:Sally T:Jessie]
-What are you doing here, little one?
-
-[[I'm bored.|CFC2 Child Jessie 1-1]]
-[[Have you seen my mummy?|CFC2 Child Jessie 2-1]]
-
-
-:: CFC2 Child Jessie 3-1 [S:Jessie T:Beth]
-Ok, bye.
-
-
-:: CFC2 Child Jessie 2-1 [S:Jessie T:Beth]
-Have you seen my mummy?
-
-[[CFC2 Child Beth 2-2]]
-
-
-:: CFC2 Child Beth 2-2 [S:Beth T:Jessie]
-When did you see your mummy last?
-
-[[We were playing Cops and Robbers.|CFC2 Child Jessie 2-3]]
-
-
-:: CFC2 Child Jessie 2-3 [S:Jessie T:Beth]
-We were playing Cops and Robbers. Then she fell asleep. 
-[[CFC2 Child Beth 2-1]]
-
-
-:: CFC2 Child Beth 2-1 [S:Beth T:Jessie]
-Mummy probably needs her sleep. Run along now!
-
-[[Ok, bye.|CFC2 Child Jessie 3-1]]
-
 
 
