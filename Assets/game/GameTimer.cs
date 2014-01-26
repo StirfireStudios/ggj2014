@@ -4,11 +4,13 @@ using System.Collections;
 public class GameTimer : MonoBehaviour
 {
 	public float tickLength = 5;
+	public int ticksToEndGame = 30;
 
 	Rect advanceRect;
 	bool alreadyAdvanced = false;
 
 	float timer = 0;
+	int tickCount = 0;
 
 	void Awake()
 	{
@@ -24,6 +26,12 @@ public class GameTimer : MonoBehaviour
 		{
 			MessagePasser.send("game-tick", null);
 			timer = timer - tickLength;
+			tickCount++;
+			if (tickCount >= ticksToEndGame)
+			{
+				MessagePasser.send("time-end", null);
+				tickCount = 0;
+			}
 		}
 	}
 
