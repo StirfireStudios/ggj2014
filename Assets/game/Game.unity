@@ -7010,9 +7010,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3864c1b388e77438ca6da30f401e6a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxCameraTilt: 90
-  JoyStickCameraPanSensitivity: 1
-  MouseCameraPanSensitivity: 100
+  MaxCameraTilt: 80
+  JoyStickCameraPanSensitivity: 3.5
+  MouseCameraPanSensitivity: 10
+  JoyStickCameraTiltSensitivity: 3.5
+  MouseCameraTiltSensitivity: 10
 --- !u!124 &845711708
 Behaviour:
   m_ObjectHideFlags: 0
