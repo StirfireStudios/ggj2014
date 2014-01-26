@@ -7,7 +7,7 @@ public class TweeNodeSection {
 
 	public TweeNodeSection(string data) {
 		int startLine = 0;
-		_delay = 10;
+		_delay = 1;
 		string[] lines = data.Split(new string[] {"\n"}, System.StringSplitOptions.None);
 		if ((lines[0].Length > 1) && lines[0].StartsWith("--")) {
 			startLine = 1;
