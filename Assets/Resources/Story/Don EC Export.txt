@@ -1,4 +1,8 @@
-﻿:: Train 00s [Ignore]
+﻿:: Start [Ignore]
+
+
+
+:: Train 00s [Ignore]
 Train is driving along track.
 [[Train 60s]]
 
@@ -32,6 +36,25 @@ Everything goes dark. A word comes onto the screen - BANG
 [[Gunshot]]
 
 
+:: MEC2 [Ignore]
+This is the seat where Don wakes up. There is a knife next to him. 
+[[MEC2-1]]
+
+
+:: MEC2-1 [S:Don Prop:Knife]
+Shit. Better take that with me. Don't want to cause a panic.
+
+[[MEC2-2]]
+
+
+:: MEC2-2 [Event:Knife]
+[[MEC2-3]]
+
+
+:: MEC2-3 [S:Don]
+Where has Grace gone? I told her to stay here! It's not safe. Anyone could be on this train. Even <color=#ffa500ff>The Dandelion Killer</color>.
+
+
 :: MEC1 [Ignore]
 Chris and Moira sit in this seat. They are talking about The Dandelion Killer. 
 
@@ -45,15 +68,26 @@ I heard he slits their throats like stuck pigs! Leaves 'em to die all slow-like.
 [[MEC1 Chris 1-1]]
 
 
+:: MEC1 Moira 1-3 [S:Moira T:Chris]
+Serves 'em right, I says. Right lot o' sows, the lot of 'em.
+
+[[MEC1 Chris 1-3]]
+
+
 :: MEC1 Chris 2-1 [S:Chris T:Moira]
---60s
 What you got against them lot, anyways? They ain't done nothin' t' you. 
 
 [[MEC1 Moira 2-1]]
 
 
+:: MEC1 Moira 2-2 [S:Moira T:Chris]
+That ain't true, and you knows it!
+
+[[MEC1 Chris 2-3]]
+
+
 :: MEC1 Moira 5-1 [S:Moira T:Chris]
---295s
+--59
 Shit! What's all that screaming about?
 [[Gunshot]]
 
@@ -64,56 +98,16 @@ Don't be so daft. He shoots 'em, clean through. They never even saw it coming.
 [[MEC1 Moira 1-2]]
 
 
+:: MEC1 Chris 1-3 [S:Chris T:Moira]
+You're one to talk, you lazy cow. 
+
+[[MEC1 Moira 1-4]]
+
+
 :: MEC1 Moira 2-1 [S:Moira T:Chris]
 Thems new money, that's who he's gettin'. Them women with all their air and graces. They thinks they're bett'r 'n' us little folk. Forgotten their roots, I tells you that!
 
 [[MEC1 Chris 2-2]]
-
-
-:: Gunshot [Ignore]
-!!!!!BANG
-
-
-:: MEC1 Moira 1-2 [S:Moira T:Chris]
---
-It was a knife, I swears it! Ma's friend Linda, she told Ma, 'n' Ma told me. 
-
-[[MEC1 Chris 1-2]]
-
-
-:: MEC1 Chris 2-2 [S:Chris T:Moira]
-Don't start. Ever since you cousin married that rich fella, you been sour as a tart. 
-
-[[MEC1 Moira 2-2]]
-
-
-:: MEC1 Chris 1-2 [S:Chris T:Moira]
---
-Oh, who cares how he does it. Dead's dead, innit? 
-
-[[MEC1 Moira 1-3]]
-
-
-:: MEC1 Moira 2-2 [S:Moira T:Chris]
-That ain't true, and you knows it!
-
-[[MEC1 Chris 2-3]]
-
-
-:: MEC2 [Ignore]
-This is the seat where Don wakes up. There is a knife next to him. 
-[[MEC2-1]]
-
-
-:: MEC2-1 [S:Don]
-Shit. Better take that with me. Don't want to cause a panic.
-
-
-:: MEC1 Moira 1-3 [S:Moira T:Chris]
---
-Serves 'em right, I says. Right lot o' sows, the lot of 'em.
-
-[[MEC1 Chris 1-3]]
 
 
 :: MEC1 Chris 2-3 [S:Chris T:Moira]
@@ -122,11 +116,26 @@ Calm down, love. You knows I love you.
 [[MEC1 Moira 2-3]]
 
 
-:: MEC1 Chris 1-3 [S:Chris T:Moira]
---
-You're one to talk, you lazy cow. 
+:: Gunshot [Ignore]
+!!!!!BANG
 
-[[MEC1 Moira 1-4]]
+
+:: MEC1 Moira 1-2 [S:Moira T:Chris]
+It was a knife, I swears it! Ma's friend Linda, she told Ma, 'n' Ma told me. 
+
+[[MEC1 Chris 1-2]]
+
+
+:: MEC1 Moira 1-4 [S:Moira T:Chris]
+Oi, leave off! 
+
+[[MEC1 Chris 2-1]]
+
+
+:: MEC1 Chris 2-2 [S:Chris T:Moira]
+Don't start. Ever since you cousin married that rich fella, you been sour as a tart. 
+
+[[MEC1 Moira 2-2]]
 
 
 :: MEC1 Moira 2-3 [S:Moira T:Chris]
@@ -135,9 +144,9 @@ Yeah, I know, I know.
 [[MEC1 Moira 5-1]]
 
 
-:: MEC1 Moira 1-4 [S:Moira T:Chris]
-Oi, leave off! 
+:: MEC1 Chris 1-2 [S:Chris T:Moira]
+Oh, who cares how he does it. Dead's dead, innit? 
 
-[[MEC1 Chris 2-1]]
+[[MEC1 Moira 1-3]]
 
 

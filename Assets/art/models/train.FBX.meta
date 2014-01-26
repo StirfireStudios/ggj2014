@@ -171,6 +171,11 @@ ModelImporter:
     100330: SC_crate_03
     100332: SC_floor
     100334: SC_walls
+    100336: DR_exitWall002
+    100338: DR_exitWall003
+    100340: DR_exterior002
+    100342: DR_exterior003
+    100344: FC_exitWall
     400000: Box002
     400002: Box003
     400004: Box004
@@ -339,6 +344,11 @@ ModelImporter:
     400330: SC_crate_03
     400332: SC_floor
     400334: SC_walls
+    400336: DR_exitWall002
+    400338: DR_exitWall003
+    400340: DR_exterior002
+    400342: DR_exterior003
+    400344: FC_exitWall
     2300000: Box002
     2300002: Box003
     2300004: Box004
@@ -506,6 +516,11 @@ ModelImporter:
     2300328: SC_crate_03
     2300330: SC_floor
     2300332: SC_walls
+    2300334: DR_exitWall002
+    2300336: DR_exitWall003
+    2300338: DR_exterior002
+    2300340: DR_exterior003
+    2300342: FC_exitWall
     3300000: Box002
     3300002: Box003
     3300004: Box004
@@ -673,6 +688,11 @@ ModelImporter:
     3300328: SC_crate_03
     3300330: SC_floor
     3300332: SC_walls
+    3300334: DR_exitWall002
+    3300336: DR_exitWall003
+    3300338: DR_exterior002
+    3300340: DR_exterior003
+    3300342: FC_exitWall
     4300000: DR
     4300002: Box002
     4300004: Box003
@@ -840,6 +860,11 @@ ModelImporter:
     4300328: SC_crate_015
     4300330: SC_crate_016
     4300332: SC_crate_017
+    4300334: DR_exterior002
+    4300336: DR_exitWall002
+    4300338: DR_exterior003
+    4300340: DR_exitWall003
+    4300342: FC_exitWall
     9500000: //RootNode
   materials:
     importMaterials: 1

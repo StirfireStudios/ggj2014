@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PlayerCamera : MonoBehaviour {
 
-	public float MaxCameraPanY = 90.0f;
-	public float CameraPanSensitivity = 1.0f;
+	public float MaxCameraTilt = 90.0f;
+	public float JoyStickCameraPanSensitivity = 1.0f;
+	public float MouseCameraPanSensitivity = 15.0f;
 	
 	void Awake() {
 		MessagePasser.subscribe("controller-status", OnControllerStatus);
@@ -15,6 +16,14 @@ public class PlayerCamera : MonoBehaviour {
 	void Start () {
 	
 	}
+
+	void moveCameraBy(float amount) {
+		_cameraPanY += Input.GetAxis("RightVertical") * JoyStickCameraPanSensitivity;
+		Mathf.Clamp (_cameraPanY, -MaxCameraTilt, MaxCameraTilt);
+
+		Debug.Log ("Transform by: " + _cameraPanY);
+		transform.eulerAngles = new Vector3(_cameraPanY, 0);
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,24 +32,20 @@ public class PlayerCamera : MonoBehaviour {
 			return;
 		}
 
+		Vector3 vcamera;
+
 		if (_controller) {
-			_cameraPanY += Input.GetAxis("RightVertical") * CameraPanSensitivity;
-
-			if (_cameraPanY < -MaxCameraPanY) {
-				_cameraPanY = -MaxCameraPanY;
-			} else if (_cameraPanY > MaxCameraPanY) {
-				_cameraPanY = MaxCameraPanY;
-			}
-
-			Vector3 vcamera = new Vector3(_cameraPanY, 0);
-
-			if (camera != null) {
-				Debug.Log ("Transform Camera!");
-				transform.eulerAngles = vcamera;
-			}
+			moveCameraBy(Input.GetAxis("RightVertical") * JoyStickCameraPanSensitivity);
 		} else {
-			// Mouse keyboard / touchscreen
+			if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer) {
+
+			} else {
+				Debug.Log ("Mouse: " + Input.GetAxis("Mouse Y") * MouseCameraPanSensitivity);
+	           moveCameraBy(Input.GetAxis("Mouse Y") * MouseCameraPanSensitivity);
+			}
 		}
+		
+
 	}
 
 	public void OnControllerStatus(string message, string arg) {

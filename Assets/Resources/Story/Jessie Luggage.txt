@@ -1,0 +1,27 @@
+﻿:: Start [Ignore]
+Your story will display this passage first. Edit it by double clicking it.
+
+
+:: CLC Jessie 1-1 [S:Jessie Prop:Annabelle]
+Mummy?
+[[CLC Jessie 1-2]]
+
+
+:: CLC Jessie 1-2 [S:Jessie]
+Mummy, hello?
+
+[[CLC Jessie 1-3]]
+
+
+:: CLC Jessie 1-3 [S:Jessie]
+--
+Are you still sleeping, mummy?
+
+[[CLC Jessie 1-4]]
+
+
+:: CLC Jessie 1-4 [S:Jessie]
+--
+<size=35>... Mummy?</size>
+
+
