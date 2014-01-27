@@ -63,7 +63,13 @@ public class Player : MonoBehaviour
 	{
 		characterName = names[1];
 		PlayerSpawn.MoveTo(transform, characterName);
-		cameraTrans.localPosition = Vector3.up * 0.45f;
+		//adjust height to be child
+		cameraTrans.localPosition = Vector3.up * 0.4f;
+		Vector3 pos = transform.position;
+		pos.y = 0.45f;
+		CharacterController col = GetComponent<CharacterController>();
+		col.height = 0.9f;
+		//col.center = Vector3.down * 0.15f;
 	}
 
 	public static void PointAt(Transform target)
