@@ -62,9 +62,7 @@ public class DialogueMachine
 			return;
 		}
 		TweeNodeSection section = currentNode.Sections[currentSection];
-		Debug.Log("Delay: "+section.Delay+" "+section.Text);
 		currentDelay++;
-		Debug.Log("Current delay: "+currentDelay);
 		if (currentDelay >= section.Delay)
 		{
 			currentDelay = 0;

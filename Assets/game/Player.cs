@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 		cameraTrans.localPosition = Vector3.up * 0.4f;
 		Vector3 pos = transform.position;
 		pos.y = 0.45f;
+		transform.position = pos;
 		CharacterController col = GetComponent<CharacterController>();
 		col.height = 0.9f;
 		//col.center = Vector3.down * 0.15f;

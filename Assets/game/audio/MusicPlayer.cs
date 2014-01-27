@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public class MusicPlayer : MonoBehaviour {
 
-	public float fadedelay;
-	public float fadeamount;
+	public float fadeTime = 1;
 
 	IEnumerator fadeout(AudioSource clip) {
+		float delta = 1 / fadeTime;
 		while (clip.volume > 0) {
-			clip.volume = clip.volume - fadeamount;
-			yield return new WaitForSeconds(fadedelay);
+			clip.volume = clip.volume - delta * Time.deltaTime;
+			yield return new WaitForEndOfFrame();
 		}
 		clip.Pause();
 	}
@@ -19,15 +19,17 @@ public class MusicPlayer : MonoBehaviour {
 		_current = clip;
 		clip.volume = 0;
 		clip.Play();
+		float delta = 1 / fadeTime;
 		while (clip.volume < 1.0f) {
-			clip.volume = clip.volume + fadeamount;
-			yield return new WaitForSeconds(fadedelay);
+			clip.volume = clip.volume + delta * Time.deltaTime;
+			yield return new WaitForEndOfFrame();
 		}
 		clip.volume = 1.0f;
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		_clips = new Dictionary<string, AudioSource>();
 		foreach(AudioSource player in GetComponentsInChildren<AudioSource>()) {
 			if (player.name != "Music") {
@@ -36,7 +38,8 @@ public class MusicPlayer : MonoBehaviour {
 		}
 
 		MessagePasser.subscribe("music-start", OnStart);
-		MessagePasser.subscribe("music-stop", OnStop);	
+		MessagePasser.subscribe("music-stop", OnStop);
+		MessagePasser.subscribe("time-end", OnTimeEnd);
 	}
 
 	private string getFilename(string arg){
@@ -66,9 +69,22 @@ public class MusicPlayer : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
-	void Update () {
 
+	public void OnTimeEnd(string message, string arg)
+	{
+		StartCoroutine(characterChange());
+	}
+
+	IEnumerator characterChange()
+	{
+		yield return new WaitForEndOfFrame();
+		foreach (string key in _clips.Keys)
+		{
+			if (!key.Contains(Player.Instance.characterName))
+			{
+				StartCoroutine("fadeout", _clips[key]);
+			}
+		}
 	}
 	
 	private Dictionary<string, AudioSource> _clips;
