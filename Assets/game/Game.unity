@@ -7467,8 +7467,8 @@ GameObject:
   - 20: {fileID: 845711710}
   - 92: {fileID: 845711709}
   - 124: {fileID: 845711708}
-  - 114: {fileID: 845711707}
   - 81: {fileID: 845711706}
+  - 114: {fileID: 845711707}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7498,22 +7498,17 @@ AudioListener:
 --- !u!114 &845711707
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: 9d4133d5d30b644bd87802a347eaccbe,
-    type: 2}
-  m_PrefabInternal: {fileID: 1716369938}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 845711704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec2fe99d1108b9d0006a298d76c639, type: 3}
+  m_Script: {fileID: 11500000, guid: 3864c1b388e77438ca6da30f401e6a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 2
-  sensitivityX: 10
-  sensitivityY: 10
-  minimumX: 0
-  maximumX: 360
-  minimumY: -15
-  maximumY: 30
+  MaxCameraTilt: 80
+  JoyStickCameraTiltSensitivity: 3
+  MouseCameraTiltSensitivity: 10
 --- !u!124 &845711708
 Behaviour:
   m_ObjectHideFlags: 0
@@ -17607,7 +17602,8 @@ Prefab:
       propertyPath: m_CullingMask.m_Bits
       value: 4294966527
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400006, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
   m_RootGameObject: {fileID: 1737767529}
   m_IsPrefabParent: 0
@@ -18066,8 +18062,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTrans: {fileID: 845711705}
-  movement: {fileID: 1737767532}
-  steering: {fileID: 1737767533}
   names:
   - Don
   - Jessie

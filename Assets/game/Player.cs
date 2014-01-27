@@ -4,9 +4,13 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	public static Player Instance;
 
+	public const string ControllerConnectionChannel = "controller-status";
+	public const string ControllerConnected = "connected";
+	public const string ControllerDisconnected = "disconnected";
+
 	public Transform cameraTrans;
-	public Behaviour movement;
-	public Behaviour steering;
+//	public Behaviour movement;
+//	public Behaviour steering;
 	public string[] names;
 	public string characterName;
 	Transform targetTrans;
@@ -16,10 +20,10 @@ public class Player : MonoBehaviour {
 			string[] controllers = Input.GetJoystickNames();
 			if (!_controller && controllers.Length > 0) {
 				_controller = true;
-				MessagePasser.send("controller-status", "connected");
+				MessagePasser.send(Player.ControllerConnectionChannel, Player.ControllerConnected);
 			} else if (_controller && controllers.Length == 0) {
 				_controller = false;
-				MessagePasser.send("controller-status", "disconnected");
+				MessagePasser.send(Player.ControllerConnectionChannel, Player.ControllerDisconnected);
 			}
 			yield return new WaitForSeconds(1f);
 		}
@@ -53,15 +57,15 @@ public class Player : MonoBehaviour {
 
 	void OnApproach(string message, string arg)
 	{
-		if (message == "player-stop")
-		{
-			movement.enabled = false;
-			steering.enabled = false;
+		if (message == "player-stop") {
+			MessagePasser.send(PlayerCamera.CameraEnableChannel, PlayerCamera.CameraDisableMessage);
+//			movement.enabled = false;
+//			steering.enabled = false;
 		}
 		else if (message == "approach-end")
 		{
-			movement.enabled = true;
-			steering.enabled = true;
+			MessagePasser.send(PlayerCamera.CameraEnableChannel, PlayerCamera.CameraEnableMessage);
+//			steering.enabled = true;
 			targetTrans = null;
 		}
 	}
