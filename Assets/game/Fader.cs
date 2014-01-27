@@ -23,7 +23,7 @@ public class Fader : MonoBehaviour {
 		fadingOut = true;
 	}
 
-	void OnPenultimate(string message, string arg)
+	void OnPenultimate(string message, object arg)
 	{
 		going = true;
 		timer = 0;

@@ -120,16 +120,16 @@ public class Passenger : MonoBehaviour
 		approachMachine = new DialogueMachine(start, "approach", characterName);
 	}
 
-	public void OnApproach(string message, string arg)
+	public void OnApproach(string message, object arg)
 	{
-		if (arg != conversationName || approachMachine == null)
+		if ((string)arg != conversationName || approachMachine == null)
 		{
 			return;
 		}
 
 		if (message == "approach-start")
 		{
-			Debug.Log("Starting approach for "+arg);
+			Debug.Log("Starting approach for "+(string)arg);
 			inApproach = true;
 			currentMachine = approachMachine;
 			updateText();
@@ -146,7 +146,7 @@ public class Passenger : MonoBehaviour
 		}
 	}
 
-	public void OnTick(string message, string arg)
+	public void OnTick(string message, object arg)
 	{
 		if (currentMachine != null)
 		{
@@ -242,13 +242,13 @@ public class Passenger : MonoBehaviour
 		}
 	}
 
-	void OnTimeEnd(string message, string arg)
+	void OnTimeEnd(string message, object arg)
 	{
 		Reset();
 	}
 
-	public static Transform getPasenger(string name)
+	public static Transform getPasenger(object name)
 	{
-		return lookup[name].transform;
+		return lookup[(string)name].transform;
 	}
 }

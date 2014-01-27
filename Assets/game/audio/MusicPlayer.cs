@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class MusicPlayer : MonoBehaviour {
 
 	public float fadeTime = 1;
+	public bool enable = true;
 
 	IEnumerator fadeout(AudioSource clip) {
 		float delta = 1 / fadeTime;
@@ -27,6 +28,12 @@ public class MusicPlayer : MonoBehaviour {
 		clip.volume = 1.0f;
 	}
 
+	void Awake() {
+		if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor) {
+			enable = true;
+		}
+	}
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -46,8 +53,11 @@ public class MusicPlayer : MonoBehaviour {
 		return arg + Player.Instance.characterName;
 	}
 
-	public void OnStart(string message, string arg) {
-		string file = getFilename(arg);
+	public void OnStart(string message, object arg) {
+		if (!enable)
+			return;
+
+		string file = getFilename((string)arg);
 		if (_clips.ContainsKey(file)) {
 			if (_current != null) {
 				StartCoroutine("fadein", _clips[file]);
@@ -60,8 +70,8 @@ public class MusicPlayer : MonoBehaviour {
 		}
 	}
 	
-	public void OnStop(string message, string arg) {
-		string file = getFilename(arg);
+	public void OnStop(string message, object arg) {
+		string file = getFilename((string)arg);
 		if (_clips.ContainsKey(file)) {
 			StartCoroutine("fadeout", _clips[file]);
 		} else {
@@ -70,7 +80,7 @@ public class MusicPlayer : MonoBehaviour {
 	}
 
 
-	public void OnTimeEnd(string message, string arg)
+	public void OnTimeEnd(string message, object arg)
 	{
 		StartCoroutine(characterChange());
 	}

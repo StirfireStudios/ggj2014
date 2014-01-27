@@ -1,17 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class MusicTrigger : MonoBehaviour
-{
+public class MusicTrigger : MonoBehaviour {
 	public string trackName;
 	
-	void OnTriggerEnter()
-	{
+	void OnTriggerEnter() {
 		MessagePasser.send("music-start", trackName);
 	}
 	
-	void OnTriggerExit()
-	{
+	void OnTriggerExit() {
 		MessagePasser.send("music-stop", trackName);
 	}
 }
