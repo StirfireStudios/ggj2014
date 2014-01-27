@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void OnApproach(string message, string arg)
+	void OnApproach(string message, object arg)
 	{
 		if (message == "player-stop") {
 			MessagePasser.send(PlayerCamera.CameraEnableChannel, PlayerCamera.CameraDisableMessage);
@@ -70,12 +70,12 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void OnPenultimate(string message, string arg)
+	void OnPenultimate(string message, object arg)
 	{
 		characterName = names[1];
 	}
 
-	void OnTimeEnd(string message, string arg)
+	void OnTimeEnd(string message, object arg)
 	{
 		characterName = names[1];
 		PlayerSpawn.MoveTo(transform, characterName);

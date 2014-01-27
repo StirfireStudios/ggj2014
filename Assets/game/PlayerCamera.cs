@@ -11,10 +11,9 @@ public class PlayerCamera : MonoBehaviour {
 	public float MaxCameraTilt = 80.0f;
 	public float JoyStickCameraTiltSensitivity = 3.0f;
 	public float MouseCameraTiltSensitivity = 10.0f;
-	public float TouchCameraTiltSensitivity = 10.0f;
 
 	void Awake() {
-		MessagePasser.subscribe("controller-status", OnControllerStatus);
+		MessagePasser.subscribe(Player.ControllerConnectionChannel, OnControllerStatus);
 		MessagePasser.subscribe(PlayerCamera.CameraEnableChannel, OnCameraEnableMessage);
 		if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor) {
 			DisableControllerInEditor = false;
@@ -27,10 +26,14 @@ public class PlayerCamera : MonoBehaviour {
 		if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor) {
 			_axis = "Joystick4";
 		} 
-
+		
 		if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer) {
 			Input.simulateMouseWithTouches = false;
 		}
+	}
+
+	// Use this for initialization
+	void Start () {
 	}
 
 	void tiltCameraBy(float amount) {
@@ -83,18 +86,15 @@ public class PlayerCamera : MonoBehaviour {
 		}
 	}
 
-	public void OnControllerStatus(string message, string arg) {
+	public void OnControllerStatus(string message, object arg) {
 		if (DisableControllerInEditor) {
 			_controller = false;
 			return;
 		}
-		if (arg == "connected")
-			_controller = true;
-		else if (arg == "disconnected")
-			_controller = false;
+		_controller = Player.ControllerConnected == (string)arg;
 	}
 
-	public void OnCameraEnableMessage(string message, string arg) {
+	public void OnCameraEnableMessage(string message, object arg) {
 		_enabled = arg.Equals(PlayerCamera.CameraEnableMessage);
 	}
 

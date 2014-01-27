@@ -26,7 +26,7 @@ public class DialogueMachine
 		MessagePasser.subscribe("approach-end", OnApproachEnd);
 	}
 
-	public void OnPlayerChoice(string message, string arg)
+	public void OnPlayerChoice(string message, object arg)
 	{
 		if (currentNode == null || !awaitingPlayer)
 		{
@@ -34,7 +34,7 @@ public class DialogueMachine
 		}
 		foreach (TweeLink link in currentNode.Links)
 		{
-			if (link.NodeName == arg)
+			if (link.NodeName == (string)arg)
 			{
 				Debug.Log("Player chose "+link.Text);
 				awaitingPlayer = false;
@@ -50,7 +50,7 @@ public class DialogueMachine
 		}
 	}
 
-	public void OnApproachEnd(string message, string arg)
+	public void OnApproachEnd(string message, object arg)
 	{
 		awaitingPlayer = false;
 	}
