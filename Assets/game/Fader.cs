@@ -23,7 +23,7 @@ public class Fader : MonoBehaviour {
 		fadingOut = true;
 	}
 
-	void OnPenultimate(string message, string arg)
+	void OnPenultimate(string message, object arg)
 	{
 		going = true;
 		timer = 0;
@@ -48,7 +48,7 @@ public class Fader : MonoBehaviour {
 			}
 			else
 			{
-				mat.color = new Color(1, 1, 1, 1 - alpha);
+				mat.color = new Color(1, 1, 1, alpha);
 				if (timer >= 5)
 				{
 					fadingOut = true;

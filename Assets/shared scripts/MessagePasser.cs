@@ -17,7 +17,7 @@ public class MessagePasser : MonoBehaviour
 		}
 	}
 
-	public delegate void messageHandler(string messageType, string arg);
+	public delegate void messageHandler(string messageType, object arg);
 	private Dictionary<string, List<messageHandler>> subscribers;
 
 	void Awake()
@@ -51,7 +51,7 @@ public class MessagePasser : MonoBehaviour
 		}
 	}
 
-	public static void send(string messageType, string arg)
+	public static void send(string messageType, object arg)
 	{
 		var subscribers = Instance.subscribers;
 		if (!subscribers.ContainsKey(messageType))
