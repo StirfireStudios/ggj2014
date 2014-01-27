@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MusicPlayer : MonoBehaviour {
 
+	public bool enable = true;
 	public float fadedelay;
 	public float fadeamount;
 
@@ -26,6 +27,12 @@ public class MusicPlayer : MonoBehaviour {
 		clip.volume = 1.0f;
 	}
 
+	void Awake() {
+		if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor) {
+			enable = true;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		_clips = new Dictionary<string, AudioSource>();
@@ -44,6 +51,9 @@ public class MusicPlayer : MonoBehaviour {
 	}
 
 	public void OnStart(string message, string arg) {
+		if (!enable)
+			return;
+
 		string file = getFilename(arg);
 		if (_clips.ContainsKey(file)) {
 			if (_current != null) {
