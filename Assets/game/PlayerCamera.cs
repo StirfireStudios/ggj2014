@@ -6,7 +6,7 @@ public class PlayerCamera : MonoBehaviour {
 	public const string CameraDisableMessage = "disable";
 	public const string CameraEnableMessage = "enable";
 
-
+	public bool DisableControllerInEditor = false;
 	public float MaxCameraTilt = 80.0f;
 	public float JoyStickCameraTiltSensitivity = 3.0f;
 	public float MouseCameraTiltSensitivity = 10.0f;
@@ -48,6 +48,12 @@ public class PlayerCamera : MonoBehaviour {
 	}
 
 	public void OnControllerStatus(string message, string arg) {
+		if (Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.WindowsEditor) {
+			if (DisableControllerInEditor) {
+				_controller = false;
+				return;
+			}
+		}
 		if (arg == "connected")
 			_controller = true;
 		else if (arg == "disconnected")
