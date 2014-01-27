@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour {
 	public float TouchCameraPanSensitivity = 0.15f;
 
 	public float JoyStickPlayerMoveSensitivity = 3.0f;
-	public float MousePlayerMoveSensitivity = 10.0f;
+	public float KeyboardPlayerMoveSensitivity = 10.0f;
 	public float TouchPlayerMoveSensitivity = 0.01f;
 
 	void Awake() {
@@ -87,7 +87,7 @@ public class PlayerMove : MonoBehaviour {
 				}
 			} else {
 				panPlayerBy(Input.GetAxis("Mouse X") * MouseCameraPanSensitivity);
-				movePlayerBy(new Vector3(Input.GetAxis ("Horizontal"), 0, Input.GetAxis("Vertical")));
+				movePlayerBy(new Vector3(Input.GetAxis ("Horizontal") * KeyboardPlayerMoveSensitivity, 0, Input.GetAxis("Vertical")  * KeyboardPlayerMoveSensitivity));
 			}
 		}
 	}

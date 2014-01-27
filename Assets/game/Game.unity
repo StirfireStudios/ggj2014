@@ -7506,7 +7506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3864c1b388e77438ca6da30f401e6a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisableControllerInEditor: 0
+  DisableControllerInEditor: 1
   TestTouchInEditor: 0
   MaxCameraTilt: 80
   JoyStickCameraTiltSensitivity: 3
@@ -17975,14 +17975,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffca4383435ad4ff09856adae00a81e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisableControllerInEditor: 0
+  DisableControllerInEditor: 1
   TestTouchInEditor: 0
   JoyStickCameraPanSensitivity: 3
   MouseCameraPanSensitivity: 10
   TouchCameraPanSensitivity: .150000006
   JoyStickPlayerMoveSensitivity: .100000001
-  MousePlayerMoveSensitivity: 10
-  TouchPlayerMoveSensitivity: .00999999978
+  KeyboardPlayerMoveSensitivity: .100000001
+  TouchPlayerMoveSensitivity: .5
 --- !u!143 &1737767534
 CharacterController:
   m_ObjectHideFlags: 0

@@ -67,14 +67,12 @@ public class PlayerCamera : MonoBehaviour {
 						float diffAngle = _touchStartAngle - getCameraPositionAngle(position);
 						transform.localEulerAngles = new Vector3(Mathf.Clamp(_touchStartCameraAngle + diffAngle, -1 * MaxCameraTilt, MaxCameraTilt), 0);
 					} else {
-
 						_touchStarted = true;
 						_touchStartAngle = getCameraPositionAngle(position);
 						_touchStartCameraAngle = transform.eulerAngles.x;
 						if (_touchStartCameraAngle > MaxCameraTilt) {
 							_touchStartAngle = _touchStartAngle - 360.0f;
 						}
-						Debug.Log ("Touch Start: " + _touchStartCameraAngle);
 					}
 				} else if (_touchStarted) {
 					_touchStarted = false;
