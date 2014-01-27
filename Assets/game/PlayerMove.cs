@@ -66,7 +66,6 @@ public class PlayerMove : MonoBehaviour {
 
 					if (_touchCount == 0) {
 						_touchCount = Input.touchCount;
-						Debug.Log ("Start Angles: " + _touchStartAngles);
 					}
 
 					if (_touchCount > 1 || Input.GetButton("Fire2")) {
@@ -99,14 +98,7 @@ public class PlayerMove : MonoBehaviour {
 	public void OnMoveEnableMessage(string message, object arg) {
 		_enabled = arg.Equals(PlayerCamera.CameraEnableMessage);
 	}
-
-	void OnCollisionEnter(Collision collision) {
-		Debug.Log ("COLLISION!");
-		foreach (ContactPoint contact in collision.contacts) {
-			Debug.DrawRay(contact.point, contact.normal, Color.white);
-		}	
-	}
-
+	
 	private Vector2 _touchStartAngles;
 	private int _touchCount = 0;
 	private float _playerPan;
