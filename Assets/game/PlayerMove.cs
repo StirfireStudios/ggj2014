@@ -40,7 +40,9 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	void movePlayerBy(Vector3 amount) {
-		transform.localPosition += transform.TransformDirection(amount);
+		CharacterController controller = GetComponent<CharacterController>();
+		controller.Move(transform.TransformDirection(amount));
+//		transform.localPosition += transform.TransformDirection(amount);
 	}
 
 	Vector2 getCameraPositionAngles(Vector2 position) {
@@ -62,24 +64,18 @@ public class PlayerMove : MonoBehaviour {
 					else
 						position = Input.GetTouch(0).position;
 
-					if (Input.touchCount > 1 || Input.GetButton("Fire2")) {
-						if (_touchCount == 2) {
-							Vector2 diffAngles = _touchStartAngles - getCameraPositionAngles(position);
-							transform.eulerAngles = new Vector3(0, _touchStartAngles.x + diffAngles.x);
-						} else {						
-							_touchCount = 2;
-							_touchStartAngles = getCameraPositionAngles(position);
-						}
-					} else {
-						if (_touchCount == 1) {
-							Vector2 diffAngles = _touchStartAngles - getCameraPositionAngles(position);
-							panPlayerBy(diffAngles.x * TouchCameraPanSensitivity);
-							movePlayerBy(new Vector3(0, 0, -diffAngles.y * TouchPlayerMoveSensitivity));
-						} else {
-							_touchCount = 1;
-							_touchStartAngles = getCameraPositionAngles(position);
-						}
+					if (_touchCount == 0) {
+						_touchCount = Input.touchCount;
+						Debug.Log ("Start Angles: " + _touchStartAngles);
+					}
 
+					if (_touchCount > 1 || Input.GetButton("Fire2")) {
+						Vector2 diffAngles = _touchStartAngles - getCameraPositionAngles(position);
+						transform.eulerAngles = new Vector3(0, _touchStartAngles.x + diffAngles.x);
+					} else {
+						Vector2 diffAngles = _touchStartAngles - getCameraPositionAngles(position);
+						panPlayerBy(diffAngles.x * TouchCameraPanSensitivity);
+						movePlayerBy(new Vector3(0, 0, -diffAngles.y * TouchPlayerMoveSensitivity));
 					}
 				} else if (_touchCount > 0) {
 					_touchCount = 0;
@@ -103,7 +99,14 @@ public class PlayerMove : MonoBehaviour {
 	public void OnMoveEnableMessage(string message, object arg) {
 		_enabled = arg.Equals(PlayerCamera.CameraEnableMessage);
 	}
-	
+
+	void OnCollisionEnter(Collision collision) {
+		Debug.Log ("COLLISION!");
+		foreach (ContactPoint contact in collision.contacts) {
+			Debug.DrawRay(contact.point, contact.normal, Color.white);
+		}	
+	}
+
 	private Vector2 _touchStartAngles;
 	private int _touchCount = 0;
 	private float _playerPan;

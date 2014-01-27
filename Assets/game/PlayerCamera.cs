@@ -43,7 +43,7 @@ public class PlayerCamera : MonoBehaviour {
 
 	float getCameraPositionAngle(Vector2 position) {
 		double temp = camera.fieldOfView / Screen.height; // degrees per pixel;
-		return (float)temp * (position.y - Screen.height / 2);
+		return (float)temp * (Screen.height / 2 - position.y);
 	}
 	
 	void Update () {
