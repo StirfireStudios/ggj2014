@@ -6,6 +6,8 @@ public class PlayerCamera : MonoBehaviour {
 	public const string CameraDisableMessage = "disable";
 	public const string CameraEnableMessage = "enable";
 
+	public const string CameraSetTiltChannel = "camera-tilt";
+
 	public bool DisableControllerInEditor = false;
 	public bool TestTouchInEditor = false;
 	public float MaxCameraTilt = 80.0f;
@@ -15,14 +17,11 @@ public class PlayerCamera : MonoBehaviour {
 	void Awake() {
 		MessagePasser.subscribe(Player.ControllerConnectionChannel, OnControllerStatus);
 		MessagePasser.subscribe(PlayerCamera.CameraEnableChannel, OnCameraEnableMessage);
+		MessagePasser.subscribe(PlayerCamera.CameraSetTiltChannel, OnCameraTiltMessage); 
 		if (Application.platform != RuntimePlatform.OSXEditor && Application.platform != RuntimePlatform.WindowsEditor) {
 			DisableControllerInEditor = false;
 			TestTouchInEditor = false;
 		}
-	}
-
-	// Use this for initialization
-	void Start () {
 		if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor) {
 			_axis = "Joystick4";
 		} 
@@ -39,7 +38,7 @@ public class PlayerCamera : MonoBehaviour {
 	void tiltCameraBy(float amount) {
 		_cameraTilt += amount;
 		_cameraTilt = Mathf.Clamp (_cameraTilt, -1 * MaxCameraTilt, MaxCameraTilt);
-		transform.eulerAngles = new Vector3(_cameraTilt, 0);
+		transform.localEulerAngles = new Vector3(_cameraTilt, 0);
 	}
 
 	float getCameraPositionAngle(Vector2 position) {
@@ -57,16 +56,16 @@ public class PlayerCamera : MonoBehaviour {
 			tiltCameraBy(Input.GetAxis(_axis) * JoyStickCameraTiltSensitivity);
 		} else {
 			if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer || TestTouchInEditor) {
-				if (Input.touchCount == 2 || Input.GetButton("Fire1")) {
+				if (Input.touchCount == 2 || Input.GetButton("Fire2")) {
 					Vector2 position; 
-					if (Input.GetButton("Fire1"))
+					if (Input.GetButton("Fire2"))
 						position = Input.mousePosition;
 					else
 						position = Input.GetTouch(0).position;
 
 					if (_touchStarted) {
 						float diffAngle = _touchStartAngle - getCameraPositionAngle(position);
-						transform.eulerAngles = new Vector3(Mathf.Clamp(_touchStartCameraAngle + diffAngle, -1 * MaxCameraTilt, MaxCameraTilt), 0);
+						transform.localEulerAngles = new Vector3(Mathf.Clamp(_touchStartCameraAngle + diffAngle, -1 * MaxCameraTilt, MaxCameraTilt), 0);
 					} else {
 
 						_touchStarted = true;
@@ -96,6 +95,11 @@ public class PlayerCamera : MonoBehaviour {
 
 	public void OnCameraEnableMessage(string message, object arg) {
 		_enabled = arg.Equals(PlayerCamera.CameraEnableMessage);
+	}
+	
+	public void OnCameraTiltMessage(string message, object arg) {
+		transform.localEulerAngles = new Vector3((float)arg, 0);
+		_cameraTilt = (float)arg;
 	}
 
 	private float _touchStartCameraAngle = 0f;
