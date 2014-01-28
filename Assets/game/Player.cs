@@ -9,8 +9,6 @@ public class Player : MonoBehaviour {
 	public const string ControllerDisconnected = "disconnected";
 
 	public Transform cameraTrans;
-//	public Behaviour movement;
-//	public Behaviour steering;
 	public string[] names;
 	public string characterName;
 	Transform targetTrans;
@@ -58,14 +56,11 @@ public class Player : MonoBehaviour {
 	void OnApproach(string message, object arg)
 	{
 		if (message == "player-stop") {
-			MessagePasser.send(PlayerCamera.CameraEnableChannel, PlayerCamera.CameraDisableMessage);
-//			movement.enabled = false;
-//			steering.enabled = false;
+			MessagePasser.send(PlayerMove.PlayerMoveEnableChannel, PlayerMove.PlayerMoveDisableMessage);
 		}
 		else if (message == "approach-end")
 		{
-			MessagePasser.send(PlayerCamera.CameraEnableChannel, PlayerCamera.CameraEnableMessage);
-//			steering.enabled = true;
+			MessagePasser.send(PlayerMove.PlayerMoveEnableChannel, PlayerMove.PlayerMoveEnableMessage);
 			targetTrans = null;
 		}
 	}

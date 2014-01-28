@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
-	public const string PlayerMoveEnableChannel = "camera-enable";
+	public const string PlayerMoveEnableChannel = "movement-enable";
 	public const string PlayerMoveDisableMessage = "disable";
 	public const string PlayerMoveEnableMessage = "enable";
 
@@ -52,6 +52,10 @@ public class PlayerMove : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (!_enabled)
+		{
+			return;
+		}
 		if (_controller && !TestTouchInEditor) {
 			panPlayerBy(Input.GetAxis(_panAxis) * JoyStickCameraPanSensitivity);
 			movePlayerBy(new Vector3(Input.GetAxis ("Horizontal") * JoyStickPlayerMoveSensitivity, 0, Input.GetAxis("Vertical") * JoyStickPlayerMoveSensitivity));

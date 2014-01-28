@@ -20,7 +20,9 @@ public class PlayerSpawn : MonoBehaviour {
 	public static void MoveTo(Transform target, string name)
 	{
 		Transform dest = lookup[name];
-		target.position = dest.position;
+		Vector3 pos = dest.position;
+		pos.y = target.position.y;
+		target.position = pos;
 		target.rotation = dest.rotation;
 	}
 }
