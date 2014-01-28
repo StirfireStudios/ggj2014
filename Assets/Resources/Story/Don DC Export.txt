@@ -1,4 +1,4 @@
-﻿:: Start [Ignore]
+:: Start [Ignore]
 
 
 
@@ -112,7 +112,7 @@ Officers, I need you to keep quiet about this. It's important.
 [[MDC1 Man Don 4-2]]
 
 
-:: MDC1 Man Ben 5-2 [S;Ben T:Don]
+:: MDC1 Man Ben 5-2 [S:Ben T:Don]
 <size=35>Well, it’s good to have you on board, sir. Don’t mind saying we’re a pinch out of our depth here. You keep doing what you're doing. Let us know if you find something more.</size>
 [[MDC1 Man Don 5-3]]
 
