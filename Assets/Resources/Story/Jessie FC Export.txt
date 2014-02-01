@@ -127,29 +127,30 @@ Yes, dear.
 
 
 :: CFC2 Beth 1-1 [S:Beth T:Sally StartNode]
-TENNIS DIALOGUE
+--
+And then Georgia said to Clarice that he needed to ask permission first, but Clarice said that was outdated.
 [[CFC2 Sally 1-1]]
 
 
 :: CFC2 Beth 2-1 [S:Beth T:Sally]
-Tennis Dialogue
+That's different, you see, because Elton is from the Wentworth family. And we all know that they haven't got enough money to their name for that to be a suitable match.
 [[CFC2 Sally 2-1]]
 
 
 :: CFC2 Beth 3-1 [S:Beth T:Sally]
-Tennis Dialogue
+True, true, but Darcy's family has been around for at least ten generations. 
 
 [[CFC2 Sally 3-1]]
 
 
 :: CFC2 Beth 4-1 [S:Beth T:Sally]
-LEEEEROOOOOOY JENKINS!!!!!!!!!!
+She has to marry someone, though. And soon! She's nearly 25 already. Who would you have her be with, Leeroy Jenkins?
 
 [[CFC2 Sally 4-1]]
 
 
 :: CFC2 Beth 5-1 [S:Beth T:Sally]
-Tennis Dialogue
+Oh but that's such an outdated custom, not suitable for this day and age. It's the twenties, Sally, you must move with the times!
 
 [[CFC2 Sally 5-1]]
 
@@ -161,29 +162,29 @@ Two women are chatting about a tennis match.
 
 
 :: CFC2 Sally 1-1 [S:Sally T:Beth]
-TENNIS DIALOGUE
+But didn't Elton ask permission before marrying Clarice?
 [[CFC2 Beth 2-1]]
 
 
 :: CFC2 Sally 2-1 [S:Sally T:Beth]
-Tennis Dialogue
+But Darcy's family certainly isn't well-off. They barely make enough to afford their estate!
 
 [[CFC2 Beth 3-1]]
 
 
 :: CFC2 Sally 3-1 [S:Sally T:Beth]
-Tennis Dialogue
+Prestige is very well and good, but how does he expect to support Georgia when his house is barely making ends meet?
 
 [[CFC2 Beth 4-1]]
 
 
 :: CFC2 Sally 4-1 [S:Sally T:Beth]
-Tennis Dialogue
+At least Leeroy would ask her father before asking for her hand!
 
 [[CFC2 Beth 5-1]]
 
 
 :: CFC2 Sally 5-1 [S:Sally T:Beth]
-Tennis Dialogue
+All I'm saying is that if a man wishes to ask for my hand, he had better ask my father first.
 
 

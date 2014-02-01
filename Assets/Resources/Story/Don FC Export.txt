@@ -171,36 +171,33 @@ You still haven't answered me, boy. What are you doing here?
 [[Maybe I should go.|MFC1 Man Don 4-1]]
 
 
-:: MFC2 Beth 1-1 [S:Beth T:Sally StartNode]
-TENNIS DIALOGUE
-[[MFC2 Sally 1-1]]
+:: CFC2 Beth 1-1 [S:Beth T:Sally StartNode]
+--10
+And then Georgia said to Clarice that he needed to ask permission first, but Clarice said that was outdated.
+[[CFC2 Sally 1-1]]
 
 
-:: MFC2 Beth 2-1 [S:Beth T:Sally]
---12
-Tennis Dialogue
-[[MFC2 Sally 2-1]]
+:: CFC2 Beth 2-1 [S:Beth T:Sally]
+That's different, you see, because Elton is from the Wentworth family. And we all know that they haven't got enough money to their name for that to be a suitable match.
+[[CFC2 Sally 2-1]]
 
 
-:: MFC2 Beth 3-1 [S:Beth T:Sally]
---24
-Tennis Dialogue
+:: CFC2 Beth 3-1 [S:Beth T:Sally]
+True, true, but Darcy's family has been around for at least ten generations. 
 
-[[MFC2 Sally 3-1]]
-
-
-:: MFC2 Beth 4-1 [S:Beth T:Sally]
---36
-Tennis Dialogue
-
-[[MFC2 Sally 4-1]]
+[[CFC2 Sally 3-1]]
 
 
-:: MFC2 Beth 5-1 [S:Beth T:Sally]
---48
-Tennis Dialogue
+:: CFC2 Beth 4-1 [S:Beth T:Sally]
+She has to marry someone, though. And soon! She's nearly 25 already. Who would you have her be with, Leeroy Jenkins?
 
-[[MFC2 Sally 5-1]]
+[[CFC2 Sally 4-1]]
+
+
+:: CFC2 Beth 5-1 [S:Beth T:Sally]
+Oh but that's such an outdated custom, not suitable for this day and age. It's the twenties, Sally, you must move with the times!
+
+[[CFC2 Sally 5-1]]
 
 
 :: MFC1 Man Mavis 3-1 [S:Mavis]
@@ -215,31 +212,31 @@ Mmm hmm...
 [[MFC1 Man Don 3-3]]
 
 
-:: MFC2 Sally 1-1 [S:Sally T:Beth]
-TENNIS DIALOGUE
-[[MFC2 Beth 2-1]]
+:: CFC2 Sally 1-1 [S:Sally T:Beth]
+But didn't Elton ask permission before marrying Clarice?
+[[CFC2 Beth 2-1]]
 
 
-:: MFC2 Sally 2-1 [S:Sally T:Beth]
-Tennis Dialogue
+:: CFC2 Sally 2-1 [S:Sally T:Beth]
+But Darcy's family certainly isn't well-off. They barely make enough to afford their estate!
 
-[[MFC2 Beth 3-1]]
-
-
-:: MFC2 Sally 3-1 [S:Sally T:Beth]
-Tennis Dialogue
-
-[[MFC2 Beth 4-1]]
+[[CFC2 Beth 3-1]]
 
 
-:: MFC2 Sally 4-1 [S:Sally T:Beth]
-Tennis Dialogue
+:: CFC2 Sally 3-1 [S:Sally T:Beth]
+Prestige is very well and good, but how does he expect to support Georgia when his house is barely making ends meet?
 
-[[MFC2 Beth 5-1]]
+[[CFC2 Beth 4-1]]
 
 
-:: MFC2 Sally 5-1 [S:Sally T:Beth]
-Tennis Dialogue
+:: CFC2 Sally 4-1 [S:Sally T:Beth]
+At least Leeroy would ask her father before asking for her hand!
+
+[[CFC2 Beth 5-1]]
+
+
+:: CFC2 Sally 5-1 [S:Sally T:Beth]
+All I'm saying is that if a man wishes to ask for my hand, he had better ask my father first.
 
 
 :: MFC2 [Ignore]
